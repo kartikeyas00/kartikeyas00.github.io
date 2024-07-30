@@ -1,0 +1,1210 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Space+Mono&display=swap');
+
+/**IcoMoon Font Stuff**/
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?u0qhb6');
+    src: url('../fonts/icomoon.eot?u0qhb6#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?u0qhb6') format('truetype'),
+        url('../fonts/icomoon.woff?u0qhb6') format('woff'),
+        url('../fonts/icomoon.svg?u0qhb6#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="icomoon-"],
+[class*=" icomoon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+.icomoon-geopandas:before {
+    content: "\e900";
+}
+
+.icomoon-scipy:before {
+    content: "\e901";
+}
+
+.icomoon-mpi:before {
+    content: "\e902";
+}
+.icomoon-dask:before {
+    content: "\e903";
+}
+
+
+
+/**CSS for main landing page**/
+
+
+
+
+.landing-page-button {
+    background: linear-gradient(145deg, #1e2328, #232a30);
+    /*border: none;*/
+    color: #EBD494;
+    transition: all 0.3s ease;
+    box-shadow: 5px 5px 10px #1a1f24, -5px -5px 10px #262b34;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.landing-page-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: all 0.5s;
+}
+
+.landing-page-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 15px #1a1f24, -8px -8px 15px #262b34;
+    color: #1aff8c;
+}
+
+.landing-page-button:hover::before {
+    left: 100%;
+}
+
+.landing-page-button .icon {
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.landing-page-button:hover .icon {
+    transform: rotate(360deg);
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(26, 255, 140, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(26, 255, 140, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(26, 255, 140, 0);
+    }
+}
+
+.landing-page-button:focus {
+    animation: pulse 1.5s infinite;
+}
+
+.hero-body {
+    background-color: #20252C;
+    padding: 4rem 2rem;
+}
+
+.main-page-title {
+    color: #EBD494;
+    font-family: 'Roboto Mono', monospace;
+}
+
+p.subtitle {
+    margin-bottom: 2rem;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.modal-full-height {
+    min-height: 100vh;
+    min-width: 100vw;
+    max-height: 100vh;
+    max-width: 100vw;
+    overflow-y: auto;
+}
+
+.modal-close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.is-active-link {
+    background-color: #4A4A4A;
+    color: white;
+}
+
+.is-active-link:hover {
+    background-color: #3273dc;
+}
+
+.footer {
+    background-color: #20252C;
+    padding: 1.5rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer p {
+    color: #EBD494;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    margin: 0;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer:hover p {
+    opacity: 1;
+}
+
+
+
+/**Work Experience and Education Modal**/
+
+.title-row {
+    background-color: #0f0f0f;
+    padding: 1.5rem;
+}
+
+.we-title {
+    color: #1aff8c;
+    font-family: 'Space Mono', monospace;
+    margin-bottom: 10px;
+}
+
+/** Timeline **/
+
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline-item {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.timeline-dot {
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    background-color: #1aff8c;
+    border-radius: 50%;
+    left: -33px;
+    top: 20%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 0 4px #2c2c2e, 0 0 0 6px #1aff8c;
+    transition: top 0.5s ease-in-out;
+
+}
+
+.timeline-date {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 10px;
+    border-color: #1aff8c;
+    border-style: inset;
+    display: inline-block;
+    font-size: 0.9em;
+    position: relative;
+
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 2px;
+    background-color: #1aff8c;
+}
+
+
+.timeline-content {
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.timeline-content-link {
+    display: flex;
+    align-items: center;
+    color: #1aff8c;
+    font-family: 'Roboto Mono', monospace;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.timeline-content-link:hover {
+    border-radius: 20px;
+    border-color: #1aff8c;
+    border-style: solid;
+    color: #1aff8c;
+    background-color: #3d3e3b;
+
+}
+
+.timeline-content-details {
+    flex: 1;
+    padding: 2% 5%;
+}
+
+.timeline-content-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.timeline-content-company {
+    font-size: 1.2em;
+    color: #ffffff;
+}
+
+.timeline-content-college {
+    font-size: 1.4em;
+    color: #ffffff;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+    right: 0;
+    height: 1px;
+    background-color: #3e3e40;
+}
+
+.timeline-item:last-child::after {
+    display: none;
+}
+
+.timeline-item.active .timeline-dot {
+    background-color: #ff5e5e;
+    box-shadow: 0 0 0 4px #2c2c2e, 0 0 0 6px #ff5e5e;
+}
+
+/**Work Experience Content**/
+.we-content-section {}
+
+.we-content-title {
+    color: #1aff8c;
+    font-family: 'Space Mono', monospace;
+    margin-top: -1.25rem;
+    font-size: 2em;
+}
+
+.we-content-subtitle {
+    color: #1aff8c;
+    font-family: 'Space Mono', monospace;
+    margin-top: -1.25rem;
+    font-size: 1.2em;
+}
+
+.we-content-section-title {
+    color: #1aff8c;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.25em;
+    padding-bottom: 10px;
+}
+
+.we-content-section-divider {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #1aff8c, #ffffff, #1aff8c);
+    margin: 20px 0;
+}
+
+/**Work Experience Job Responsibilites**/
+.we-content-section-job-responsibilities {
+    color: #ffffff;
+    font-size: 1.2em;
+    border-left: 3px solid #1aff8c;
+    padding-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.we-content-section-job-responsibilities .highlight {
+    color: #1aff8c;
+    font-weight: bold;
+}
+
+/**Work Experience Achievements**/
+
+.we-content-section-achievements {
+    color: #ffffff;
+    font-size: 1.2em;
+    border-left: 3px solid #1aff8c;
+    padding-left: 10px;
+    transition: all 0.3s ease;
+}
+
+
+.we-content-section-achievements ul li {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.we-content-section-achievements ul li:hover {
+    color: #1aff8c;
+    transition: color 0.3s;
+}
+
+/**Work Experience Tech Stack**/
+
+.we-content-section-tech-stack {
+    margin-top: 20px;
+    font-size: 1.2em;
+    border-left: 3px solid #1aff8c;
+    padding-left: 10px;
+    transition: all 0.3s ease;
+}
+
+
+.we-content-section-tech-stack-title {
+    font-size: 1.2em;
+}
+
+
+
+.tab-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tech-stack-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+}
+
+.we-content-section-tech-stack-tabs {
+    margin-bottom: 20px;
+}
+
+.we-content-section-tech-stack-tabs ul {
+    border-bottom-color: #363636;
+}
+
+.we-content-section-tech-stack-tabs a {
+    color: #fff;
+    border-bottom-color: transparent;
+    transition: border-bottom-color 0.3s;
+}
+
+.we-content-section-tech-stack-tabs li.is-active a {
+    color: #48c774;
+    border-bottom-color: #48c774;
+}
+
+.we-content-section-tech-stack-tabs a:hover {
+    border-bottom-color: #fff;
+    color: #48c774;
+}
+
+
+.we-content-section-tech-stack-icon {
+    flex: 0 0 auto;
+    background-color: #222;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.we-content-section-tech-stack-icon i {
+    color: #1aff8c;
+}
+
+.we-content-section-tech-stack-icon p {
+    color: #fff;
+    margin: 0;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9em;
+}
+
+.we-content-section-tech-stack-icon:hover {
+    transform: scale(1.1);
+    background-color: #333;
+}
+
+
+
+#we-timeline-sector-filter-modal .modal-content {
+    background-color: #2c2c2e;
+    /* Dark theme for the modal content */
+    color: #1aff8c;
+    /* Green text color */
+    position: absolute;
+    /* Positioning relative to its nearest positioned ancestor */
+    left: 5%;
+    /* Align to the left side */
+    top: 50%;
+    /* Center vertically */
+    transform: translateY(-50%);
+    /* Adjust to exactly center vertically */
+    width: 400px;
+    /* Fixed width, adjust as necessary */
+    z-index: 50;
+    /* Make sure it sits above other content */
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.we-timeline-sector-filter-modal-title {
+    font-size: 1.4em;
+    color: #1aff8c;
+
+}
+
+/* Additional styling for checkbox labels to match your theme */
+#we-timeline-sector-filter-modal label {
+    color: #1aff8c;
+    /* Green text for labels */
+    font-weight: normal;
+    /* Adjust font weight as needed */
+    left: 5%;
+}
+
+#we-timeline-sector-filter-modal input[type="checkbox"] {
+    accent-color: #1aff8c;
+    /* Green color for the checkboxes */
+}
+
+
+#we-timeline-period-filter-modal .modal-content {
+    background-color: #2c2c2e;
+    color: #1aff8c;
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    width: 400px;
+    z-index: 50;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.we-timeline-period-filter-modal-title {
+    font-size: 1.4em;
+    color: #1aff8c;
+
+}
+
+#we-timeline-period-filter-modal label {
+    color: #1aff8c;
+    font-weight: normal;
+    left: 5%;
+}
+
+#we-timeline-period-filter-modal input[type="checkbox"] {
+    accent-color: #1aff8c;
+}
+
+#we-timeline-period-filter-modal .datetimepicker-wrapper.modal .datetimepicker {
+    left: 5%;
+}
+
+
+
+#we-timeline-technology-filter-modal .modal-content {
+    background-color: #2c2c2e;
+    color: #1aff8c;
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 400px;
+    z-index: 50;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.we-timeline-technology-filter-modal-title {
+    font-size: 1.4em;
+    color: #1aff8c;
+
+}
+
+#we-timeline-technology-filter-modal label {
+    color: #1aff8c;
+    font-weight: normal;
+    left: 5%;
+}
+
+#we-timeline-technology-filter-modal input[type="checkbox"] {
+    accent-color: #1aff8c;
+}
+
+
+/**Education Content**/
+.timeline-content-college .ed-icon {
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.5em;
+}
+
+.ed-content-section {}
+
+.ed-content-title {
+    color: #1aff8c;
+    font-family: 'Space Mono', monospace;
+    margin-top: -1.25rem;
+    font-size: 2em;
+}
+
+.ed-content-subtitle {
+    color: #1aff8c;
+    font-family: 'Space Mono', monospace;
+    margin-top: -1.25rem;
+    font-size: 1.2em;
+}
+
+.ed-content-section-title {
+    color: #1aff8c;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.25em;
+    padding-bottom: 10px;
+}
+
+.ed-content-section-subtitle {
+    color: #1aff8c;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.2em;
+    padding-bottom: 10px;
+}
+
+.ed-content-section-project {
+    color: #ffffff;
+    font-size: 1.2em;
+    border-left: 3px solid #1aff8c;
+    padding-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.ed-content-section-project ul li {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.ed-content-section-project ul li:hover {
+    color: #1aff8c;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.ed-content-section-divider {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #1aff8c, #ffffff, #1aff8c);
+    margin: 20px 0;
+}
+
+.ed-content-section-project-details {
+    color: #ffffff;
+    padding: 10px;
+    transition: all 0.3s ease;
+    border-left: 3px solid #1aff8c;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.ed-content-section-project-description {
+    line-height: 1.6;
+}
+
+.ed-content-section-project-github-container {
+    text-align: center;
+    margin-top: 8px;
+}
+
+.ed-content-section-project-github {
+    display: inline-block;
+    padding: 5px;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 20px;
+    border: 1px #1aff8c solid;
+    transition: background-color 0.3s ease;
+}
+
+.ed-content-section-project-github:hover {
+    background-color: #14cc70;
+}
+
+.ed-content-section-project-github i {
+    margin-right: 8px;
+}
+
+.ed-content-section-athletic-achievements {
+    color: #ffffff;
+    font-size: 1.2em;
+    border-left: 3px solid #1aff8c;
+    padding-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.ed-content-section-athletic-achievements ul li {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.ed-content-section-athletic-achievements ul li:hover {
+    color: #1aff8c;
+    transition: color 0.3s;
+}
+
+
+
+.ed-content-section-classes {
+    color: #ffffff;
+    font-size: 1.2em;
+    border-left: 3px solid #1aff8c;
+    padding-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.ed-content-section-tech-stack-tabs {
+    margin-bottom: 20px;
+}
+
+.ed-content-section-tech-stack-tabs ul {
+    border-bottom-color: #363636;
+}
+
+.ed-content-section-tech-stack-tabs a {
+    color: #fff;
+    border-bottom-color: transparent;
+    transition: border-bottom-color 0.3s;
+}
+
+.ed-content-section-tech-stack-tabs li.is-active a {
+    color: #48c774;
+    border-bottom-color: #48c774;
+}
+
+.ed-content-section-tech-stack-tabs a:hover {
+    border-bottom-color: #fff;
+    color: #48c774;
+}
+
+.ed-content-section-classes-icon {
+    flex: 0 0 auto;
+    background-color: #222;
+    padding: 8px 12px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.ed-content-section-classes-icon i {
+    color: #1aff8c;
+    font-size: 1.2em;
+}
+
+.ed-content-section-classes-info {
+    color: #fff;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9em;
+}
+
+.ed-content-section-classes-icon:hover {
+    transform: translateY(-3px);
+    background-color: #333;
+}
+
+
+.ed-content-section-internship {
+    color: #ffffff;
+    font-size: 1.2em;
+    border-left: 3px solid #1aff8c;
+    padding-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.ed-content-section-internship ul li {
+    margin-bottom: 20px;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.ed-content-section-internship ul li:hover {
+    color: #1aff8c;
+    transition: color 0.3s;
+}
+
+.ed-content-section-internship-date {
+    border-radius: 20px;
+    border: 0.5px #1aff8c solid;
+    padding: 5px 15px;
+    margin-right: 10px;
+}
+
+.ed-content-section-internship-job {
+    font-weight: bold;
+}
+
+.ed-content-section-internship-company {
+    font-weight: bold;
+}
+
+.ed-content-section-research-teaching {
+    color: #ffffff;
+    font-size: 1.2em;
+    border-left: 3px solid #1aff8c;
+    padding-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.ed-content-section-research-teaching ul li {
+    margin-bottom: 20px;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.ed-content-section-research-teaching ul li:hover {
+    color: #1aff8c;
+    transition: color 0.3s;
+}
+
+.ed-content-section-research-teaching-date {
+    border-radius: 20px;
+    border: 0.5px #1aff8c solid;
+    padding: 5px 15px;
+    margin-right: 10px;
+}
+
+.ed-content-section-research-teaching-job {
+    font-weight: bold;
+}
+
+.ed-content-section-research-teaching-course {
+    font-style: italic;
+    color: #aaa;
+}
+
+.ed-content-section-research-teaching-company {
+    font-weight: bold;
+}
+
+.ed-content-section-memories {
+    color: #ffffff;
+    font-size: 1.2em;
+    border-left: 3px solid #1aff8c;
+    padding-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.custom-image {
+    object-fit: cover;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-image:hover {
+    transform: scale(1.05);
+}
+
+/**Projects Content**/
+
+
+.projects-content-title {
+    color: #1aff8c;
+    font-family: 'Space Mono', monospace;
+    margin-top: -1rem;
+    font-size: 2em;
+}
+
+.projects-content-section-divider {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #1aff8c, #ffffff, #1aff8c);
+    margin: 20px 0;
+}
+
+.projects-content-section-title {
+    color: #1aff8c;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.25em;
+    padding-bottom: 10px;
+}
+
+.projects-content-section-image-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.projects-content-section-image-container figure {
+    width: 50%;
+    text-align: center;
+}
+
+.projects-content-section-image-container img {
+    width: 100%;
+    height: auto;
+}
+
+.projects-content-section-image-container figcaption {
+    font-family: 'Space Mono', monospace;
+    color: #1aff8c;
+    margin-top: 10px;
+}
+
+.projects-content-section-description {
+    color: #ffffff;
+    font-size: 1.2em;
+    border-left: 3px solid #1aff8c;
+    padding-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.projects-content-section-repository {
+    color: #ffffff;
+    font-size: 1.2em;
+    border-left: 3px solid #1aff8c;
+    padding-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.projects-content-section-repository a {
+    color: #ffffff;
+}
+
+.projects-content-section-repository a:hover {
+    border-bottom-color: #fff;
+    color: #48c774;
+}
+
+.projects-content-section-url {
+    color: #ffffff;
+    font-size: 1.2em;
+    border-left: 3px solid #1aff8c;
+    padding-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.projects-content-section-url a {
+    color: #ffffff;
+}
+
+.projects-content-section-url a:hover {
+    border-bottom-color: #fff;
+    color: #48c774;
+}
+
+.projects-content-section-tech-stack {
+    margin-top: 20px;
+    font-size: 1.2em;
+    border-left: 3px solid #1aff8c;
+    padding-left: 10px;
+    transition: all 0.3s ease;
+}
+
+
+
+.projects-content-section-tech-stack-tabs {
+    margin-bottom: 20px;
+}
+
+.projects-content-section-tech-stack-tabs ul {
+    border-bottom-color: #363636;
+}
+
+.projects-content-section-tech-stack-tabs a {
+    color: #fff;
+    border-bottom-color: transparent;
+    transition: border-bottom-color 0.3s;
+}
+
+.projects-content-section-tech-stack-tabs li.is-active a {
+    color: #48c774;
+    border-bottom-color: #48c774;
+}
+
+.projects-content-section-tech-stack-tabs a:hover {
+    border-bottom-color: #fff;
+    color: #48c774;
+}
+
+
+.projects-content-section-tech-stack-icon {
+    flex: 0 0 auto;
+    background-color: #222;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.projects-content-section-tech-stack-icon i {
+    color: #1aff8c;
+}
+
+.projects-content-section-tech-stack-icon p {
+    color: #fff;
+    margin: 0;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9em;
+}
+
+.projects-content-section-tech-stack-icon:hover {
+    transform: scale(1.1);
+    background-color: #333;
+}
+
+#projects-timeline-type-filter-modal .modal-content {
+    background-color: #2c2c2e;
+    color: #1aff8c;
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 400px;
+    z-index: 50;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.projects-timeline-type-filter-modal-title {
+    font-size: 1.4em;
+    color: #1aff8c;
+
+}
+
+#projects-timeline-type-filter-modal label {
+    color: #1aff8c;
+    font-weight: normal;
+    left: 5%;
+}
+
+#projects-timeline-type-filter-modal input[type="checkbox"] {
+    accent-color: #1aff8c;
+}
+
+#projects-timeline-technology-filter-modal .modal-content {
+    background-color: #2c2c2e;
+    color: #1aff8c;
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 400px;
+    z-index: 50;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.projects-timeline-technology-filter-modal-title {
+    font-size: 1.4em;
+    color: #1aff8c;
+
+}
+
+#projects-timeline-technology-filter-modal label {
+    color: #1aff8c;
+    font-weight: normal;
+    left: 5%;
+}
+
+#projects-timeline-technology-filter-modal input[type="checkbox"] {
+    accent-color: #1aff8c;
+}
+
+/* Publications Modal Styles */
+.publications-content-title {
+    color: #1aff8c;
+    font-family: 'Space Mono', monospace;
+    margin-top: -1rem;
+    font-size: 2em;
+}
+
+.publications-content-section-divider {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #1aff8c, #ffffff, #1aff8c);
+    margin: 20px 0;
+}
+
+.publications-content-section-title {
+    color: #1aff8c;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.25em;
+    padding-bottom: 10px;
+}
+
+.publications-content-section-description {
+    color: #ffffff;
+    font-size: 1.2em;
+    border-left: 3px solid #1aff8c;
+    padding-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.publications-content-section-link {
+    color: #ffffff;
+    font-size: 1.2em;
+    border-left: 3px solid #1aff8c;
+    padding-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.publications-content-section-link a {
+    color: #ffffff;
+}
+
+.publications-content-section-link a:hover {
+    border-bottom-color: #fff;
+    color: #48c774;
+}
+
+#publications-timeline-type-filter-modal .modal-content {
+    background-color: #2c2c2e;
+    color: #1aff8c;
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 400px;
+    z-index: 50;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.publications-timeline-type-filter-modal-title {
+    font-size: 1.4em;
+    color: #1aff8c;
+}
+
+#publications-timeline-type-filter-modal label {
+    color: #1aff8c;
+    font-weight: normal;
+    left: 5%;
+}
+
+#publications-timeline-type-filter-modal input[type="checkbox"] {
+    accent-color: #1aff8c;
+}
+
+/* Talks Modal Styles */
+.talks-content-title {
+    color: #1aff8c;
+    font-family: 'Space Mono', monospace;
+    margin-top: -1rem;
+    font-size: 2em;
+}
+
+.talks-content-subtitle {
+    color: #1aff8c;
+    font-family: 'Space Mono', monospace;
+    margin-top: -1.25rem;
+    font-size: 1.2em;
+}
+
+.talks-content-subtitle a{
+    color: #1aff8c;
+}
+
+.talks-content-section-divider {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #1aff8c, #ffffff, #1aff8c);
+    margin: 20px 0;
+}
+
+.talks-content-section-title {
+    color: #1aff8c;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.25em;
+    padding-bottom: 10px;
+}
+
+.talks-content-section-description {
+    color: #ffffff;
+    font-size: 1.2em;
+    border-left: 3px solid #1aff8c;
+    padding-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.talks-content-section-link {
+    color: #ffffff;
+    font-size: 1.2em;
+    border-left: 3px solid #1aff8c;
+    padding-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.talks-content-section-link a {
+    color: #ffffff;
+}
+
+.talks-content-section-link a:hover {
+    border-bottom-color: #fff;
+    color: #48c774;
+}
+
+#talks-timeline-period-filter-modal .modal-content {
+    background-color: #2c2c2e;
+    color: #1aff8c;
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    width: 400px;
+    z-index: 50;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.talks-timeline-period-filter-modal-title {
+    font-size: 1.4em;
+    color: #1aff8c;
+}
+
+#talks-timeline-period-filter-modal label {
+    color: #1aff8c;
+    font-weight: normal;
+    left: 5%;
+}
+
+#talks-timeline-period-filter-modal input[type="date"] {
+    accent-color: #1aff8c;
+}
+
+#talks-timeline-period-filter-modal .datetimepicker-wrapper.modal .datetimepicker {
+    left: 5%;
+}
+
+.talks-not-available {
+    color: #ff6b6b;
+    font-style: italic;
+    margin-top: 5px;
+}
