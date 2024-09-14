@@ -1,0 +1,5 @@
+.vscode
+.env
+env/
+.textClipping
+.DS_Store
