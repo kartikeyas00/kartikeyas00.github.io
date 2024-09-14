@@ -6,7 +6,7 @@ function switchSection(id, el) {
     color: #1aff8c;
     background-color: #3d3e3b;
     `
-    document.querySelectorAll('.we-content-section,.ed-content-section,.projects-content-section,.publications-content-section').forEach(c => c.style.display = 'none');
+    document.querySelectorAll('.we-content-section,.ed-content-section,.projects-content-section,.publications-content-section,.talks-content-section').forEach(c => c.style.display = 'none');
     document.querySelectorAll('div.timeline-dot').forEach(c => c.style.display = 'none');
     document.getElementById(id).style.display = 'block';
     el.parentElement.parentElement.querySelector('.timeline-dot').style.display = 'block';

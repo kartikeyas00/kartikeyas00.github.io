@@ -172,6 +172,51 @@ body {
     opacity: 1;
 }
 
+/** Mobile Specific Design **/
+
+@media screen and (max-width: 768px) {
+    .hero-body {
+        padding: 3rem 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-page-title {
+        font-size: 2.5rem !important;
+        margin-top: 1rem;
+    }
+
+    .subtitle {
+        font-size: 1rem !important;
+    }
+
+    .mobile-profile-pic {
+        width: 200px;
+        height: 200px;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .landing-page-button {
+        width: 100%;
+        margin-bottom: 0.75rem !important;
+    }
+
+    .mt-6-desktop {
+        margin-top: 2rem !important;
+    }
+
+    .mt-4-mobile {
+        margin-top: 1rem !important;
+    }
+
+    .mb-3-mobile {
+        margin-bottom: 0.75rem !important;
+    }
+}
+
 
 
 /**Work Experience and Education Modal**/
@@ -1205,6 +1250,12 @@ body {
 
 .talks-not-available {
     color: #ff6b6b;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+.talks-coming-soon {
+    color: #ceff6b;
     font-style: italic;
     margin-top: 5px;
 }

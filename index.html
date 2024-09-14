@@ -3,6 +3,7 @@
 
 <head>
     <title>Kartikeya Sharma's Personal Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link rel="stylesheet" type='text/css' href="css/bulma-calendar.min.css" />
@@ -21,19 +22,19 @@
     <section class="hero is-fullheight">
         <div class="hero-body">
             <div class="container">
-                <div class="columns is-vcentered">
-                    <div class="column is-4">
-                        <figure class="image is-256x256">
-                            <img class="is-rounded" src="img/main/ski.jpg" alt="Profile Picture">
+                <div class="columns is-vcentered is-multiline">
+                    <div class="column is-12-mobile is-4-tablet is-4-desktop">
+                        <figure class="image is-256x256 is-flex is-justify-content-center">
+                            <img class="is-rounded mobile-profile-pic" src="img/main/ski.jpg" alt="Profile Picture">
                         </figure>
                     </div>
-
-                    <div class="column is-centered">
-                        <h1 class="title is-1 main-page-title">Kartikeya Sharma 👨🏾‍💻</h1>
-                        <p class="subtitle" style="color: #FFFFFF;">
+    
+                    <div class="column is-12-mobile is-8-tablet is-8-desktop">
+                        <h1 class="title is-1 main-page-title has-text-centered-mobile">Kartikeya Sharma 👨🏾‍💻</h1>
+                        <p class="subtitle has-text-centered-mobile" style="color: #FFFFFF;">
                             CyberSecurity and AI 🤖 | Tennis 🎾 | Track and Field 🏃‍♂️
                         </p>
-                        <div class="buttons">
+                        <div class="buttons is-centered-mobile">
                             <a class="button is-link is-rounded" href="https://www.linkedin.com/in/kart1/">
                                 <span class="icon">
                                     <i class="fa-brands fa-linkedin"></i>
@@ -49,40 +50,42 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="columns is-centered">
-                    <div class="buttons mt-3">
-                        <button class="button is-rounded is-large landing-page-button"
-                            data-target="work-experience-modal">
-                            <span class="icon">
-                                <i class="fas fa-briefcase"></i>
-                            </span>
-                            <span>Work Experience</span>
-                        </button>
-                        <button class="button is-rounded is-large landing-page-button" data-target="education-modal">
-                            <span class="icon">
-                                <i class="fas fa-graduation-cap"></i>
-                            </span>
-                            <span>Education</span>
-                        </button>
-                        <a class="button is-rounded is-large landing-page-button" data-target="projects-modal">
-                            <span class="icon">
-                                <i class="fas fa-project-diagram"></i>
-                            </span>
-                            <span>Projects</span>
-                        </a>
-                        <a class="button is-rounded is-large landing-page-button" data-target="publications-modal">
-                            <span class="icon">
-                                <i class="fas fa-rss"></i>
-                            </span>
-                            <span>Publications</span>
-                        </a>
-                        <a class="button is-rounded is-large landing-page-button" data-target="talks-modal">
-                            <span class="icon">
-                                <i class="fas fa-microphone"></i>
-                            </span>
-                            <span>Talks</span>
-                        </a>
+    
+                <div class="columns is-centered mt-6-desktop mt-4-mobile">
+                    <div class="column is-12-mobile is-10-tablet is-10-desktop">
+                        <div class="buttons is-centered is-multiline">
+                            <button class="button is-rounded is-medium landing-page-button mb-3-mobile"
+                                data-target="work-experience-modal">
+                                <span class="icon">
+                                    <i class="fas fa-briefcase"></i>
+                                </span>
+                                <span>Work Experience</span>
+                            </button>
+                            <button class="button is-rounded is-medium landing-page-button mb-3-mobile" data-target="education-modal">
+                                <span class="icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </span>
+                                <span>Education</span>
+                            </button>
+                            <a class="button is-rounded is-medium landing-page-button mb-3-mobile" data-target="projects-modal">
+                                <span class="icon">
+                                    <i class="fas fa-project-diagram"></i>
+                                </span>
+                                <span>Projects</span>
+                            </a>
+                            <a class="button is-rounded is-medium landing-page-button mb-3-mobile" data-target="publications-modal">
+                                <span class="icon">
+                                    <i class="fas fa-rss"></i>
+                                </span>
+                                <span>Publications</span>
+                            </a>
+                            <a class="button is-rounded is-medium landing-page-button mb-3-mobile" data-target="talks-modal">
+                                <span class="icon">
+                                    <i class="fas fa-microphone"></i>
+                                </span>
+                                <span>Talks</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -3110,7 +3113,6 @@
                                 class="fa-solid fa-angle-down"></i></button>
                     </div>
                     <div class="timeline m-2">
-                        <!-- Add your publication items here -->
                         <div class="timeline-item" data-type="Research Papers">
                             <div class="timeline-dot" style="display: none;"></div>
                             <div class="timeline-content">
@@ -3216,7 +3218,36 @@
                                 class="fa-solid fa-angle-down"></i></button>
                     </div>
                     <div class="timeline m-2">
-                        <!-- Add your talk items here -->
+                        <div class="timeline-item" data-from="2024-10-08" data-to="2024-10-08">
+                            <div class="timeline-dot" style="display: none;"></div>
+                            <div class="timeline-date"><i class="fa-solid fa-calendar-days"></i> 10/08/2024</div>
+                            <div class="timeline-content">
+                                <a class="timeline-content-link" onclick="switchSection('talks-section3', this)">
+                                    <div class="timeline-content-details">
+                                        <div class="timeline-content-title">Utilizing Graph Neural Networks for Robust 
+                                            DDoS Attack Detection in Network Security</div>
+                                        <div class="timeline-content-venue">Oregon Cyber Resilience Summit 2024</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline m-2">
+                        <div class="timeline-item" data-from="2024-09-06" data-to="2024-09-06">
+                            <div class="timeline-dot" style="display: none;"></div>
+                            <div class="timeline-date"><i class="fa-solid fa-calendar-days"></i> 09/06/2024</div>
+                            <div class="timeline-content">
+                                <a class="timeline-content-link" onclick="switchSection('talks-section2', this)">
+                                    <div class="timeline-content-details">
+                                        <div class="timeline-content-title">Utilizing Graph Neural Networks for Robust DDoS 
+                                            Attack Detection in Network Security </div>
+                                        <div class="timeline-content-venue">BSides Cache 2024</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline m-2">
                         <div class="timeline-item" data-from="2024-04-27" data-to="2024-04-27">
                             <div class="timeline-dot" style="display: none;"></div>
                             <div class="timeline-date"><i class="fa-solid fa-calendar-days"></i> 04/27/2024</div>
@@ -3234,6 +3265,74 @@
                 </div>
                 <div class="column is-two-third"
                     style="background-color: #2c2c2e; padding: 30px; height: calc(100vh - 100px);overflow-y: auto;">
+                    <div class="talks-content-section" id="talks-section3" style="display: none;">
+                        <h2 class="title talks-content-title">Utilizing Graph Neural Networks for Robust DDoS Attack Detection in Network Security</h2>
+                        <h4 class="subtitle talks-content-subtitle">
+                            <i class="fa-solid fa-calendar-days"></i> 10/08/2024
+                        </h4>
+                        <h4 class="subtitle talks-content-subtitle">
+                            <i class="fa-solid fa-microphone"></i> <a href="https://ocrs.uoregon.edu/">Oregon Cyber Resilience Summit 2024</a>
+                        </h4>
+                        <hr class="talks-content-section-divider">
+                        <div class="talks-content-section-description">
+                            <h3 class="talks-content-section-title">Abstract</h3>
+                            <p>
+                                In this talk, we will explore the application of Graph Neural Networks (GNNs) in detecting 
+                                Distributed Denial of Service (DDoS) attacks. We will introduce GNNs, compare them with traditional 
+                                neural networks, and highlight their evolution and adoption. We will also compare traditional detection 
+                                methods with AI-based approaches and how GNN based approaches can be advantageous. Finally, we 
+                                will talk about two important GNN models used in DDoS detection and discuss their superior performance 
+                                compared to traditional machine learning models.
+                            </p>
+                        </div>
+                        <hr class="talks-content-section-divider">
+                        <div class="talks-content-section-link">
+                            <h3 class="talks-content-section-title">Slides</h3>
+                            <a href="resources/talks/ocrs_2024/gnn-ddos-ocrs.pdf" target="_blank">View
+                                Slides</a>
+                        </div>
+                        <hr class="talks-content-section-divider">
+                        <div class="talks-content-section-link">
+                            <h3 class="talks-content-section-title">Recording</h3>
+                            <!--<a href="" target="_blank">View Slides</a>-->
+                            <p class="talks-coming-soon">Coming Soon</p>
+                        </div>
+                    </div>
+                    <div class="talks-content-section" id="talks-section2" style="display: none;">
+                        <h2 class="title talks-content-title">Utilizing Graph Neural Networks for Robust DDoS Attack Detection in Network Security</h2>
+                        <h4 class="subtitle talks-content-subtitle">
+                            <i class="fa-solid fa-calendar-days"></i> 09/06/2024
+                        </h4>
+                        <h4 class="subtitle talks-content-subtitle">
+                            <i class="fa-solid fa-microphone"></i> <a href="https://www.bsidescache.org/">BSides
+                                Cache 2024</a>
+                        </h4>
+                        <hr class="talks-content-section-divider">
+                        <div class="talks-content-section-description">
+                            <h3 class="talks-content-section-title">Abstract</h3>
+                            <p>
+                                In this talk, we will explore the application of Graph Neural Networks (GNNs) in detecting 
+                                Distributed Denial of Service (DDoS) attacks. We will introduce GNNs, compare them with traditional
+                                neural networks, and highlight their evolution and adoption. We will also compare traditional detection 
+                                methods with AI-based approaches and how GNN based approaches can be advantageous. Finally, we will talk 
+                                about two important GNN models used in DDoS detection and discuss their superior performance compared to 
+                                traditional machine learning models.
+
+                            </p>
+                        </div>
+                        <hr class="talks-content-section-divider">
+                        <div class="talks-content-section-link">
+                            <h3 class="talks-content-section-title">Slides</h3>
+                            <a href="resources/talks/bsides_cache_2024/gnn-ddos-bsides-cache.pdf" target="_blank">View
+                                Slides</a>
+                        </div>
+                        <hr class="talks-content-section-divider">
+                        <div class="talks-content-section-link">
+                            <h3 class="talks-content-section-title">Recording</h3>
+                            <!--<a href="" target="_blank">View Slides</a>-->
+                            <p class="talks-coming-soon">Coming Soon</p>
+                        </div>
+                    </div>
                     <div class="talks-content-section" id="talks-section1" style="display: none;">
                         <h2 class="title talks-content-title">Graph Neural Networks: Revolutionizing DDoS Attack
                             Detection</h2>
@@ -3260,7 +3359,7 @@
                         <hr class="talks-content-section-divider">
                         <div class="talks-content-section-link">
                             <h3 class="talks-content-section-title">Slides</h3>
-                            <a href="resources/talks/bsides_seattle_2024/gnn-ddos-bsides.pptx" target="_blank">View
+                            <a href="resources/talks/bsides_seattle_2024/gnn-ddos-bsides-seattle.pdf" target="_blank">View
                                 Slides</a>
                         </div>
                         <hr class="talks-content-section-divider">
