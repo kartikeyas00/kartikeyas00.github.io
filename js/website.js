@@ -1,4 +1,5 @@
 function switchSection(id, el) {
+    const isMobile = () => window.innerWidth <= 768;
     const hoverStyleToAdd = `
     border-radius: 20px;
     border-color: #1aff8c;
@@ -17,38 +18,36 @@ function switchSection(id, el) {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Mechanism for Modal (copy and pasted from Bulma)
 
     function openModal($el) {
-        //$el.classList.add('animate__animated', 'animate__fadeInDown');
+        const isMobile = () => window.innerWidth <= 768;
         $el.classList.add('is-active');
 
         if ($el.id === "work-experience-modal") {
-            $el.querySelector('.timeline-content-link').click();
+            !isMobile() ? $el.querySelector('.timeline-content-link').click() : null;
 
         }
 
         if ($el.id === "education-modal") {
-            $el.querySelector('.timeline-content-link').click();
+            !isMobile() ? $el.querySelector('.timeline-content-link').click() : null;
 
         }
 
         if ($el.id === "projects-modal") {
-            $el.querySelector('.timeline-content-link').click();
+            !isMobile() ? $el.querySelector('.timeline-content-link').click() : null;
 
         }
 
         if ($el.id === "publications-modal") {
-            $el.querySelector('.timeline-content-link').click();
+            !isMobile() ? $el.querySelector('.timeline-content-link').click() : null;
         }
 
         if ($el.id === "talks-modal") {
-            $el.querySelector('.timeline-content-link').click();
+            !isMobile() ? $el.querySelector('.timeline-content-link').click() : null;
         }
     }
 
     function closeModal($el) {
-        //$el.classList.add('animate__animated', 'animate__fadeOutUp');
         $el.classList.remove('is-active');
     }
 
@@ -86,8 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const target = tab.getAttribute('data-target');
             const section = target.split('-').pop();
 
-            console.log(target.split('-'));
-            // Remove active class from all tabs and hide all content
             document.querySelectorAll('.tabs ul li').forEach(t => {
                 if (t.getAttribute('data-target').includes(section)) {
                     t.classList.remove('is-active');
@@ -100,14 +97,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            // Set the clicked tab as active and show its content
             tab.classList.add('is-active');
-            console.log(tab);
             document.getElementById(target).style.display = 'flex';
         });
     });
 
-    //const timelineItems = document.querySelectorAll('.timeline-item');
 
     document.querySelector('#we-timeline-sector-filter').addEventListener('click', function () {
         openModal(document.querySelector('#we-timeline-sector-filter-modal'));
@@ -212,7 +206,6 @@ document.addEventListener('DOMContentLoaded', () => {
      * Projects modal related code
      */
 
-    //const timelineItems = document.querySelectorAll('.timeline-item');
 
     document.querySelector('#projects-timeline-type-filter').addEventListener('click', function () {
         openModal(document.querySelector('#projects-timeline-type-filter-modal'));
@@ -265,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
      * Publications modal related code
      */
 
-    
+
     document.querySelector('#publications-timeline-type-filter').addEventListener('click', function () {
         openModal(document.querySelector('#publications-timeline-type-filter-modal'));
     });
@@ -323,7 +316,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // Add animation to the landing page buttons
     const buttons = document.querySelectorAll('.landing-page-button');
     buttons.forEach((button, index) => {
         button.style.opacity = '0';
@@ -334,11 +326,220 @@ document.addEventListener('DOMContentLoaded', () => {
             button.style.transform = 'translateY(0)';
         }, 100 * index);
     });
-    
+
 });
 
 
 
 Fancybox.bind("[data-fancybox]", {
-    // Your custom options
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const isMobile = () => window.innerWidth <= 768;
+    let expandedState = new Map();
+    let currentScrollPosition = 0;
+
+    const removeChildrenConfig = {
+        "talks": 3,
+        "projects": 2,
+        "we": 4,
+        "ed": 4,
+        "publications": 3
+    }
+
+    const handleMobileClick = (event) => {
+        if (!isMobile()) return;
+        event.preventDefault();
+
+        const link = event.currentTarget;
+        const sectionId = link.getAttribute('onclick')?.match(/'(.*?)'/)?.[1];
+
+        if (!sectionId) {
+            console.error('Section ID not found');
+            return;
+        }
+
+        const originalContent = document.getElementById(sectionId);
+        if (!originalContent) {
+            console.error(`Content not found for section: ${sectionId}`);
+            return;
+        }
+
+        const existingContent = link.parentElement.nextElementSibling;
+        if (existingContent?.classList.contains('mobile-content-section')) {
+
+            existingContent.style.height = existingContent.scrollHeight + 'px';
+            existingContent.offsetHeight;
+            existingContent.style.height = '0';
+            existingContent.style.opacity = '0';
+            existingContent.style.padding = '0 1rem';
+
+            setTimeout(() => {
+                existingContent.remove();
+            }, 300); 
+
+            if (expandedState.get(link)) {
+                expandedState.set(link, false);
+                link.classList.remove('mobile-active');
+                return;
+            }
+
+        }
+
+        if (expandedState.get(link)) {
+            expandedState.set(link, false);
+            link.classList.remove('mobile-active');
+            return;
+        }
+
+        document.querySelectorAll('.timeline-content-link.mobile-active').forEach(activeLink => {
+            const expandedContent = activeLink.parentElement.nextElementSibling;
+            if (expandedContent?.classList.contains('mobile-content-section')) {
+                //expandedContent.remove();
+                expandedContent.style.height = expandedContent.scrollHeight + 'px';
+                expandedContent.offsetHeight;
+                expandedContent.style.height = '0';
+                expandedContent.style.opacity = '0';
+                expandedContent.style.padding = '0 1rem';
+
+                setTimeout(() => {
+                    expandedContent.remove();
+                }, 300);
+            }
+            expandedState.set(activeLink, false);
+            activeLink.classList.remove('mobile-active');
+        });
+
+        const clonedContent = document.createElement('div');
+        clonedContent.classList.add('mobile-content-section');
+
+        for (let [key, value] of Object.entries(removeChildrenConfig)) {
+            if (link.getAttribute("onclick").includes(key)) {
+                numberChildrenRemove = value;
+            }
+        }
+
+        const contentWithoutFirst = Array.from(originalContent.children)
+            .slice(numberChildrenRemove)
+            .map(element => element.cloneNode(true));
+
+        contentWithoutFirst.forEach(element => {
+            clonedContent.appendChild(element);
+        });
+
+
+        clonedContent.style.height = '0';
+
+
+        link.parentElement.insertAdjacentElement('afterend', clonedContent);
+
+        requestAnimationFrame(() => {
+            const height = clonedContent.scrollHeight;
+            clonedContent.style.height = height + 'px';
+            clonedContent.style.opacity = '1';
+            clonedContent.style.padding = '1rem';
+
+            setTimeout(() => {
+                clonedContent.style.height = 'auto';
+            }, 300);
+        });
+
+        document.querySelectorAll('.tabs ul li').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const target = tab.getAttribute('data-target');
+                const section = target.split('-').pop();
+
+                document.querySelectorAll('.tabs ul li').forEach(t => {
+                    if (t.getAttribute('data-target').includes(section)) {
+                        t.classList.remove('is-active');
+                    }
+                });
+
+                document.querySelectorAll('.tab-content').forEach(c => {
+                    if (c.id.includes(section)) {
+                        c.style.display = 'none';
+                    }
+                });
+
+                tab.classList.add('is-active');
+                document.getElementById(target).style.display = 'flex';
+            });
+        });
+
+        const projectItems = document.querySelectorAll(".ed-content-section-project ul li");
+
+        projectItems.forEach(item => {
+            item.addEventListener("click", function (e) {
+                const projectDetails = item.nextElementSibling;
+
+                if (projectDetails && projectDetails.classList.contains("ed-content-section-project-details")) {
+                    projectDetails.style.display = projectDetails.style.display === "none" ? "block" : "none";
+                }
+            });
+        });
+
+        expandedState.set(link, true);
+        link.classList.add('mobile-active');
+    };
+
+    const setupMobileHandlers = () => {
+        const links = document.querySelectorAll('#talks-modal .timeline-content-link, #projects-modal .timeline-content-link, #work-experience-modal .timeline-content-link, #education-modal .timeline-content-link, #publications-modal .timeline-content-link');
+        links.forEach(link => {
+            link.removeEventListener('click', handleMobileClick, true);
+            link.addEventListener('click', handleMobileClick, true);
+        });
+    };
+
+    const cleanupMobileContent = () => {
+        document.querySelectorAll('.mobile-content-section').forEach(section => section.remove());
+        expandedState.clear();
+        document.querySelectorAll('.timeline-content-link.mobile-active').forEach(link => {
+            link.classList.remove('mobile-active');
+        });
+    };
+
+    const handleViewportChange = (entries) => {
+        entries.forEach(entry => {
+            if (entry.contentRect.width > 768) {
+                cleanupMobileContent();
+            }
+        });
+    };
+
+    const resizeObserver = new ResizeObserver(handleViewportChange);
+    resizeObserver.observe(document.body);
+
+    const setupScrollTracking = () => {
+        window.addEventListener('scroll', () => {
+            if (isMobile()) {
+                currentScrollPosition = window.scrollY;
+            }
+        });
+    };
+
+    const restoreScrollPosition = () => {
+        if (isMobile()) {
+            window.scrollTo(0, currentScrollPosition);
+        }
+    };
+
+    const debounce = (func, delay) => {
+        let timer;
+        return (...args) => {
+            clearTimeout(timer);
+            timer = setTimeout(() => func.apply(this, args), delay);
+        };
+    };
+
+    window.addEventListener('resize', debounce(() => {
+        if (!isMobile()) {
+            cleanupMobileContent();
+        } else {
+            restoreScrollPosition();
+        }
+    }, 200));
+
+    setupMobileHandlers();
+    setupScrollTracking();
 });
