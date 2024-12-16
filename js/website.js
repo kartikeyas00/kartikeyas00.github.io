@@ -345,7 +345,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "projects": 2,
         "we": 4,
         "ed": 4,
-        "publications": 3
+        "publications": 2
     }
 
     const handleMobileClick = (event) => {
@@ -396,7 +396,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.timeline-content-link.mobile-active').forEach(activeLink => {
             const expandedContent = activeLink.parentElement.nextElementSibling;
             if (expandedContent?.classList.contains('mobile-content-section')) {
-                //expandedContent.remove();
                 expandedContent.style.height = expandedContent.scrollHeight + 'px';
                 expandedContent.offsetHeight;
                 expandedContent.style.height = '0';
