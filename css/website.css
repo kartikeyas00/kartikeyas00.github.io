@@ -1428,6 +1428,17 @@ body {
     font-size: 2em;
 }
 
+.publications-content-subtitle {
+    color: #1aff8c;
+    font-family: 'Space Mono', monospace;
+    margin-top: -1.25rem;
+    font-size: 1.2em;
+}
+
+.publications-content-subtitle a {
+    color: #1aff8c;
+}
+
 .publications-content-section-divider {
     border: none;
     height: 2px;
