@@ -1,0 +1,849 @@
+[
+    {
+        "company": "Equinix",
+        "role": "Senior Associate Information Security Engineer",
+        "from": "07/2023",
+        "to": "",
+        "location": "Remote 🇺🇸",
+        "sector": "Industry",
+        "tech": {
+            "Languages": [
+                "Python",
+                "JavaScript"
+            ],
+            "Web Frameworks": [
+                "Flask"
+            ],
+            "Database": [
+                "Elasticsearch"
+            ],
+            "ML & Data Analytics": [
+                "PyTorch",
+                "DGL",
+                "Pandas",
+                "NumPy",
+                "Matplotlib",
+                "SciPy",
+                "Apache ECharts"
+            ]
+        },
+        "sections": [
+            {
+                "type": "paragraphs",
+                "slug": "job-responsibilities",
+                "title": "Job Responsibilities",
+                "paragraphs": [
+                    [
+                        "Developed reporting tools and analytical dashboards to ",
+                        {
+                            "text": "standardize processes",
+                            "highlight": true
+                        },
+                        " and ",
+                        {
+                            "text": "increase understanding",
+                            "highlight": true
+                        },
+                        " of cybersecurity threats. Managed the implementation of a new ",
+                        {
+                            "text": "cybersecurity tool",
+                            "highlight": true
+                        },
+                        ", ensuring ",
+                        {
+                            "text": "data accuracy",
+                            "highlight": true
+                        },
+                        " and leading ",
+                        {
+                            "text": "training sessions",
+                            "highlight": true
+                        },
+                        " to improve security practices."
+                    ]
+                ]
+            },
+            {
+                "type": "bullets",
+                "slug": "achievements",
+                "title": "Achievements",
+                "items": [
+                    {
+                        "icon": "fa-solid fa-file-alt",
+                        "text": "Designed and implemented reporting tools for the threat intelligence team using JavaScript, standardizing reporting processes and utilizing Power Automate to distribute emails efficiently."
+                    },
+                    {
+                        "icon": "fa-solid fa-chart-area",
+                        "text": "Developed insightful dashboards using Python's pandas library, JavaScript, and Apache ECharts to analyze DDoS attacks, enhancing the team's ability to understand and mitigate threats."
+                    },
+                    {
+                        "icon": "fa-solid fa-shield-alt",
+                        "text": "Played a key role in onboarding a Cyber Asset Attack Surface Management tool, creating use cases for different departments, validating data accuracy, and conducting training sessions for InfoSec employees to enhance tool utilization."
+                    }
+                ]
+            },
+            {
+                "type": "tech",
+                "slug": "tech-stack",
+                "title": "Technical Skills"
+            }
+        ]
+    },
+    {
+        "company": "University of Oregon",
+        "role": "Teaching Assistant",
+        "from": "04/2023",
+        "to": "06/2023",
+        "location": "Eugene, Oregon 🇺🇸",
+        "sector": "Academia",
+        "tech": {
+            "Languages": [
+                "C"
+            ]
+        },
+        "sections": [
+            {
+                "type": "paragraphs",
+                "slug": "job-responsibilities",
+                "title": "Job Responsibilities",
+                "paragraphs": [
+                    [
+                        "Developed ",
+                        {
+                            "text": "lab materials",
+                            "highlight": true
+                        },
+                        " and conducted ",
+                        {
+                            "text": "demonstrations in C",
+                            "highlight": true
+                        },
+                        " for the CS 415 Operating Systems course. Led ",
+                        {
+                            "text": "weekly lab sessions",
+                            "highlight": true
+                        },
+                        " and provided ",
+                        {
+                            "text": "dedicated office hours",
+                            "highlight": true
+                        },
+                        " to assist students with assignments and exam preparations."
+                    ]
+                ]
+            },
+            {
+                "type": "bullets",
+                "slug": "achievements",
+                "title": "Achievements",
+                "items": [
+                    {
+                        "icon": "fa-solid fa-flask",
+                        "text": "Contributed significantly to the CS 415 Operating Systems course by developing lab materials and conducting engaging demonstrations in C."
+                    },
+                    {
+                        "icon": "fa-solid fa-users",
+                        "text": "Led three weekly lab sessions, providing hands-on guidance and creating a dynamic learning environment."
+                    },
+                    {
+                        "icon": "fa-solid fa-clock",
+                        "text": "Offered dedicated office hours, assisting students with assignments, projects, and exam preparations to ensure their academic success; consistently received highly positive reviews from students."
+                    }
+                ]
+            },
+            {
+                "type": "tech",
+                "slug": "tech-stack",
+                "title": "Technical Skills"
+            }
+        ]
+    },
+    {
+        "company": "Viewrail",
+        "role": "Data Science Intern",
+        "from": "01/2023",
+        "to": "03/2023",
+        "location": "Remote 🇺🇸",
+        "sector": "Industry",
+        "tech": {
+            "Languages": [
+                "Python",
+                "JavaScript",
+                "SQL",
+                "Bash"
+            ],
+            "Web Frameworks": [
+                "Flask"
+            ],
+            "Database": [
+                "MySQL",
+                "SQLite"
+            ],
+            "ML & Data Analytics": [
+                "Pandas",
+                "NumPy"
+            ]
+        },
+        "sections": [
+            {
+                "type": "paragraphs",
+                "slug": "job-responsibilities",
+                "title": "Job Responsibilities",
+                "paragraphs": [
+                    [
+                        "Developed ",
+                        {
+                            "text": "applications",
+                            "highlight": true
+                        },
+                        " and ",
+                        {
+                            "text": "interfaces",
+                            "highlight": true
+                        },
+                        " to enhance payment processes, user experience, and financial management, improving operational efficiency and data integrity."
+                    ]
+                ]
+            },
+            {
+                "type": "bullets",
+                "slug": "achievements",
+                "title": "Achievements",
+                "items": [
+                    {
+                        "icon": "fa-solid fa-truck-loading",
+                        "text": "Developed a VRD payments application using Flask (Python), improving tracking and payment for VRD shipments, leading to streamlined operations."
+                    },
+                    {
+                        "icon": "fa-solid fa-tachometer-alt",
+                        "text": "Optimized SQL queries for legacy applications, significantly enhancing performance and user experience."
+                    },
+                    {
+                        "icon": "fa-solid fa-balance-scale",
+                        "text": "Built an application for comparing transactions between the company financial database system and QuickBooks Online , meticulously identifying and rectifying discrepancies to uphold data integrity."
+                    },
+                    {
+                        "icon": "fa-solid fa-sliders-h",
+                        "text": "Designed and integrated an intuitive settings interface within Accounting Automation application using Flask, facilitating seamless user control over the Accounting Automation tools and simplifying managerial tasks."
+                    }
+                ]
+            },
+            {
+                "type": "tech",
+                "slug": "tech-stack",
+                "title": "Technical Skills"
+            }
+        ]
+    },
+    {
+        "company": "University of Oregon",
+        "role": "Teaching Assistant",
+        "from": "09/2022",
+        "to": "12/2022",
+        "location": "Eugene, Oregon 🇺🇸",
+        "sector": "Academia",
+        "tech": {
+            "Languages": [
+                "Python"
+            ]
+        },
+        "sections": [
+            {
+                "type": "paragraphs",
+                "slug": "job-responsibilities",
+                "title": "Job Responsibilities",
+                "paragraphs": [
+                    [
+                        "Guided students through ",
+                        {
+                            "text": "class projects",
+                            "highlight": true
+                        },
+                        " and assisted in ",
+                        {
+                            "text": "creating, reviewing, and grading assignments",
+                            "highlight": true
+                        },
+                        " while holding office hours to support student learning for the CS 422 Software Method I course."
+                    ]
+                ]
+            },
+            {
+                "type": "bullets",
+                "slug": "achievements",
+                "title": "Achievements",
+                "items": [
+                    {
+                        "icon": "fa-solid fa-users",
+                        "text": "Led consulting meetings with students to provide guidance and support in developing projects required for the CS 422 Software Method I course."
+                    },
+                    {
+                        "icon": "fa-solid fa-chalkboard-teacher",
+                        "text": "Held weekly office hours to assist students in understanding course material and concepts more effectively."
+                    },
+                    {
+                        "icon": "fa-solid fa-file-alt",
+                        "text": "Collaborated with the professor in creating, reviewing, and grading course projects to ensure fair and consistent evaluation."
+                    }
+                ]
+            },
+            {
+                "type": "tech",
+                "slug": "tech-stack",
+                "title": "Technical Skills"
+            }
+        ]
+    },
+    {
+        "company": "Equinix, Inc.",
+        "role": "Threat Analytics Intern",
+        "from": "06/2022",
+        "to": "09/2022",
+        "location": "Remote 🇺🇸",
+        "sector": "Industry",
+        "tech": {
+            "Languages": [
+                "Python",
+                "JavaScript",
+                "Bash"
+            ],
+            "Web Frameworks": [
+                "Flask"
+            ],
+            "Database": [
+                "Elasticsearch"
+            ],
+            "ML & Data Analytics": [
+                "Pandas",
+                "NumPy",
+                "Matplotlib",
+                "SciPy"
+            ]
+        },
+        "sections": [
+            {
+                "type": "paragraphs",
+                "slug": "job-responsibilities",
+                "title": "Job Responsibilities",
+                "paragraphs": [
+                    [
+                        "Developed ",
+                        {
+                            "text": "data processing tools",
+                            "highlight": true
+                        },
+                        " and contributed to ",
+                        {
+                            "text": "cybersecurity analytics pipelines",
+                            "highlight": true
+                        },
+                        " to enhance threat detection capabilities."
+                    ]
+                ]
+            },
+            {
+                "type": "bullets",
+                "slug": "achievements",
+                "title": "Achievements",
+                "items": [
+                    {
+                        "icon": "fa-solid fa-file-code",
+                        "text": "Built a universal JSON formatter using Flask (Python) to format and export JSON files into a user-friendly tabular format."
+                    },
+                    {
+                        "icon": "fa-solid fa-shield-alt",
+                        "text": "Assisted the Threat Analytics team in developing a real-time anomaly detection pipeline to identify malicious behavior in network traffic using Elasticsearch and Python."
+                    },
+                    {
+                        "icon": "fa-solid fa-chart-area",
+                        "text": "Created a comprehensive dashboard by aggregating paid and open-source Indicator of Compromise (IOC) API sources, providing a centralized view of IOCs for the company."
+                    }
+                ]
+            },
+            {
+                "type": "tech",
+                "slug": "tech-stack",
+                "title": "Technical Skills"
+            }
+        ]
+    },
+    {
+        "company": "Center For Cyber Security and Privacy, University of Oregon",
+        "role": "Research Assistant",
+        "from": "09/2021",
+        "to": "06/2022",
+        "location": "Eugene, Oregon 🇺🇸",
+        "sector": "Academia",
+        "tech": {
+            "Languages": [
+                "Python",
+                "Bash"
+            ],
+            "ML & Data Analytics": [
+                "PyTorch",
+                "DGL",
+                "Pandas",
+                "NumPy",
+                "Matplotlib"
+            ]
+        },
+        "sections": [
+            {
+                "type": "paragraphs",
+                "slug": "job-responsibilities",
+                "title": "Job Responsibilities",
+                "paragraphs": [
+                    [
+                        "Developed ",
+                        {
+                            "text": "Graph Neural Networks",
+                            "highlight": true
+                        },
+                        " for spam detection in social networks. Contributed to a ",
+                        {
+                            "text": "distributed system",
+                            "highlight": true
+                        },
+                        " to accelerate training on large-scale graphs."
+                    ]
+                ]
+            },
+            {
+                "type": "bullets",
+                "slug": "achievements",
+                "title": "Achievements",
+                "items": [
+                    {
+                        "icon": "fa-solid fa-brain",
+                        "text": "Built a novel Graph Neural Network architecture based on Ordinary Differential Equations to establish a benchmark for spam detection tasks."
+                    },
+                    {
+                        "icon": "fa-solid fa-network-wired",
+                        "text": "Utilized Deep Graph Library (DGL) and PyTorch to train Graph Neural Networks for detecting spam in social networks by exploiting the heterogeneous relationships between users."
+                    },
+                    {
+                        "icon": "fa-solid fa-server",
+                        "text": "Contributed to the development of a distributed system to optimize and accelerate the training process of Graph Neural Networks on large-scale graphs."
+                    }
+                ]
+            },
+            {
+                "type": "tech",
+                "slug": "tech-stack",
+                "title": "Technical Skills"
+            }
+        ]
+    },
+    {
+        "company": "Veada Industries",
+        "role": "Data Scientist",
+        "from": "07/2019",
+        "to": "09/2021",
+        "location": "New Paris, Indiana 🇺🇸",
+        "sector": "Industry",
+        "tech": {
+            "Languages": [
+                "Python",
+                "JavaScript",
+                "SQL",
+                "Bash"
+            ],
+            "Web Frameworks": [
+                "Flask",
+                "Django"
+            ],
+            "Database": [
+                "MySQL",
+                "SQL Server",
+                "SQLite"
+            ],
+            "Cloud Technologies": [
+                "AWS"
+            ],
+            "ML & Data Analytics": [
+                "Scikit-learn",
+                "NLTK",
+                "Pandas",
+                "NumPy",
+                "Matplotlib"
+            ]
+        },
+        "sections": [
+            {
+                "type": "paragraphs",
+                "slug": "job-responsibilities",
+                "title": "Job Responsibilities",
+                "paragraphs": [
+                    [
+                        "Developed ",
+                        {
+                            "text": "web applications",
+                            "highlight": true
+                        },
+                        ", ",
+                        {
+                            "text": "machine learning models",
+                            "highlight": true
+                        },
+                        ", and ",
+                        {
+                            "text": "data analysis",
+                            "highlight": true
+                        },
+                        " solutions to streamline processes, automate tasks, and support decision-making. Managed ",
+                        {
+                            "text": "databases",
+                            "highlight": true
+                        },
+                        ", ",
+                        {
+                            "text": "cloud deployments",
+                            "highlight": true
+                        },
+                        ", and explored new technologies for continuous improvement."
+                    ]
+                ]
+            },
+            {
+                "type": "bullets",
+                "slug": "achievements",
+                "title": "Achievements",
+                "items": [
+                    {
+                        "icon": "fa-solid fa-laptop-code",
+                        "text": "Developed a 'Project Management' web application using Flask (Python), jQuery, and REST framework, and deployed it on AWS using Elastic Beanstalk. This application replaced several years old software solutions and manual processes, consolidating everything into a single platform, resulting in a 50% reduction in manufacturing lead time."
+                    },
+                    {
+                        "icon": "fa-solid fa-file-signature",
+                        "text": "Built custom web applications, including an 'Electronic Signature' system and a 'Vinyl Patterning' tool, using Flask (Python) as alternatives to commercial software. These internally-developed solutions helped the company save a substantial amount of money on software expenses.use. It helped the company to save a hefty amount of money."
+                    },
+                    {
+                        "icon": "fa-solid fa-brain",
+                        "text": "Trained a machine learning classifier using Scikit-learn and NLTK to automatically categorize future orders. This classifier provided management with valuable insights for optimizing labor hours and raw material quantities based on predicted order categories."
+                    }
+                ]
+            },
+            {
+                "type": "tech",
+                "slug": "tech-stack",
+                "title": "Technical Skills"
+            }
+        ]
+    },
+    {
+        "company": "Viewrail",
+        "role": "Data Scientist (Independent Contractor)",
+        "from": "08/2020",
+        "to": "09/2021",
+        "location": "Remote",
+        "sector": "Industry",
+        "tech": {
+            "Languages": [
+                "Python",
+                "JavaScript",
+                "SQL",
+                "Bash"
+            ],
+            "Web Frameworks": [
+                "Flask"
+            ],
+            "Database": [
+                "MySQL",
+                "SQLite"
+            ],
+            "ML & Data Analytics": [
+                "Pandas",
+                "NumPy",
+                "Matplotlib",
+                "GeoPandas",
+                "Leaflet.js"
+            ]
+        },
+        "sections": [
+            {
+                "type": "paragraphs",
+                "slug": "job-responsibilities",
+                "title": "Job Responsibilities",
+                "paragraphs": [
+                    [
+                        "Developed ",
+                        {
+                            "text": "applications",
+                            "highlight": true
+                        },
+                        " for ",
+                        {
+                            "text": "optimizing",
+                            "highlight": true
+                        },
+                        " shipment hub locations, ",
+                        {
+                            "text": "standardizing",
+                            "highlight": true
+                        },
+                        " SKU data, ",
+                        {
+                            "text": "streamlining",
+                            "highlight": true
+                        },
+                        " inventory counting, and ",
+                        {
+                            "text": "automating",
+                            "highlight": true
+                        },
+                        " invoice validation to improve operational processes."
+                    ]
+                ]
+            },
+            {
+                "type": "bullets",
+                "slug": "achievements",
+                "title": "Achievements",
+                "items": [
+                    {
+                        "icon": "fa-solid fa-map-marked-alt",
+                        "text": "Created an application using Leaflet.js, GeoPandas (Python), and Flask (Python) to predict optimal locations for shipment hubs, reducing shipping costs for the company."
+                    },
+                    {
+                        "icon": "fa-solid fa-barcode",
+                        "text": "Utilized pattern recognition with Python to standardize irregular naming conventions and archive duplicate SKUs for thousands of product SKUs."
+                    },
+                    {
+                        "icon": "fa-solid fa-qrcode",
+                        "text": "Developed a QR code scanner using JavaScript's ZXing library and Flask (Python) to streamline inventory counting in the warehouse."
+                    },
+                    {
+                        "icon": "fa-solid fa-file-invoice-dollar",
+                        "text": "Built web applications using Flask (Python) to automate invoice validation for the accounting department, integrating with the company's database."
+                    }
+                ]
+            },
+            {
+                "type": "tech",
+                "slug": "tech-stack",
+                "title": "Technical Skills"
+            }
+        ]
+    },
+    {
+        "company": "Goshen College",
+        "role": "Teaching Assistant",
+        "from": "01/2020",
+        "to": "04/2020",
+        "location": "Goshen, Indiana 🇺🇸",
+        "sector": "Academia",
+        "tech": {
+            "Languages": [
+                "Python"
+            ],
+            "ML & Data Analytics": [
+                "NumPy",
+                "Pandas",
+                "Scikit-learn",
+                "Matplotlib"
+            ]
+        },
+        "sections": [
+            {
+                "type": "paragraphs",
+                "slug": "job-responsibilities",
+                "title": "Job Responsibilities",
+                "paragraphs": [
+                    [
+                        "Developed ",
+                        {
+                            "text": "teaching materials",
+                            "highlight": true
+                        },
+                        ", ",
+                        {
+                            "text": "taught",
+                            "highlight": true
+                        },
+                        " weekly classes, ",
+                        {
+                            "text": "created and graded",
+                            "highlight": true
+                        },
+                        " assignments and exams, and ",
+                        {
+                            "text": "arranged",
+                            "highlight": true
+                        },
+                        " guest lectures for COSC 375, Machine Learning course."
+                    ]
+                ]
+            },
+            {
+                "type": "bullets",
+                "slug": "achievements",
+                "title": "Achievements",
+                "items": [
+                    {
+                        "icon": "fa-solid fa-chalkboard-teacher",
+                        "text": "Created engaging teaching materials and delivered weekly lectures to enhance student learning in the Machine Learning course."
+                    },
+                    {
+                        "icon": "fa-solid fa-file-alt",
+                        "text": "Collaborated with the professor to develop homework assignments and exams, ensuring alignment with course objectives and providing timely grading and feedback."
+                    },
+                    {
+                        "icon": "fa-solid fa-users",
+                        "text": "Coordinated guest lectures from industry professionals, exposing students to real-world applications of machine learning and fostering industry connections."
+                    }
+                ]
+            },
+            {
+                "type": "tech",
+                "slug": "tech-stack",
+                "title": "Technical Skills"
+            }
+        ]
+    },
+    {
+        "company": "Veada Industries Inc.",
+        "role": "Data Analytics Intern",
+        "from": "01/2019",
+        "to": "04/2019",
+        "location": "New Paris, Indiana 🇺🇸",
+        "sector": "Industry",
+        "tech": {
+            "Languages": [
+                "Python",
+                "SQL"
+            ],
+            "GUI Framework": [
+                "PyQT"
+            ],
+            "Database": [
+                "SQL Server"
+            ],
+            "ML & Data Analytics": [
+                "PyPDF2",
+                "Pandas",
+                "Matplotlib",
+                "Power BI",
+                "SSRS"
+            ]
+        },
+        "sections": [
+            {
+                "type": "paragraphs",
+                "slug": "job-responsibilities",
+                "title": "Job Responsibilities",
+                "paragraphs": [
+                    [
+                        "Mined ",
+                        {
+                            "text": "unstructured text data",
+                            "highlight": true
+                        },
+                        " from PDF files, defined and analyzed ",
+                        {
+                            "text": "KPIs",
+                            "highlight": true
+                        },
+                        ", and developed and distributed ",
+                        {
+                            "text": "reports",
+                            "highlight": true
+                        },
+                        " to support data-driven decision making."
+                    ]
+                ]
+            },
+            {
+                "type": "bullets",
+                "slug": "achievements",
+                "title": "Achievements",
+                "items": [
+                    {
+                        "icon": "fa-solid fa-file-pdf",
+                        "text": "Extracted valuable unstructured text data from hundreds of legacy PDF files using PyPDF2, enabling informed future product decisions."
+                    },
+                    {
+                        "icon": "fa-solid fa-chart-line",
+                        "text": "Defined and analyzed key performance indicators (KPIs) for the production line, providing insights into operational efficiency."
+                    },
+                    {
+                        "icon": "fa-solid fa-file-export",
+                        "text": "Developed and distributed reports to Veada's employees using SQL Server Reporting Services, enhancing data accessibility and transparency."
+                    }
+                ]
+            },
+            {
+                "type": "tech",
+                "slug": "tech-stack",
+                "title": "Technical Skills"
+            }
+        ]
+    },
+    {
+        "company": "Zebra Technologies",
+        "role": "Data Analytics Intern",
+        "from": "05/2018",
+        "to": "08/2018",
+        "location": "Lincolnshire, Illinois 🇺🇸",
+        "sector": "Industry",
+        "tech": {
+            "Languages": [
+                "Python",
+                "SQL"
+            ],
+            "Database": [
+                "SQL Server"
+            ],
+            "ML & Data Analytics": [
+                "Pandas",
+                "Power BI",
+                "Microsoft Excel"
+            ]
+        },
+        "sections": [
+            {
+                "type": "paragraphs",
+                "slug": "job-responsibilities",
+                "title": "Job Responsibilities",
+                "paragraphs": [
+                    [
+                        "Collaborated with the Finance department to analyze ",
+                        {
+                            "text": "economic impact of tariffs",
+                            "highlight": true
+                        },
+                        " and conducted ",
+                        {
+                            "text": "data analysis and reporting",
+                            "highlight": true
+                        },
+                        " to support Global Trade Compliance initiatives."
+                    ]
+                ]
+            },
+            {
+                "type": "bullets",
+                "slug": "achievements",
+                "title": "Achievements",
+                "items": [
+                    {
+                        "icon": "fa-solid fa-chart-pie",
+                        "text": "Analyzed over fifteen thousand part numbers using Pandas to determine the financial effect of revised Chinese import tariffs on Zebra Technologies."
+                    },
+                    {
+                        "icon": "fa-solid fa-magnifying-glass-chart",
+                        "text": "Identified inconsistencies in Harmonized Tariff Systems (HTS) data by detecting anomalies caused by frequent modifications to HTS Codes."
+                    },
+                    {
+                        "icon": "fa-solid fa-gears",
+                        "text": "Automated manual reporting of Key Performance Indicators (KPIs) for the Global Trade Compliance Department using SQL and Power BI, streamlining processes and improving efficiency."
+                    }
+                ]
+            },
+            {
+                "type": "tech",
+                "slug": "tech-stack",
+                "title": "Technical Skills"
+            }
+        ]
+    }
+]

@@ -1,0 +1,285 @@
+[
+    {
+        "title": "Adversarial Techniques for Bypassing Graph Neural Network-Based Network Defense",
+        "date": "10/23/2025",
+        "venue": "SAINTCON 2025",
+        "from": "2025-10-23",
+        "to": "2025-10-23",
+        "sections": [
+            {
+                "type": "paragraphs",
+                "slug": "description",
+                "title": "Abstract",
+                "paragraphs": [
+                    "In this talk, we explore a critical security question surrounding modern AI-driven defenses: can attackers exploit the very graph structures that Graph Neural Network (GNN)-based intrusion detection systems depend on? While state-of-the-art GNN-based models report near-perfect detection performance on benchmark datasets, we demonstrate how subtle manipulations of network topology can fundamentally undermine their effectiveness. We introduce three novel adversarial techniques — Spoofed Flow Distribution, Spoofed Flow Distribution combined with Benign Injection, and Link Congestion Distribution — that preserve DDoS attack functionality while strategically altering graph construction to evade detection. Through comprehensive evaluation across multiple real-world datasets and leading GNN-based models, we show significant degradation in detection performance and analyze why different architectures fail under different attack strategies. We conclude with a discussion on the practical feasibility of these techniques and the broader implications for deploying graph-based AI defenses in production environments."
+                ]
+            },
+            {
+                "type": "links",
+                "slug": "link",
+                "title": "Slides",
+                "links": [
+                    {
+                        "label": "View Slides",
+                        "url": "resources/talks/saintcon_2025/adversarial-tech-gnn-saintcon-2025.pdf",
+                        "external": true,
+                        "icon": null
+                    }
+                ]
+            },
+            {
+                "type": "links",
+                "slug": "link",
+                "title": "Recording",
+                "links": [
+                    {
+                        "label": "Youtube Video Link",
+                        "url": "https://www.youtube.com/watch?v=BnTDWJxOwuQ",
+                        "external": true,
+                        "icon": "fa-solid fa-arrow-up-right-from-square"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Graph Neural Network-Based DDoS Protection for Data Center Infrastructure",
+        "date": "10/13/2025",
+        "venue": "Pacific Northwest Software Quality Conference 2025",
+        "from": "2025-10-13",
+        "to": "2025-10-13",
+        "sections": [
+            {
+                "type": "paragraphs",
+                "slug": "description",
+                "title": "Abstract",
+                "paragraphs": [
+                    "In this talk, we explore how modern data centers have become high-value targets for increasingly large and coordinated Distributed Denial of Service (DDoS) attacks, and why traditional signature-based, threshold-based, and conventional machine learning approaches often fail to capture the relational complexity of these threats. We introduce Graph Neural Networks (GNNs) as a structure-aware and adaptive detection approach that models hosts and network flows as interconnected graph entities, enabling context-rich and scalable analysis of traffic behavior. We will present a heterogeneous Graph U-Net architecture designed specifically for data center environments, walk through how network traffic is transformed into graph representations, and discuss a practical three-stage deployment pipeline for real-world integration. Finally, we will share experimental results across multiple enterprise and cloud datasets, highlight performance advantages over existing models, and discuss deployment considerations, limitations, and future directions for production-ready graph-based DDoS defense."
+                ]
+            },
+            {
+                "type": "links",
+                "slug": "link",
+                "title": "Slides",
+                "links": [
+                    {
+                        "label": "View Slides",
+                        "url": "resources/talks/pnsqc_2025/gnn-ddos-data-center-pnsqc-2025.pdf",
+                        "external": true,
+                        "icon": null
+                    }
+                ]
+            },
+            {
+                "type": "links",
+                "slug": "link",
+                "title": "Recording",
+                "links": [],
+                "emptyText": "Not Available"
+            }
+        ]
+    },
+    {
+        "title": "GPT as Ally: Improving Cybersecurity Workflows with GPT and Embedding APIs",
+        "date": "12/05/2024",
+        "venue": "BSides Austin 2024",
+        "from": "2024-12-05",
+        "to": "2024-12-05",
+        "sections": [
+            {
+                "type": "paragraphs",
+                "slug": "description",
+                "title": "Abstract",
+                "paragraphs": [
+                    "In this talk, we explore how large language models like ChatGPT can be transformed from perceived cybersecurity threats into powerful allies for strengthening organizational security posture. We'll demonstrate how security engineers of all coding skill levels can leverage GPT and embedding APIs to build three key systems: an intelligent semantic matching system for pattern recognition, an application anomaly detection system for monitoring employee workstations, and a threat intelligence correlation platform that generates actionable insights from multiple sources. The presentation covers practical implementation strategies, the synergistic use of embedding and chat APIs, real-world applications, and ethical considerations for integrating AI into security operations."
+                ]
+            },
+            {
+                "type": "links",
+                "slug": "link",
+                "title": "Slides",
+                "links": [
+                    {
+                        "label": "View Slides",
+                        "url": "resources/talks/bsides_austin_2024/gpt-as-ally-bsides-austin-2024.pdf",
+                        "external": true,
+                        "icon": null
+                    }
+                ]
+            },
+            {
+                "type": "links",
+                "slug": "link",
+                "title": "Recording",
+                "links": [],
+                "emptyText": "Not Available"
+            }
+        ]
+    },
+    {
+        "title": "Graphing the Insider: Innovative Applications of GNNs in Insider Threat Detection",
+        "date": "10/25/2024",
+        "venue": "BSides Portland 2024",
+        "from": "2024-10-25",
+        "to": "2024-10-25",
+        "sections": [
+            {
+                "type": "paragraphs",
+                "slug": "description",
+                "title": "Abstract",
+                "paragraphs": [
+                    "In this talk, we explore how insider threats pose significant risks to organizational security by evading traditional detection methods. Graph Neural Networks (GNNs) offer an innovative solution by modeling users, devices, and activities as interconnected nodes and edges in a graph structure, effectively capturing complex relationships and behavioral patterns. Research shows that GNN-based models demonstrate superior performance compared to conventional machine learning techniques in identifying insider threats. The exploration of various GNN architectures and their real-world applications provides valuable insights for cybersecurity professionals seeking to enhance organizational security against insider threats."
+                ]
+            },
+            {
+                "type": "links",
+                "slug": "link",
+                "title": "Slides",
+                "links": [
+                    {
+                        "label": "View Slides",
+                        "url": "resources/talks/bsides_portland_2024/gnn-insider-threat-detection-bsides-portland-2024.pdf",
+                        "external": true,
+                        "icon": null
+                    }
+                ]
+            },
+            {
+                "type": "links",
+                "slug": "link",
+                "title": "Recording",
+                "links": [
+                    {
+                        "label": "Youtube Video Link",
+                        "url": "https://www.youtube.com/watch?v=iTFPxKkrHU8",
+                        "external": true,
+                        "icon": "fa-solid fa-arrow-up-right-from-square"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Utilizing Graph Neural Networks for Robust DDoS Attack Detection in Network Security",
+        "date": "10/08/2024",
+        "venue": "Oregon Cyber Resilience Summit 2024",
+        "from": "2024-10-08",
+        "to": "2024-10-08",
+        "sections": [
+            {
+                "type": "paragraphs",
+                "slug": "description",
+                "title": "Abstract",
+                "paragraphs": [
+                    "In this talk, we will explore the application of Graph Neural Networks (GNNs) in detecting Distributed Denial of Service (DDoS) attacks. We will introduce GNNs, compare them with traditional neural networks, and highlight their evolution and adoption. We will also compare traditional detection methods with AI-based approaches and how GNN based approaches can be advantageous. Finally, we will talk about two important GNN models used in DDoS detection and discuss their superior performance compared to traditional machine learning models."
+                ]
+            },
+            {
+                "type": "links",
+                "slug": "link",
+                "title": "Slides",
+                "links": [
+                    {
+                        "label": "View Slides",
+                        "url": "resources/talks/ocrs_2024/gnn-ddos-ocrs-2024.pdf",
+                        "external": true,
+                        "icon": null
+                    }
+                ]
+            },
+            {
+                "type": "links",
+                "slug": "link",
+                "title": "Recording",
+                "links": [
+                    {
+                        "label": "Youtube Video Link",
+                        "url": "https://www.youtube.com/watch?v=lgtTVzn6kLM",
+                        "external": true,
+                        "icon": "fa-solid fa-arrow-up-right-from-square"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Utilizing Graph Neural Networks for Robust DDoS Attack Detection in Network Security",
+        "date": "09/06/2024",
+        "venue": "BSides Cache 2024",
+        "from": "2024-09-06",
+        "to": "2024-09-06",
+        "sections": [
+            {
+                "type": "paragraphs",
+                "slug": "description",
+                "title": "Abstract",
+                "paragraphs": [
+                    "In this talk, we will explore the application of Graph Neural Networks (GNNs) in detecting Distributed Denial of Service (DDoS) attacks. We will introduce GNNs, compare them with traditional neural networks, and highlight their evolution and adoption. We will also compare traditional detection methods with AI-based approaches and how GNN based approaches can be advantageous. Finally, we will talk about two important GNN models used in DDoS detection and discuss their superior performance compared to traditional machine learning models."
+                ]
+            },
+            {
+                "type": "links",
+                "slug": "link",
+                "title": "Slides",
+                "links": [
+                    {
+                        "label": "View Slides",
+                        "url": "resources/talks/bsides_cache_2024/gnn-ddos-bsides-cache-2024.pdf",
+                        "external": true,
+                        "icon": null
+                    }
+                ]
+            },
+            {
+                "type": "links",
+                "slug": "link",
+                "title": "Recording",
+                "links": [
+                    {
+                        "label": "Youtube Video Link",
+                        "url": "https://youtu.be/L7HOxq_itR8?t=9545",
+                        "external": true,
+                        "icon": "fa-solid fa-arrow-up-right-from-square"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Graph Neural Networks: Revolutionizing DDoS Attack Detection",
+        "date": "04/27/2024",
+        "venue": "BSides Seattle 2024",
+        "from": "2024-04-27",
+        "to": "2024-04-27",
+        "sections": [
+            {
+                "type": "paragraphs",
+                "slug": "description",
+                "title": "Abstract",
+                "paragraphs": [
+                    "In this talk, I will present my research on the cutting-edge world of Graph Neural Networks (GNN) and their transformative role in combating one of the most prevalent cyber threats: DDoS (Distributed Denial of Service) attacks. I will uncover how GNNs offer a significant advancement over traditional methods of detection, delving into the evolution of GNNs and exploring their unique application in cybersecurity. We'll close with a forward-looking view on how the advancements in GNNs are equipping us with better shields in the digital arena against DDoS threats."
+                ]
+            },
+            {
+                "type": "links",
+                "slug": "link",
+                "title": "Slides",
+                "links": [
+                    {
+                        "label": "View Slides",
+                        "url": "resources/talks/bsides_seattle_2024/gnn-ddos-bsides-seattle-2024.pdf",
+                        "external": true,
+                        "icon": null
+                    }
+                ]
+            },
+            {
+                "type": "links",
+                "slug": "link",
+                "title": "Recording",
+                "links": [],
+                "emptyText": "Not Available"
+            }
+        ]
+    }
+]

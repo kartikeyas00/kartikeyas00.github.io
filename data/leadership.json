@@ -1,0 +1,92 @@
+[
+    {
+        "title": "CFP Reviewer",
+        "date": "April 9, 2026",
+        "venue": "BSides SLC 2026",
+        "venueUrl": "https://www.bsidesslc.org/",
+        "from": "2026-04-09",
+        "to": "2026-04-09",
+        "sections": [
+            {
+                "type": "paragraphs",
+                "slug": "description",
+                "title": "Overview",
+                "paragraphs": [
+                    "Reviewed 125 CFP submissions, evaluating talk proposals based on technical depth, originality, clarity, audience relevance, and alignment with the conference program."
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Paper Reviewer",
+        "date": "October 13, 2025",
+        "venue": "Pacific Northwest Software Quality Conference 2025",
+        "venueUrl": "https://pnsqc.org/conference/2025/at-a-glance/",
+        "from": "2025-10-13",
+        "to": "2025-10-13",
+        "sections": [
+            {
+                "type": "paragraphs",
+                "slug": "description",
+                "title": "Overview",
+                "paragraphs": [
+                    "Reviewed two full research papers, providing detailed feedback on technical soundness, methodology, clarity, contribution strength, and suitability for publication."
+                ]
+            }
+        ]
+    },
+    {
+        "title": "CFP Reviewer",
+        "date": "September 12, 2025",
+        "venue": "BSides Cache 2025",
+        "venueUrl": "https://www.bsidescache.org/",
+        "from": "2025-09-12",
+        "to": "2025-09-12",
+        "sections": [
+            {
+                "type": "paragraphs",
+                "slug": "description",
+                "title": "Overview",
+                "paragraphs": [
+                    "Reviewed 48 CFP submissions, evaluating abstracts and outlines to help identify talks with strong technical merit, audience value, and conference fit."
+                ]
+            }
+        ]
+    },
+    {
+        "title": "CFP Reviewer",
+        "date": "April 10, 2025",
+        "venue": "BSides SLC 2025",
+        "venueUrl": "https://www.bsidesslc.org/",
+        "from": "2025-04-10",
+        "to": "2025-04-10",
+        "sections": [
+            {
+                "type": "paragraphs",
+                "slug": "description",
+                "title": "Overview",
+                "paragraphs": [
+                    "Reviewed 118 CFP submissions, assessing talk proposals for technical quality, clarity, originality, practical value, and relevance to the security community."
+                ]
+            }
+        ]
+    },
+    {
+        "title": "CFP Reviewer",
+        "date": "November 15, 2024",
+        "venue": "BSides Red Rocks 2024",
+        "venueUrl": "https://www.bsidesredrocks.org/",
+        "from": "2024-11-15",
+        "to": "2024-11-15",
+        "sections": [
+            {
+                "type": "paragraphs",
+                "slug": "description",
+                "title": "Overview",
+                "paragraphs": [
+                    "Reviewed 37 CFP submissions, evaluating talk abstracts, outlines, technical depth, originality, audience relevance, and overall fit for the conference program."
+                ]
+            }
+        ]
+    }
+]

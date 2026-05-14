@@ -1,0 +1,259 @@
+[
+    {
+        "title": "Graph Neural Networks Explorer",
+        "type": "Personal",
+        "tech": {
+            "Languages": [
+                "JavaScript"
+            ],
+            "Frameworks/Libraries": [
+                "D3.js",
+                "Bulma"
+            ]
+        },
+        "sections": [
+            {
+                "type": "image",
+                "slug": "image-container",
+                "src": "img/projects/gnn-explorer/message_passing.gif",
+                "alt": "Project Image",
+                "caption": "Message passing and feature aggregation in a GNN"
+            },
+            {
+                "type": "paragraphs",
+                "slug": "description",
+                "title": "Description",
+                "paragraphs": [
+                    "This project visualizes the message passing and feature aggregation processes within Graph Neural Networks (GNNs). By providing an intuitive, step-by-step demonstration of how node features are combined and updated, it helps users better understand the inner workings of GNNs and the mathematics behind feature aggregation."
+                ]
+            },
+            {
+                "type": "links",
+                "slug": "repository",
+                "title": "Source Code Repository",
+                "links": [
+                    {
+                        "label": "https://github.com/kartikeyas00/gnn-explorer",
+                        "url": "https://github.com/kartikeyas00/gnn-explorer",
+                        "external": true
+                    }
+                ]
+            },
+            {
+                "type": "links",
+                "slug": "url",
+                "title": "URL",
+                "links": [
+                    {
+                        "label": "https://kartikeyas00.github.io/gnn-explorer/",
+                        "url": "https://kartikeyas00.github.io/gnn-explorer/",
+                        "external": true
+                    }
+                ]
+            },
+            {
+                "type": "tech",
+                "slug": "tech-stack",
+                "title": "Tech Stack"
+            }
+        ]
+    },
+    {
+        "title": "Enhancing Schelling’s Segregation Model: A Distributed Geo-spatial Approach",
+        "type": "Academic",
+        "tech": {
+            "Languages": [
+                "Python"
+            ],
+            "Frameworks/Libraries": [
+                "Pandas",
+                "NumPy",
+                "GeoPandas",
+                "Matplotlib",
+                "SciPy",
+                "MPI4Py",
+                "Dask"
+            ]
+        },
+        "sections": [
+            {
+                "type": "image",
+                "slug": "image-container",
+                "src": "img/projects/dist-geo-spatial-schellings-model/row_partition.gif",
+                "alt": "Project Image",
+                "caption": "Populating California map with agents and partitioning it using row-based partitioning technique"
+            },
+            {
+                "type": "paragraphs",
+                "slug": "description",
+                "title": "Description",
+                "paragraphs": [
+                    "This project evaluates the application of Schelling’s Model of segregation in real-world geographical scenarios using a distributed system. The project optimizes computational efficiency through advanced partitioning techniques and a master-worker architecture. The distributed system significantly outperforms centralized approaches, achieving up to 17 times faster performance in large-scale simulations involving millions of agents. The system also shows excellent horizontal scalability, maintaining consistent performance as the number of processes increases."
+                ]
+            },
+            {
+                "type": "links",
+                "slug": "repository",
+                "title": "Source Code Repository",
+                "links": [
+                    {
+                        "label": "https://github.com/kartikeyas00/dist-geo-schelling",
+                        "url": "https://github.com/kartikeyas00/dist-geo-schelling",
+                        "external": true
+                    }
+                ]
+            },
+            {
+                "type": "tech",
+                "slug": "tech-stack",
+                "title": "Tech Stack"
+            }
+        ]
+    },
+    {
+        "title": "Cowin Automate: Automated Vaccination Availability Alerts Using Cowin API",
+        "type": "Personal",
+        "tech": {
+            "Languages": [
+                "Python"
+            ],
+            "Frameworks/Libraries": [
+                "Pandas"
+            ],
+            "Database": [
+                "SQLite"
+            ]
+        },
+        "sections": [
+            {
+                "type": "image",
+                "slug": "image-container",
+                "src": "img/projects/cowin-automate-alerts/syringe.png",
+                "alt": "Project Image",
+                "caption": ""
+            },
+            {
+                "type": "paragraphs",
+                "slug": "description",
+                "title": "Description",
+                "paragraphs": [
+                    "This project utilizes the Indian Government's CoWin API to create an automated script that notifies people when a vaccine is available in their district. The script continuously checks for vaccine availability and sends alerts to users, ensuring they stay informed about vaccination slots in real-time."
+                ]
+            },
+            {
+                "type": "links",
+                "slug": "repository",
+                "title": "Source Code Repository",
+                "links": [
+                    {
+                        "label": "https://github.com/kartikeyas00/cowin-automate",
+                        "url": "https://github.com/kartikeyas00/cowin-automate",
+                        "external": true
+                    }
+                ]
+            },
+            {
+                "type": "tech",
+                "slug": "tech-stack",
+                "title": "Tech Stack"
+            }
+        ]
+    },
+    {
+        "title": "Optimizing Resident Assistant Matching to Floors Using Gale-Shapley",
+        "type": "Academic",
+        "tech": {
+            "Languages": [
+                "Python"
+            ],
+            "Frameworks/Libraries": [
+                "Pandas"
+            ]
+        },
+        "sections": [
+            {
+                "type": "image",
+                "slug": "image-container",
+                "src": "img/projects/ra-matching/dorm.jpeg",
+                "alt": "Project Image",
+                "caption": ""
+            },
+            {
+                "type": "paragraphs",
+                "slug": "description",
+                "title": "Description",
+                "paragraphs": [
+                    "This project optimizes the matching of Resident Assistants to floors using the Gale-Shapley algorithm. The main goal of the project is to find a stable matching for two asymmetric arrays: students applying for Resident Assistant (R.A.) jobs and the number of available R.A. jobs. Each job is assigned a personality trait, and candidates are given preferences accordingly. The Gale-Shapley algorithm is applied to achieve an optimal and stable matching, which is validated through sensitivity analysis.",
+                    "The findings show that there is only one stable matching, guaranteeing an optimal allocation of Resident Assistant positions. The sensitivity analysis further supports the robustness of the matching algorithm, highlighting that changes in preferences have a minimal impact on the stability of the results. This project offering insights into effective resource allocation in scenarios with more applicants than available positions."
+                ]
+            },
+            {
+                "type": "links",
+                "slug": "repository",
+                "title": "Source Code Repository",
+                "links": [
+                    {
+                        "label": "https://github.com/kartikeyas00/RAProblem",
+                        "url": "https://github.com/kartikeyas00/RAProblem",
+                        "external": true
+                    }
+                ]
+            },
+            {
+                "type": "tech",
+                "slug": "tech-stack",
+                "title": "Tech Stack"
+            }
+        ]
+    },
+    {
+        "title": "Evaluating Racial Tolerance in U.S. States Using Schelling's Model",
+        "type": "Academic",
+        "tech": {
+            "Languages": [
+                "Python"
+            ],
+            "Frameworks/Libraries": [
+                "PyQT",
+                "GeoPandas",
+                "Matplotlib",
+                "SciPy"
+            ]
+        },
+        "sections": [
+            {
+                "type": "image",
+                "slug": "image-container",
+                "src": "img/projects/eval-racial-tolerance-schellings-model/texas_shellings_model.gif",
+                "alt": "Project Image",
+                "caption": "Simulation of Schelling's Model of Segregation on a Texas Map"
+            },
+            {
+                "type": "paragraphs",
+                "slug": "description",
+                "title": "Description",
+                "paragraphs": [
+                    "This project evaluates racial tolerance across American states using a geospatial version of Schelling’s Model of segregation. By simulating the distribution of ethnic groups within states, the project analyzes the relationship between desired and actual similarity among neighbors. Census data on racial diversity by county is used to run these simulations, which are then compared with real-world data through visual inspection and statistical tests like the Kolmogorov-Smirnov test.",
+                    "The findings show that states with lower similarity thresholds, indicating higher tolerance, often correspond with states identified as more liberal or tolerant in existing research and rankings. Moreover, the study shows that while higher similarity thresholds can increase segregation but very high thresholds can paradoxically lead to a multicultural society. This project offers a quantifiable measure of state-level tolerance and insights into the dynamics of ethnic distribution and social cohesion within states."
+                ]
+            },
+            {
+                "type": "links",
+                "slug": "repository",
+                "title": "Source Code Repository",
+                "links": [
+                    {
+                        "label": "https://github.com/kartikeyas00/geo-schelling",
+                        "url": "https://github.com/kartikeyas00/geo-schelling",
+                        "external": true
+                    }
+                ]
+            },
+            {
+                "type": "tech",
+                "slug": "tech-stack",
+                "title": "Tech Stack"
+            }
+        ]
+    }
+]

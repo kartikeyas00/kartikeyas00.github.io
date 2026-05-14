@@ -1,0 +1,570 @@
+[
+    {
+        "degree": "M.S. in Computer Science",
+        "institution": "University of Oregon",
+        "icon": "img/college/uo/icon/oregon-duck.png",
+        "period": "09/2021 - 06/2023",
+        "location": "Eugene, OR 🇺🇸",
+        "sections": [
+            {
+                "type": "accordion-list",
+                "slug": "project",
+                "title": "Academic Projects and Research",
+                "items": [
+                    {
+                        "icon": "fas fa-network-wired",
+                        "title": "Enhancing Schelling’s Segregation Model: A Distributed Geo-spatial Approach",
+                        "tags": [
+                            "Class Project"
+                        ],
+                        "description": "Developed a distributed geo-spatial version of Schelling’s model of segregation to overcome computational constraints. Employed Morton and Geohash partitioning techniques to optimize computational efficiency and evenly balance workloads. Achieved up to 17 times speedup and demonstrated excellent horizontal scalability in simulations involving millions of agents.",
+                        "links": [
+                            {
+                                "label": "View on GitHub",
+                                "url": "https://github.com/kartikeyas00/dist-geo-schelling",
+                                "external": true,
+                                "icon": "fab fa-github fa-lg"
+                            }
+                        ]
+                    },
+                    {
+                        "icon": "fas fa-trophy",
+                        "title": "Predicting NCAA Division 1 Men’s Tennis Matches with Logistic Regression",
+                        "tags": [
+                            "Class Project"
+                        ],
+                        "description": "Developed Logistic Regression models to predict NCAA Division 1 Men’s Tennis Nationals outcomes, demonstrating the effective use of machine learning in sports analytics. The Logistic Regression (Backward Selection AIC) model achieved the highest accuracy of 84.07% and the top F-1 score.",
+                        "links": []
+                    },
+                    {
+                        "icon": "fas fa-square-root-alt",
+                        "title": "Twitter Spam Detection using Graph Neural Ordinary Differential Equations",
+                        "tags": [
+                            "Class Project",
+                            "Research"
+                        ],
+                        "description": "Developed a Graph Neural ODE model for Twitter spam detection using various ODE solvers, including Euler, Runge-Kutta, and Adams. Achieved significantly faster training and inference times compared to traditional methods, although the accuracy was slightly lower. This approach addresses the challenges of training on large graph datasets by using efficient numerical methods for computation and parameter management.",
+                        "links": []
+                    },
+                    {
+                        "icon": "fas fa-project-diagram",
+                        "title": "Real Time Heterogenous Graph Neural Network for Spam Detection on Social Media",
+                        "tags": [
+                            "Class Project",
+                            "Research"
+                        ],
+                        "description": "Developed a Real-time Heterogeneous Graph Neural Network (RHGNN) model for Twitter spam detection, using Graph Attention Networks and Semantic Attention networks. Achieved significantly faster training and inference times compared to traditional methods, with GPU training speeding up by 168 times and inference by 74 times, but with a slightly lower accuracy. This approach addresses the challenges of training on large, heterogeneous graph datasets, making it a viable candidate for real-time spam detection.",
+                        "links": []
+                    }
+                ]
+            },
+            {
+                "type": "tabbed-icon-list",
+                "slug": "classes",
+                "title": "Classes",
+                "groups": [
+                    {
+                        "key": "main",
+                        "label": "",
+                        "icon": null,
+                        "items": [
+                            {
+                                "icon": "fa-solid fa-computer",
+                                "label": "CIS 510: Multi-Agent Systems"
+                            },
+                            {
+                                "icon": "fa-solid fa-computer",
+                                "label": "CIS 533: Computer & Network Security"
+                            },
+                            {
+                                "icon": "fa-solid fa-computer",
+                                "label": "CIS 571: Introduction to Artificial Intelligence"
+                            },
+                            {
+                                "icon": "fa-solid fa-computer",
+                                "label": "CIS 572: Machine Learning"
+                            },
+                            {
+                                "icon": "fa-solid fa-computer",
+                                "label": "CIS 607: Unix, C and C++ for Graduate Students"
+                            },
+                            {
+                                "icon": "fa-solid fa-computer",
+                                "label": "CIS 670: Data Science"
+                            },
+                            {
+                                "icon": "fa-solid fa-computer",
+                                "label": "CS 510: Computational Science"
+                            },
+                            {
+                                "icon": "fa-solid fa-computer",
+                                "label": "CS 541: Introduction to Computer Graphics"
+                            },
+                            {
+                                "icon": "fa-solid fa-computer",
+                                "label": "CS 551: Database Processing"
+                            },
+                            {
+                                "icon": "fa-solid fa-computer",
+                                "label": "CS 621: Algorithms and Complexity"
+                            },
+                            {
+                                "icon": "fa-solid fa-computer",
+                                "label": "CS 630: Distributed Systems"
+                            },
+                            {
+                                "icon": "fa-solid fa-computer",
+                                "label": "CS 640: Writing in Computer Research"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "cards",
+                "slug": "internship",
+                "title": "Internships",
+                "items": [
+                    {
+                        "date": "01/2023 - 03/2023",
+                        "title": "Data Science Intern",
+                        "subtitle": "Viewrail",
+                        "icon": "fa-regular fa-building"
+                    },
+                    {
+                        "date": "06/2022 - 09/2022",
+                        "title": "Threat Analytics Intern",
+                        "subtitle": "Equinix",
+                        "icon": "fa-regular fa-building"
+                    }
+                ]
+            },
+            {
+                "type": "cards",
+                "slug": "research-teaching",
+                "title": "Research and Teaching Roles",
+                "items": [
+                    {
+                        "date": "04/2023 - 06/2023",
+                        "title": "Teaching Assistant",
+                        "subtitle": "CS 415 Operating Systems",
+                        "icon": "fa-solid fa-computer"
+                    },
+                    {
+                        "date": "09/2022 - 12/2022",
+                        "title": "Teaching Assistant",
+                        "subtitle": "CS 422 Software Method",
+                        "icon": "fa-solid fa-computer"
+                    },
+                    {
+                        "date": "09/2021 - 06/2022",
+                        "title": "Research Assistant",
+                        "subtitle": "Center For Cyber Security and Privacy",
+                        "icon": "fa-solid fa-fingerprint"
+                    }
+                ]
+            },
+            {
+                "type": "gallery",
+                "slug": "memories",
+                "title": "Memories",
+                "images": [
+                    {
+                        "full": "img/college/uo/uo-memories/58DC51C6-450C-4A49-A210-9791E7765C9F.JPG",
+                        "thumb": "img/college/uo/uo-memories/58DC51C6-450C-4A49-A210-9791E7765C9F_thumbnail.jpg",
+                        "caption": "Graduation picture with parents ❤️"
+                    },
+                    {
+                        "full": "img/college/uo/uo-memories/IMG_8654.jpg",
+                        "thumb": "img/college/uo/uo-memories/IMG_8654.jpg",
+                        "caption": "When finals are here but you gotta go hiking!"
+                    },
+                    {
+                        "full": "img/college/uo/uo-memories/BE75DC65-D4CB-428F-AAA5-F427A015C74E.JPEG",
+                        "thumb": "img/college/uo/uo-memories/BE75DC65-D4CB-428F-AAA5-F427A015C74E.JPEG",
+                        "caption": "Silver Falls State Park with the department friends !"
+                    },
+                    {
+                        "full": "img/college/uo/uo-memories/C5AEB147-ACC6-4E6A-BE5F-D9EEF5DC95D6.JPEG",
+                        "thumb": "img/college/uo/uo-memories/C5AEB147-ACC6-4E6A-BE5F-D9EEF5DC95D6.JPEG",
+                        "caption": "When two mates PR together!"
+                    },
+                    {
+                        "full": "img/college/uo/uo-memories/IMG_0939.jpg",
+                        "thumb": "img/college/uo/uo-memories/IMG_0939.jpg",
+                        "caption": "Run group at the Amazon Trail!"
+                    },
+                    {
+                        "full": "img/college/uo/uo-memories/IMG_1175.jpg",
+                        "thumb": "img/college/uo/uo-memories/IMG_1175_thumbnail.jpg",
+                        "caption": "We Mastered 🥺"
+                    },
+                    {
+                        "full": "img/college/uo/uo-memories/IMG_3630.JPG",
+                        "thumb": "img/college/uo/uo-memories/IMG_3630.JPG",
+                        "caption": "Amazing experience being an envoy to the Indian National Track and Field Team!"
+                    },
+                    {
+                        "full": "img/college/uo/uo-memories/IMG_4692.jpg",
+                        "thumb": "img/college/uo/uo-memories/IMG_4692.jpg",
+                        "caption": "Go Ducks!!"
+                    },
+                    {
+                        "full": "img/college/uo/uo-memories/IMG_4778.JPG",
+                        "thumb": "img/college/uo/uo-memories/IMG_4778.JPG",
+                        "caption": "Graduation photoshoot!"
+                    },
+                    {
+                        "full": "img/college/uo/uo-memories/IMG_4915.jpg",
+                        "thumb": "img/college/uo/uo-memories/IMG_4915_thumbnail.jpg",
+                        "caption": "Last Masters Class ever 🥺"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "degree": "B.A. in Computer Science, Accounting",
+        "institution": "Goshen College",
+        "icon": "img/college/gc/icon/gc-maple-leaf.png",
+        "period": "08/2015 - 05/2019",
+        "location": "Goshen, IN 🇺🇸",
+        "sections": [
+            {
+                "type": "accordion-list",
+                "slug": "project",
+                "title": "Academic Projects and Research",
+                "items": [
+                    {
+                        "icon": "fas fa-chart-pie",
+                        "title": "Big Data Analytics: Transforming Modern Accounting",
+                        "tags": [
+                            "Final Thesis"
+                        ],
+                        "description": "Explored the critical role of data analytics in contemporary accounting. Built a Flask (Python) web application demonstrating the superior efficiency of big data analytics compared to traditional tools like Microsoft Excel, particularly in auditing processes.",
+                        "links": [
+                            {
+                                "label": "View on GitHub",
+                                "url": "https://github.com/kartikeyas00/analytical-procedures-gl",
+                                "external": true,
+                                "icon": "fab fa-github fa-lg"
+                            }
+                        ]
+                    },
+                    {
+                        "icon": "fas fa-map-marked-alt",
+                        "title": "Evaluating Racial Tolerance in U.S. States Using Schelling's Model",
+                        "tags": [
+                            "Class Project"
+                        ],
+                        "description": "Utilized geospatial simulations of Schelling's segregation model to assess racial majorities' tolerance towards minorities in specific U.S. states. Selected for presentation at the Goshen College Annual Academic Research Symposium, 2019.",
+                        "links": [
+                            {
+                                "label": "View on GitHub",
+                                "url": "https://github.com/kartikeyas00/geo-schelling",
+                                "external": true,
+                                "icon": "fab fa-github fa-lg"
+                            }
+                        ]
+                    },
+                    {
+                        "icon": "fas fa-user-friends",
+                        "title": "Optimizing Resident Assistant Matching to Floors Using Gale-Shapley",
+                        "tags": [
+                            "Class Project"
+                        ],
+                        "description": "Applied the Gale-Shapley Algorithm to find the best stable matches between Resident Assistant applicants and respective floors. Conducted sensitivity analyses on over a million preference orders to determine the most likely matches.",
+                        "links": [
+                            {
+                                "label": "View on GitHub",
+                                "url": "https://github.com/kartikeyas00/RAProblem",
+                                "external": true,
+                                "icon": "fab fa-github fa-lg"
+                            }
+                        ]
+                    },
+                    {
+                        "icon": "fas fa-car",
+                        "title": "KridaCar: Arduino-Powered Remote-Controlled Vehicle",
+                        "tags": [
+                            "Class Project"
+                        ],
+                        "description": "Created an innovative Android application that serves as a remote control for an Arduino-based car, combining mobility with advanced technology.",
+                        "links": [
+                            {
+                                "label": "View on GitHub",
+                                "url": "https://github.com/kartikeyas00/Remote-Control-App",
+                                "external": true,
+                                "icon": "fab fa-github fa-lg"
+                            }
+                        ]
+                    },
+                    {
+                        "icon": "fas fa-coffee",
+                        "title": "Java Junction's Cost of Goods Calculator",
+                        "tags": [
+                            "Class Project"
+                        ],
+                        "description": "Built a Cost of Goods Sold (COGS) calculator using Flask for Goshen College's coffee shop, Java Junction. The tool simplified expense calculations, improving operational efficiency.",
+                        "links": [
+                            {
+                                "label": "View on GitHub",
+                                "url": "https://github.com/kartikeyas00/calc-cogs-flask",
+                                "external": true,
+                                "icon": "fab fa-github fa-lg"
+                            }
+                        ]
+                    },
+                    {
+                        "icon": "fas fa-chart-line",
+                        "title": "Comparing Linear Regression Techniques on Indian Economic Data",
+                        "tags": [
+                            "Class Project"
+                        ],
+                        "description": "Compared various Python-based linear regression methods, evaluating their performance speed and results. Focused on analyzing the relationship between India's annual Foreign Export data and Gross Domestic Product.",
+                        "links": [
+                            {
+                                "label": "View on GitHub",
+                                "url": "https://github.com/kartikeyas00/linear-regression-techniques-analysis",
+                                "external": true,
+                                "icon": "fab fa-github fa-lg"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "bullets",
+                "slug": "athletic-achievements",
+                "title": "Athletic Achievements",
+                "items": [
+                    {
+                        "icon": "fas fa-trophy",
+                        "text": "Recruited with a full-tuition scholarship to play tennis for Goshen College."
+                    },
+                    {
+                        "icon": "fas fa-medal",
+                        "text": "Secured a position among the top 10 players in Goshen College history for singles win."
+                    },
+                    {
+                        "icon": "fas fa-user-tie",
+                        "text": "Led the tennis program as Captain to its first-ever unbeaten season at home."
+                    },
+                    {
+                        "icon": "fas fa-award",
+                        "text": "Received the NAIA-Daktronics Scholar-Athlete Award in 2019, recognizing outstanding academic achievement alongside athletic prowess."
+                    },
+                    {
+                        "icon": "fas fa-award",
+                        "text": "Received the 2019 Crossroads League Academic All-Conference Award, acknowledging outstanding academic performance while competing at the highest level in the conference."
+                    },
+                    {
+                        "icon": "fas fa-award",
+                        "text": "Received the OneLeaf Leadership Award for two years, recognizing contributions towards supporting the athletic department's goals and initiatives."
+                    }
+                ]
+            },
+            {
+                "type": "tabbed-icon-list",
+                "slug": "classes",
+                "title": "Classes",
+                "groups": [
+                    {
+                        "key": "cs",
+                        "label": "Computer Science",
+                        "icon": "fa-solid fa-computer",
+                        "items": [
+                            {
+                                "icon": "fa-solid fa-computer",
+                                "label": "COSC 370: Advanced Game Design"
+                            },
+                            {
+                                "icon": "fa-solid fa-computer",
+                                "label": "COSC 365: Analysis of Algorithms"
+                            },
+                            {
+                                "icon": "fa-solid fa-computer",
+                                "label": "INFO 350: Computer Networking & Security"
+                            },
+                            {
+                                "icon": "fa-solid fa-computer",
+                                "label": "INFO 340: Database Design"
+                            },
+                            {
+                                "icon": "fa-solid fa-square-root-alt",
+                                "label": "MATH205: Discrete Math"
+                            },
+                            {
+                                "icon": "fa-solid fa-bolt",
+                                "label": "PHYS 304: Electronics"
+                            },
+                            {
+                                "icon": "fa-solid fa-square-root-alt",
+                                "label": "MAT 250: General Calculus I"
+                            },
+                            {
+                                "icon": "fa-solid fa-square-root-alt",
+                                "label": "MATH351: Mathematical Modeling"
+                            },
+                            {
+                                "icon": "fa-solid fa-square-root-alt",
+                                "label": "MATH 323: Probability and Statistics"
+                            },
+                            {
+                                "icon": "fa-solid fa-computer",
+                                "label": "INFO200: Problem Solving with Computers"
+                            },
+                            {
+                                "icon": "fa-solid fa-computer",
+                                "label": "INFO230: Programming I"
+                            },
+                            {
+                                "icon": "fa-solid fa-computer",
+                                "label": "INFO 330: Programming II"
+                            },
+                            {
+                                "icon": "fa-solid fa-computer",
+                                "label": "INFO 405: Project Management"
+                            },
+                            {
+                                "icon": "fa-solid fa-computer",
+                                "label": "INFO 355: Systems Analysis"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "acct",
+                        "label": "Accounting",
+                        "icon": "fa-solid fa-calculator",
+                        "items": [
+                            {
+                                "icon": "fa-solid fa-calculator",
+                                "label": "ACC 210: Accounting Information Systems"
+                            },
+                            {
+                                "icon": "fa-solid fa-calculator",
+                                "label": "ACC 405: Auditing"
+                            },
+                            {
+                                "icon": "fa-solid fa-calculator",
+                                "label": "ACC 434: Business Income Taxation"
+                            },
+                            {
+                                "icon": "fa-solid fa-calculator",
+                                "label": "ACC 301: Cost Accounting"
+                            },
+                            {
+                                "icon": "fa-solid fa-calculator",
+                                "label": "ACC 304: Individual Income Taxation"
+                            },
+                            {
+                                "icon": "fa-solid fa-calculator",
+                                "label": "ACC 302: Intermediate Accounting I"
+                            },
+                            {
+                                "icon": "fa-solid fa-calculator",
+                                "label": "ACC 303: Intermediate Accounting II"
+                            },
+                            {
+                                "icon": "fa-solid fa-calculator",
+                                "label": "ACC 201: Principles of Financial Acct"
+                            },
+                            {
+                                "icon": "fa-solid fa-calculator",
+                                "label": "ACC 202: Principles of Managerial Acct"
+                            },
+                            {
+                                "icon": "fa-solid fa-calculator",
+                                "label": "BUS 220: Office Software Productivity"
+                            },
+                            {
+                                "icon": "fa-solid fa-calculator",
+                                "label": "ECON002: Principles of Economics(Micro)"
+                            },
+                            {
+                                "icon": "fa-solid fa-calculator",
+                                "label": "ECON204: Principles of Macroeconomics"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "cards",
+                "slug": "internship",
+                "title": "Internships",
+                "items": [
+                    {
+                        "date": "01/2019 - 04/2019",
+                        "title": "Data Analytics Intern",
+                        "subtitle": "Veada Industries",
+                        "icon": "fa-regular fa-building"
+                    },
+                    {
+                        "date": "05/2018 - 09/2018",
+                        "title": "Data Analytics Intern",
+                        "subtitle": "Zebra Technologies",
+                        "icon": "fa-regular fa-building"
+                    }
+                ]
+            },
+            {
+                "type": "gallery",
+                "slug": "memories",
+                "title": "Memories",
+                "images": [
+                    {
+                        "full": "img/college/gc/gc-memories/IMG_1629.JPG",
+                        "thumb": "img/college/gc/gc-memories/IMG_1629.JPG",
+                        "caption": "At Detroit Tigers game with my boy Eric!"
+                    },
+                    {
+                        "full": "img/college/gc/gc-memories/IMG_1230.JPG",
+                        "thumb": "img/college/gc/gc-memories/IMG_1230.JPG",
+                        "caption": "Roomies suited up for their first kick off!"
+                    },
+                    {
+                        "full": "img/college/gc/gc-memories/IMG_1236.JPG",
+                        "thumb": "img/college/gc/gc-memories/IMG_1236.JPG",
+                        "caption": "Tennis Team at the Kickoff!"
+                    },
+                    {
+                        "full": "img/college/gc/gc-memories/IMG_2600.JPG",
+                        "thumb": "img/college/gc/gc-memories/IMG_2600.JPG",
+                        "caption": "Thanksgiving at Chicago!"
+                    },
+                    {
+                        "full": "img/college/gc/gc-memories/IMG_4097.PNG",
+                        "thumb": "img/college/gc/gc-memories/IMG_4097.PNG",
+                        "caption": "Our last kickoff together 😭"
+                    },
+                    {
+                        "full": "img/college/gc/gc-memories/LRG__DSC4535.JPG",
+                        "thumb": "img/college/gc/gc-memories/LRG__DSC4535.JPG",
+                        "caption": "We graduated 🥺"
+                    },
+                    {
+                        "full": "img/college/gc/gc-memories/Image.png",
+                        "thumb": "img/college/gc/gc-memories/Image.png",
+                        "caption": "Ready to beat Indiana Wesleyan again!"
+                    },
+                    {
+                        "full": "img/college/gc/gc-memories/F3D901A5-CB1C-4687-B872-16977DAD9334.jpg",
+                        "thumb": "img/college/gc/gc-memories/F3D901A5-CB1C-4687-B872-16977DAD9334.jpg",
+                        "caption": "200m action during the indoor season (not my strongest event haha)"
+                    },
+                    {
+                        "full": "img/college/gc/gc-memories/DSC_0401.jpeg",
+                        "thumb": "img/college/gc/gc-memories/DSC_0401.jpeg",
+                        "caption": "Kiss my Ace!"
+                    },
+                    {
+                        "full": "img/college/gc/gc-memories/D53D04CD-382B-4673-9597-9AF351156DF1.jpeg",
+                        "thumb": "img/college/gc/gc-memories/D53D04CD-382B-4673-9597-9AF351156DF1.jpeg",
+                        "caption": "Let's get this bread!"
+                    }
+                ]
+            }
+        ]
+    }
+]
