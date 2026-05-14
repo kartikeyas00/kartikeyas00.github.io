@@ -7,7 +7,7 @@ function switchSection(id, el) {
     color: #1aff8c;
     background-color: #3d3e3b;
     `
-    document.querySelectorAll('.we-content-section,.ed-content-section,.projects-content-section,.publications-content-section,.talks-content-section').forEach(c => c.style.display = 'none');
+    document.querySelectorAll('.we-content-section,.ed-content-section,.projects-content-section,.publications-content-section,.talks-content-section,.service-content-section').forEach(c => c.style.display = 'none');
     document.querySelectorAll('div.timeline-dot').forEach(c => c.style.display = 'none');
     document.getElementById(id).style.display = 'block';
     el.parentElement.parentElement.querySelector('.timeline-dot').style.display = 'block';
@@ -17,6 +17,27 @@ function switchSection(id, el) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    const parseCalendarDate = (value) => {
+        const [month, day, year] = value.split('/').map(Number);
+
+        if ([month, day, year].some(Number.isNaN)) {
+            return null;
+        }
+
+        const fullYear = year < 100 ? 2000 + year : year;
+        return new Date(fullYear, month - 1, day);
+    };
+
+    const parseLocalIsoDate = (value) => {
+        const [year, month, day] = value.split('-').map(Number);
+
+        if ([year, month, day].some(Number.isNaN)) {
+            return null;
+        }
+
+        return new Date(year, month - 1, day);
+    };
 
 
     function openModal($el) {
@@ -43,6 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if ($el.id === "talks-modal") {
+            !isMobile() ? $el.querySelector('.timeline-content-link').click() : null;
+        }
+
+        if ($el.id === "leadership-modal") {
             !isMobile() ? $el.querySelector('.timeline-content-link').click() : null;
         }
     }
@@ -299,11 +324,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
     [talksCalendarFrom[0], talksCalendarTo[0]].forEach(d => {
         d.on('select', date => {
-            const fromFilter = new Date(talksCalendarFrom[0].value());
-            const toFilter = new Date(talksCalendarTo[0].value());
+            const fromFilter = parseCalendarDate(talksCalendarFrom[0].value());
+            const toFilter = parseCalendarDate(talksCalendarTo[0].value());
             document.querySelectorAll('#talks-modal .timeline-item').forEach(c => {
-                const fromTimelineItem = new Date(c.dataset.from);
-                const toTimelineItem = new Date(c.dataset.to);
+                const fromTimelineItem = parseLocalIsoDate(c.dataset.from);
+                const toTimelineItem = parseLocalIsoDate(c.dataset.to);
+                if (fromFilter <= fromTimelineItem && toFilter >= toTimelineItem) {
+                    c.style.display = "block";
+                }
+                else {
+                    c.style.display = "none";
+                }
+
+            });
+        });
+    });
+
+    document.querySelector('#leadership-timeline-period-filter').addEventListener('click', function () {
+        openModal(document.querySelector('#leadership-timeline-period-filter-modal'));
+    });
+
+    leadershipCalendarFrom = bulmaCalendar.attach('#leadership-timeline-period-filter-from', {
+        type: "date",
+        displayMode: "dialog",
+        startDate: '11/15/24',
+        dateFormat: 'MM/dd/yy'
+    });
+
+    leadershipCalendarTo = bulmaCalendar.attach('#leadership-timeline-period-filter-to', {
+        type: "date",
+        displayMode: "dialog",
+        startDate: new Date().toLocaleString('en-US', { month: '2-digit', day: '2-digit', year: '2-digit' }).replace(/\//g, '/'),
+        dateFormat: 'MM/dd/yy',
+    });
+
+    [leadershipCalendarFrom[0], leadershipCalendarTo[0]].forEach(d => {
+        d.on('select', date => {
+            const fromFilter = parseCalendarDate(leadershipCalendarFrom[0].value());
+            const toFilter = parseCalendarDate(leadershipCalendarTo[0].value());
+            document.querySelectorAll('#leadership-modal .timeline-item').forEach(c => {
+                const fromTimelineItem = parseLocalIsoDate(c.dataset.from);
+                const toTimelineItem = parseLocalIsoDate(c.dataset.to);
                 if (fromFilter <= fromTimelineItem && toFilter >= toTimelineItem) {
                     c.style.display = "block";
                 }
@@ -345,7 +406,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "projects": 2,
         "we": 4,
         "ed": 4,
-        "publications": 2
+        "publications": 2,
+        "service": 3
     }
 
     const handleMobileClick = (event) => {
@@ -483,7 +545,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const setupMobileHandlers = () => {
-        const links = document.querySelectorAll('#talks-modal .timeline-content-link, #projects-modal .timeline-content-link, #work-experience-modal .timeline-content-link, #education-modal .timeline-content-link, #publications-modal .timeline-content-link');
+        const links = document.querySelectorAll('#talks-modal .timeline-content-link, #projects-modal .timeline-content-link, #work-experience-modal .timeline-content-link, #education-modal .timeline-content-link, #publications-modal .timeline-content-link, #leadership-modal .timeline-content-link');
         links.forEach(link => {
             link.removeEventListener('click', handleMobileClick, true);
             link.addEventListener('click', handleMobileClick, true);

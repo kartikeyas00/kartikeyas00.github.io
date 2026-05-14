@@ -89,6 +89,13 @@
                                 </span>
                                 <span>Talks</span>
                             </a>
+                            <a class="button is-rounded is-medium landing-page-button mb-3-mobile"
+                                data-target="leadership-modal">
+                                <span class="icon">
+                                    <i class="fas fa-users"></i>
+                                </span>
+                                <span>Leadership</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -3712,6 +3719,211 @@
                     </div>
                     <div class="field-body">
                         <input id="talks-timeline-period-filter-to" type="month" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!----------------------------------------------------------------------------->
+
+    <!---------  Modal for Leadership ---------------------------------------->
+    <div id="leadership-modal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content modal-full-height" style="overflow-x: hidden;">
+            <div class="title-row">
+                <h1 class="title we-title has-text-centered">Leadership</h1>
+            </div>
+            <div class="columns">
+                <div class="column is-one-third"
+                    style=" background-color: #2c2c2e;  height: calc(100vh - 100px); overflow-y: auto;">
+                    <div class="tags m-4">
+                        <span class="tag is-white is-rounded is-large">
+                            <i class="fa-solid fa-filter"></i>
+                        </span>
+                        <button id="leadership-timeline-period-filter" class="tag is-white is-rounded is-large">Period&nbsp<i
+                                class="fa-solid fa-angle-down"></i></button>
+                    </div>
+                    <div class="timeline m-2">
+                        <div class="timeline-item" data-from="2026-04-09" data-to="2026-04-09">
+                            <div class="timeline-dot" style="display: none;"></div>
+                            <div class="timeline-date"><i class="fa-solid fa-calendar-days"></i> 04/09/2026</div>
+                            <div class="timeline-content">
+                                <a class="timeline-content-link" onclick="switchSection('service-section5', this)">
+                                    <div class="timeline-content-details">
+                                        <div class="timeline-content-title">CFP Reviewer</div>
+                                        <div class="timeline-content-venue">BSides SLC 2026</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-from="2025-10-13" data-to="2025-10-13">
+                            <div class="timeline-dot" style="display: none;"></div>
+                            <div class="timeline-date"><i class="fa-solid fa-calendar-days"></i> 10/13/2025</div>
+                            <div class="timeline-content">
+                                <a class="timeline-content-link" onclick="switchSection('service-section4', this)">
+                                    <div class="timeline-content-details">
+                                        <div class="timeline-content-title">Paper Reviewer</div>
+                                        <div class="timeline-content-venue">Pacific Northwest Software Quality Conference 2025</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-from="2025-09-12" data-to="2025-09-12">
+                            <div class="timeline-dot" style="display: none;"></div>
+                            <div class="timeline-date"><i class="fa-solid fa-calendar-days"></i> 09/12/2025</div>
+                            <div class="timeline-content">
+                                <a class="timeline-content-link" onclick="switchSection('service-section3', this)">
+                                    <div class="timeline-content-details">
+                                        <div class="timeline-content-title">CFP Reviewer</div>
+                                        <div class="timeline-content-venue">BSides Cache 2025</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-from="2025-04-10" data-to="2025-04-10">
+                            <div class="timeline-dot" style="display: none;"></div>
+                            <div class="timeline-date"><i class="fa-solid fa-calendar-days"></i> 04/10/2025</div>
+                            <div class="timeline-content">
+                                <a class="timeline-content-link" onclick="switchSection('service-section2', this)">
+                                    <div class="timeline-content-details">
+                                        <div class="timeline-content-title">CFP Reviewer</div>
+                                        <div class="timeline-content-venue">BSides SLC 2025</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-from="2024-11-15" data-to="2024-11-15">
+                            <div class="timeline-dot" style="display: none;"></div>
+                            <div class="timeline-date"><i class="fa-solid fa-calendar-days"></i> 11/15/2024</div>
+                            <div class="timeline-content">
+                                <a class="timeline-content-link" onclick="switchSection('service-section1', this)">
+                                    <div class="timeline-content-details">
+                                        <div class="timeline-content-title">CFP Reviewer</div>
+                                        <div class="timeline-content-venue">BSides Red Rocks 2024</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-two-third"
+                    style="background-color: #2c2c2e; padding: 30px; height: calc(100vh - 100px);overflow-y: auto;">
+                    <div class="service-content-section" id="service-section5" style="display: none;">
+                        <h2 class="title service-content-title">CFP Reviewer</h2>
+                        <h4 class="subtitle service-content-subtitle">
+                            <i class="fa-solid fa-calendar-days"></i> April 9, 2026
+                        </h4>
+                        <h4 class="subtitle service-content-subtitle">
+                            <i class="fa-solid fa-users"></i> <a href="https://www.bsidesslc.org/" target="_blank">BSides SLC 2026</a>
+                        </h4>
+                        <hr class="service-content-section-divider">
+                        <div class="service-content-section-description">
+                            <h3 class="service-content-section-title">Overview</h3>
+                            <p>
+                                Reviewed 125 CFP submissions, evaluating talk proposals based on technical depth,
+                                originality, clarity, audience relevance, and alignment with the conference program.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="service-content-section" id="service-section4" style="display: none;">
+                        <h2 class="title service-content-title">Paper Reviewer</h2>
+                        <h4 class="subtitle service-content-subtitle">
+                            <i class="fa-solid fa-calendar-days"></i> October 13, 2025
+                        </h4>
+                        <h4 class="subtitle service-content-subtitle">
+                            <i class="fa-solid fa-users"></i> <a href="https://pnsqc.org/conference/2025/at-a-glance/" target="_blank">Pacific Northwest Software Quality Conference 2025</a>
+                        </h4>
+                        <hr class="service-content-section-divider">
+                        <div class="service-content-section-description">
+                            <h3 class="service-content-section-title">Overview</h3>
+                            <p>
+                                Reviewed two full research papers, providing detailed feedback on technical soundness,
+                                methodology, clarity, contribution strength, and suitability for publication.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="service-content-section" id="service-section3" style="display: none;">
+                        <h2 class="title service-content-title">CFP Reviewer</h2>
+                        <h4 class="subtitle service-content-subtitle">
+                            <i class="fa-solid fa-calendar-days"></i> September 12, 2025
+                        </h4>
+                        <h4 class="subtitle service-content-subtitle">
+                            <i class="fa-solid fa-users"></i> <a href="https://www.bsidescache.org/" target="_blank">BSides Cache 2025</a>
+                        </h4>
+                        <hr class="service-content-section-divider">
+                        <div class="service-content-section-description">
+                            <h3 class="service-content-section-title">Overview</h3>
+                            <p>
+                                Reviewed 48 CFP submissions, evaluating abstracts and outlines to help identify talks
+                                with strong technical merit, audience value, and conference fit.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="service-content-section" id="service-section2" style="display: none;">
+                        <h2 class="title service-content-title">CFP Reviewer</h2>
+                        <h4 class="subtitle service-content-subtitle">
+                            <i class="fa-solid fa-calendar-days"></i> April 10, 2025
+                        </h4>
+                        <h4 class="subtitle service-content-subtitle">
+                            <i class="fa-solid fa-users"></i> <a href="https://www.bsidesslc.org/" target="_blank">BSides SLC 2025</a>
+                        </h4>
+                        <hr class="service-content-section-divider">
+                        <div class="service-content-section-description">
+                            <h3 class="service-content-section-title">Overview</h3>
+                            <p>
+                                Reviewed 118 CFP submissions, assessing talk proposals for technical quality, clarity,
+                                originality, practical value, and relevance to the security community.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="service-content-section" id="service-section1" style="display: none;">
+                        <h2 class="title service-content-title">CFP Reviewer</h2>
+                        <h4 class="subtitle service-content-subtitle">
+                            <i class="fa-solid fa-calendar-days"></i> November 15, 2024
+                        </h4>
+                        <h4 class="subtitle service-content-subtitle">
+                            <i class="fa-solid fa-users"></i> <a href="https://www.bsidesredrocks.org/" target="_blank">BSides Red Rocks 2024</a>
+                        </h4>
+                        <hr class="service-content-section-divider">
+                        <div class="service-content-section-description">
+                            <h3 class="service-content-section-title">Overview</h3>
+                            <p>
+                                Reviewed 37 CFP submissions, evaluating talk abstracts, outlines, technical depth,
+                                originality, audience relevance, and overall fit for the conference program.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close" onclick="closeModal()">×</button>
+    </div>
+    <!----------------------------------------------------------------------------->
+
+    <!-- Modal for Period filter for Leadership Timeline-->
+    <div class="modal" id="leadership-timeline-period-filter-modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <h1 class="title leadership-timeline-period-filter-modal-title has-text-centered">Period</h1>
+            <div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">From</label>
+                    </div>
+                    <div class="field-body">
+                        <input id="leadership-timeline-period-filter-from" type="month" />
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">To</label>
+                    </div>
+                    <div class="field-body">
+                        <input id="leadership-timeline-period-filter-to" type="month" />
                     </div>
                 </div>
             </div>

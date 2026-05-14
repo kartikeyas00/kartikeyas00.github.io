@@ -1548,39 +1548,45 @@ body {
 }
 
 /* Talks Modal Styles */
-.talks-content-title {
+.talks-content-title,
+.service-content-title {
     color: #1aff8c;
     font-family: 'Space Mono', monospace;
     margin-top: -1rem;
     font-size: 2em;
 }
 
-.talks-content-subtitle {
+.talks-content-subtitle,
+.service-content-subtitle {
     color: #1aff8c;
     font-family: 'Space Mono', monospace;
     margin-top: -1.25rem;
     font-size: 1.2em;
 }
 
-.talks-content-subtitle a {
+.talks-content-subtitle a,
+.service-content-subtitle a {
     color: #1aff8c;
 }
 
-.talks-content-section-divider {
+.talks-content-section-divider,
+.service-content-section-divider {
     border: none;
     height: 2px;
     background: linear-gradient(to right, #1aff8c, #ffffff, #1aff8c);
     margin: 20px 0;
 }
 
-.talks-content-section-title {
+.talks-content-section-title,
+.service-content-section-title {
     color: #1aff8c;
     font-family: 'Space Mono', monospace;
     font-size: 1.25em;
     padding-bottom: 10px;
 }
 
-.talks-content-section-description {
+.talks-content-section-description,
+.service-content-section-description {
     color: #ffffff;
     font-size: 1.2em;
     border-left: 3px solid #1aff8c;
@@ -1588,7 +1594,8 @@ body {
     transition: all 0.3s ease;
 }
 
-.talks-content-section-link {
+.talks-content-section-link,
+.service-content-section-link {
     color: #ffffff;
     font-size: 1.2em;
     border-left: 3px solid #1aff8c;
@@ -1596,16 +1603,19 @@ body {
     transition: all 0.3s ease;
 }
 
-.talks-content-section-link a {
+.talks-content-section-link a,
+.service-content-section-link a {
     color: #ffffff;
 }
 
-.talks-content-section-link a:hover {
+.talks-content-section-link a:hover,
+.service-content-section-link a:hover {
     border-bottom-color: #fff;
     color: #48c774;
 }
 
-#talks-timeline-period-filter-modal .modal-content {
+#talks-timeline-period-filter-modal .modal-content,
+#leadership-timeline-period-filter-modal .modal-content {
     background-color: #2c2c2e;
     color: #1aff8c;
     position: absolute;
@@ -1617,22 +1627,26 @@ body {
     padding: 10px;
 }
 
-.talks-timeline-period-filter-modal-title {
+.talks-timeline-period-filter-modal-title,
+.leadership-timeline-period-filter-modal-title {
     font-size: 1.4em;
     color: #1aff8c;
 }
 
-#talks-timeline-period-filter-modal label {
+#talks-timeline-period-filter-modal label,
+#leadership-timeline-period-filter-modal label {
     color: #1aff8c;
     font-weight: normal;
     left: 5%;
 }
 
-#talks-timeline-period-filter-modal input[type="date"] {
+#talks-timeline-period-filter-modal input[type="date"],
+#leadership-timeline-period-filter-modal input[type="date"] {
     accent-color: #1aff8c;
 }
 
-#talks-timeline-period-filter-modal .datetimepicker-wrapper.modal .datetimepicker {
+#talks-timeline-period-filter-modal .datetimepicker-wrapper.modal .datetimepicker,
+#leadership-timeline-period-filter-modal .datetimepicker-wrapper.modal .datetimepicker {
     left: max(5%, calc((100vw - 1920px) / 2 + 5%));
 }
 
@@ -1649,28 +1663,33 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-    #talks-modal .columns {
+    #talks-modal .columns,
+    #leadership-modal .columns {
         display: flex;
         flex-direction: column;
         /* Single-column layout */
         height: 100vh;
     }
 
-    #talks-modal .column.is-one-third {
+    #talks-modal .column.is-one-third,
+    #leadership-modal .column.is-one-third {
         width: 100%;
         height: auto;
     }
 
-    #talks-modal .column.is-two-third {
+    #talks-modal .column.is-two-third,
+    #leadership-modal .column.is-two-third {
         display: none;
         /* Hide right panel on mobile */
     }
 
-    #talks-modal .tags .tag{
+    #talks-modal .tags .tag,
+    #leadership-modal .tags .tag {
         font-size: 1em;
     }
 
-    .talks-content-section-description {
+    .talks-content-section-description,
+    .service-content-section-description {
         color: #ffffff;
         font-size: 1em;
         border-left: 3px solid #1aff8c;
@@ -1678,7 +1697,8 @@ body {
         transition: all 0.3s ease;
     }
 
-    .talks-content-section-link {
+    .talks-content-section-link,
+    .service-content-section-link {
         color: #ffffff;
         font-size: 1em;
         border-left: 3px solid #1aff8c;
@@ -1686,7 +1706,8 @@ body {
         transition: all 0.3s ease;
     }
 
-    #talks-timeline-period-filter-modal .modal-content {
+    #talks-timeline-period-filter-modal .modal-content,
+    #leadership-timeline-period-filter-modal .modal-content {
         background-color: #2c2c2e;
         color: #1aff8c;
         position: absolute;
@@ -1700,7 +1721,8 @@ body {
         padding: 10px;
     }
 
-    .talks-timeline-period-filter-modal-title {
+    .talks-timeline-period-filter-modal-title,
+    .leadership-timeline-period-filter-modal-title {
         font-size: 1.7em;
         color: #1aff8c;
     }
