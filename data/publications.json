@@ -1,0 +1,72 @@
+[ 
+    {
+        "kind": "research-paper",
+        "type": "Research Papers",
+        "title": "Graph Neural Network-Based DDoS Protection for Data Center Infrastructure",
+        "date": "2025-10-13",
+        "venue": "43rd Annual Pacific Northwest Software Quality Conference",
+        "sections": [
+            {
+                "type": "paragraphs",
+                "slug": "description",
+                "title": "Abstract",
+                "paragraphs": [
+                    "In light of rising cybersecurity threats, data center providers face growing pressure to protect their own management infrastructure from Distributed Denial-of-Service (DDoS) attacks. While tenant-managed cages generally fall outside the data center's direct security purview, a successful DDoS assault on core provider systems can indirectly disrupt network services. To address this availability assault, the authors developed a Graph Neural Network (GNN) based detection system which leverages Graph U-Nets to automatically classify and mitigate DDoS traffic. Although the model was developed using open-source network flows rather than proprietary data center logs, the model effectively identifies multi-layer DDoS attacks that resemble the malicious patterns threatening modern data centers.",
+                    "Adopting this system to data center environments requires minimal changes to existing operational workflows and processes. Specifically, the GNN based system can be integrated at critical areas within a data center's network infrastructure. Our model achieved an F1 score of over 95% when evaluated on various open-source datasets, significantly reducing the likelihood of service disruptions and reputational damage. This Graph U-Nets architecture delivers unprecedented precision (98.5%) in complex cloud environments, thereby helping data center operators uphold reliable service availability and increase customer trust and goodwill in an era of increasingly sophisticated cyber threats."
+                ]
+            },
+            {
+                "type": "links",
+                "slug": "link",
+                "title": "Link to Publication",
+                "links": [
+                    {
+                        "label": "View Publication",
+                        "url": "",
+                        "external": true,
+                        "icon": "fa-solid fa-arrow-up-right-from-square"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "kind": "blog",
+        "type": "Blogs",
+        "title": "Graph Neural Networks for Enhanced DDoS Attack Detection",
+        "date": "2025-01-09",
+        "slug": "gnn-ddos-detection",
+        "sections": [
+            {
+                "type": "paragraphs",
+                "slug": "description",
+                "title": "Summary",
+                "paragraphs": [
+                    "In an era where digital infrastructure forms the backbone of our daily operations, the threat of Distributed Denial of Service (DDoS) attacks looms larger than ever. These attacks, growing in both frequency and sophistication, pose a significant challenge to traditional security measures. This article explores how Graph Neural Networks (GNNs), a specialized artificial neural network can revolutionize the way we detect and combat DDoS attacks."
+                ]
+            },
+            {
+                "type": "tags",
+                "slug": "description",
+                "title": "Tags",
+                "values": [
+                    "Graph Neural Networks",
+                    "DDoS",
+                    "Network Security"
+                ]
+            },
+            {
+                "type": "links",
+                "slug": "link",
+                "title": "Link to Publication",
+                "links": [
+                    {
+                        "label": "Read Blog",
+                        "url": "blogs/gnn-ddos-detection.html",
+                        "button": true
+                    }
+                ]
+            }
+        ]
+    }
+]

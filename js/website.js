@@ -1,25 +1,69 @@
 function switchSection(id, el) {
-    const isMobile = () => window.innerWidth <= 768;
+    const targetSection = document.getElementById(id);
+
+    if (!targetSection || !el) {
+        return;
+    }
+
     const hoverStyleToAdd = `
     border-radius: 20px;
     border-color: #1aff8c;
     border-style: solid;
     color: #1aff8c;
     background-color: #3d3e3b;
-    `
-    document.querySelectorAll('.we-content-section,.ed-content-section,.projects-content-section,.publications-content-section,.talks-content-section,.service-content-section').forEach(c => c.style.display = 'none');
-    document.querySelectorAll('div.timeline-dot').forEach(c => c.style.display = 'none');
-    document.getElementById(id).style.display = 'block';
-    el.parentElement.parentElement.querySelector('.timeline-dot').style.display = 'block';
-    el.parentElement.parentElement.classList.add('active');
-    document.querySelectorAll('.timeline-content-link').forEach(c => c.style.cssText = "");
-    el.style.cssText += hoverStyleToAdd
+    `;
+
+    document.querySelectorAll(".we-content-section,.ed-content-section,.projects-content-section,.publications-content-section,.talks-content-section,.service-content-section").forEach((section) => {
+        section.style.display = "none";
+    });
+
+    document.querySelectorAll("div.timeline-dot").forEach((dot) => {
+        dot.style.display = "none";
+    });
+
+    document.querySelectorAll(".timeline-item.active").forEach((item) => {
+        item.classList.remove("active");
+    });
+
+    document.querySelectorAll(".timeline-content-link").forEach((link) => {
+        link.style.cssText = "";
+    });
+
+    targetSection.style.display = "block";
+
+    const timelineItem = el.closest(".timeline-item");
+    timelineItem?.querySelector(".timeline-dot")?.style.setProperty("display", "block");
+    timelineItem?.classList.add("active");
+    el.style.cssText += hoverStyleToAdd;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
+    const modalRenderReady = window.modalRenderReady || Promise.resolve();
+    const isMobile = () => window.innerWidth <= 768;
+    const expandedState = new Map();
+    let currentScrollPosition = 0;
+    let weCalendarFrom;
+    let weCalendarTo;
+    let talksCalendarFrom;
+    let talksCalendarTo;
+    let serviceCalendarFrom;
+    let serviceCalendarTo;
 
-    const parseCalendarDate = (value) => {
-        const [month, day, year] = value.split('/').map(Number);
+    const removeChildrenConfig = {
+        talks: 3,
+        projects: 2,
+        we: 4,
+        ed: 4,
+        publications: 2,
+        service: 3
+    };
+
+    function parseCalendarDate(value) {
+        if (!value) {
+            return null;
+        }
+
+        const [month, day, year] = value.split("/").map(Number);
 
         if ([month, day, year].some(Number.isNaN)) {
             return null;
@@ -27,580 +71,624 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const fullYear = year < 100 ? 2000 + year : year;
         return new Date(fullYear, month - 1, day);
-    };
+    }
 
-    const parseLocalIsoDate = (value) => {
-        const [year, month, day] = value.split('-').map(Number);
+    function parseMonthYearDate(value, fallbackToNow = false) {
+        if (!value) {
+            return fallbackToNow ? new Date() : null;
+        }
+
+        const [month, year] = value.split("/").map(Number);
+
+        if ([month, year].some(Number.isNaN)) {
+            return fallbackToNow ? new Date() : null;
+        }
+
+        return new Date(year, month - 1, 1);
+    }
+
+    function parseLocalIsoDate(value, fallbackToNow = false) {
+        if (!value) {
+            return fallbackToNow ? new Date() : null;
+        }
+
+        const [year, month, day] = value.split("-").map(Number);
 
         if ([year, month, day].some(Number.isNaN)) {
-            return null;
+            return fallbackToNow ? new Date() : null;
         }
 
         return new Date(year, month - 1, day);
-    };
-
-
-    function openModal($el) {
-        const isMobile = () => window.innerWidth <= 768;
-        $el.classList.add('is-active');
-
-        if ($el.id === "work-experience-modal") {
-            !isMobile() ? $el.querySelector('.timeline-content-link').click() : null;
-
-        }
-
-        if ($el.id === "education-modal") {
-            !isMobile() ? $el.querySelector('.timeline-content-link').click() : null;
-
-        }
-
-        if ($el.id === "projects-modal") {
-            !isMobile() ? $el.querySelector('.timeline-content-link').click() : null;
-
-        }
-
-        if ($el.id === "publications-modal") {
-            !isMobile() ? $el.querySelector('.timeline-content-link').click() : null;
-        }
-
-        if ($el.id === "talks-modal") {
-            !isMobile() ? $el.querySelector('.timeline-content-link').click() : null;
-        }
-
-        if ($el.id === "leadership-modal") {
-            !isMobile() ? $el.querySelector('.timeline-content-link').click() : null;
-        }
     }
 
-    function closeModal($el) {
-        $el.classList.remove('is-active');
+    function getFirstVisibleTimelineLink(modal) {
+        const visibleItem = Array.from(modal.querySelectorAll(".timeline-item")).find((item) => {
+            return item.style.display !== "none";
+        });
+
+        return visibleItem?.querySelector(".timeline-content-link") || null;
+    }
+
+    function clearModalSelection(modal) {
+        modal.querySelectorAll(".timeline-item.active").forEach((item) => {
+            item.classList.remove("active");
+        });
+
+        modal.querySelectorAll(".timeline-content-link").forEach((link) => {
+            link.style.cssText = "";
+        });
+
+        modal.querySelectorAll(".timeline-dot").forEach((dot) => {
+            dot.style.display = "none";
+        });
+
+        modal.querySelectorAll(".we-content-section,.ed-content-section,.projects-content-section,.publications-content-section,.talks-content-section,.service-content-section").forEach((section) => {
+            section.style.display = "none";
+        });
+    }
+
+    function collapseMobileSection(section) {
+        section.style.height = `${section.scrollHeight}px`;
+        section.offsetHeight;
+        section.style.height = "0";
+        section.style.opacity = "0";
+        section.style.padding = "0 1rem";
+
+        setTimeout(() => {
+            section.remove();
+        }, 300);
+    }
+
+    function cleanupMobileContent() {
+        document.querySelectorAll(".mobile-content-section").forEach((section) => {
+            section.remove();
+        });
+
+        expandedState.clear();
+
+        document.querySelectorAll(".timeline-content-link.mobile-active").forEach((link) => {
+            link.classList.remove("mobile-active");
+        });
+    }
+
+    function findTimelineLinkBySectionId(modal, sectionId) {
+        if (!modal || !sectionId) {
+            return null;
+        }
+
+        return Array.from(modal.querySelectorAll(".timeline-content-link")).find((link) => {
+            return link.dataset.sectionId === sectionId;
+        }) || null;
+    }
+
+    function getRenderedSectionId(prefix, title, venue) {
+        const items = window.renderedModalData?.[prefix];
+
+        if (!Array.isArray(items) || !title) {
+            return null;
+        }
+
+        const index = items.findIndex((item) => {
+            const sameTitle = item.title === title;
+            const sameVenue = venue ? item.venue === venue : true;
+            return sameTitle && sameVenue;
+        });
+
+        return index === -1 ? null : `${prefix}-section${items.length - index}`;
+    }
+
+    async function openModalTrigger(trigger) {
+        if (!trigger) {
+            return;
+        }
+
+        await modalRenderReady;
+
+        const targetModal = document.getElementById(trigger.dataset.target);
+
+        if (!targetModal) {
+            return;
+        }
+
+        openModal(targetModal);
+
+        const sectionId = trigger.dataset.sectionId || getRenderedSectionId(
+            trigger.dataset.modalPrefix,
+            trigger.dataset.itemTitle,
+            trigger.dataset.itemVenue
+        );
+
+        if (!sectionId) {
+            return;
+        }
+
+        const timelineLink = findTimelineLinkBySectionId(targetModal, sectionId);
+
+        if (!timelineLink) {
+            return;
+        }
+
+        if (isMobile()) {
+            handleMobileTimelineClick(timelineLink);
+            timelineLink.scrollIntoView({ behavior: "smooth", block: "start" });
+            return;
+        }
+
+        timelineLink.click();
+        timelineLink.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    function openModal(modal) {
+        if (!modal) {
+            return;
+        }
+
+        modal.classList.add("is-active");
+
+        if (isMobile()) {
+            return;
+        }
+
+        getFirstVisibleTimelineLink(modal)?.click();
+    }
+
+    function closeModalElement(modal) {
+        if (!modal) {
+            return;
+        }
+
+        modal.classList.remove("is-active");
+        cleanupMobileContent();
     }
 
     function closeAllModals() {
-        (document.querySelectorAll('.modal') || []).forEach(($modal) => {
-            closeModal($modal);
+        document.querySelectorAll(".modal").forEach((modal) => {
+            closeModalElement(modal);
         });
     }
 
-    (document.querySelectorAll('.button') || []).forEach(($trigger) => {
-        const modal = $trigger.dataset.target;
-        const $target = document.getElementById(modal);
+    function restoreScrollPosition() {
+        if (isMobile()) {
+            window.scrollTo(0, currentScrollPosition);
+        }
+    }
 
-        $trigger.addEventListener('click', () => {
-            openModal($target);
+    function debounce(func, delay) {
+        let timer;
+        return (...args) => {
+            clearTimeout(timer);
+            timer = setTimeout(() => func.apply(null, args), delay);
+        };
+    }
+
+    function getCheckedValues(containerSelector) {
+        const inputs = Array.from(document.querySelectorAll(`${containerSelector} input[type="checkbox"]`));
+        return {
+            selected: inputs.filter((input) => input.checked).map((input) => input.dataset.filterValue || ""),
+            total: inputs.length
+        };
+    }
+
+    function matchesSelection(value, state) {
+        if (state.total === 0) {
+            return true;
+        }
+
+        if (state.selected.length === 0) {
+            return false;
+        }
+
+        return state.selected.includes(value || "");
+    }
+
+    function matchesTech(item, state) {
+        if (state.total === 0) {
+            return true;
+        }
+
+        if (state.selected.length === 0) {
+            return false;
+        }
+
+        const technology = Object.values(JSON.parse(item.dataset.technology || "{}")).flat();
+        return state.selected.some((value) => technology.includes(value));
+    }
+
+    function matchesDateRange(startDate, endDate, fromDate, toDate) {
+        if (!startDate && !endDate) {
+            return true;
+        }
+
+        if (!fromDate || !toDate) {
+            return false;
+        }
+
+        if (startDate && toDate < startDate) {
+            return false;
+        }
+
+        if (endDate && fromDate > endDate) {
+            return false;
+        }
+
+        return true;
+    }
+
+    function syncVisibleSelection(modalId) {
+        const modal = document.getElementById(modalId);
+
+        if (!modal || !modal.classList.contains("is-active") || isMobile()) {
+            return;
+        }
+
+        const activeItem = modal.querySelector(".timeline-item.active");
+
+        if (activeItem && activeItem.style.display !== "none") {
+            return;
+        }
+
+        const firstVisibleLink = getFirstVisibleTimelineLink(modal);
+
+        if (!firstVisibleLink) {
+            clearModalSelection(modal);
+            return;
+        }
+
+        firstVisibleLink.click();
+    }
+
+    function applyWorkExperienceFilters() {
+        const sectorState = getCheckedValues("#we-timeline-sector-filter-options");
+        const technologyState = getCheckedValues("#we-timeline-technology-filter-options");
+        const startDate = parseCalendarDate(weCalendarFrom?.value());
+        const endDate = parseCalendarDate(weCalendarTo?.value());
+
+        document.querySelectorAll("#work-experience-modal .timeline-item").forEach((item) => {
+            const fromDate = parseMonthYearDate(item.dataset.from);
+            const toDate = parseMonthYearDate(item.dataset.to, true);
+            const isVisible = matchesSelection(item.dataset.sector, sectorState)
+                && matchesTech(item, technologyState)
+                && matchesDateRange(startDate, endDate, fromDate, toDate);
+
+            item.style.display = isVisible ? "block" : "none";
+        });
+
+        syncVisibleSelection("work-experience-modal");
+    }
+
+    function applyProjectsFilters() {
+        const typeState = getCheckedValues("#projects-timeline-type-filter-options");
+        const technologyState = getCheckedValues("#projects-timeline-technology-filter-options");
+
+        document.querySelectorAll("#projects-modal .timeline-item").forEach((item) => {
+            const itemType = item.dataset.type || item.dataset.sector || "";
+            const isVisible = matchesSelection(itemType, typeState)
+                && matchesTech(item, technologyState);
+
+            item.style.display = isVisible ? "block" : "none";
+        });
+
+        syncVisibleSelection("projects-modal");
+    }
+
+    function applyPublicationsFilters() {
+        const typeState = getCheckedValues("#publications-timeline-type-filter-options");
+
+        document.querySelectorAll("#publications-modal .timeline-item").forEach((item) => {
+            const isVisible = matchesSelection(item.dataset.type, typeState);
+            item.style.display = isVisible ? "block" : "none";
+        });
+
+        syncVisibleSelection("publications-modal");
+    }
+
+    function applyTalksFilters() {
+        const startDate = parseCalendarDate(talksCalendarFrom?.value());
+        const endDate = parseCalendarDate(talksCalendarTo?.value());
+
+        document.querySelectorAll("#talks-modal .timeline-item").forEach((item) => {
+            const fromDate = parseLocalIsoDate(item.dataset.from);
+            const toDate = parseLocalIsoDate(item.dataset.to, true);
+            const isVisible = matchesDateRange(startDate, endDate, fromDate, toDate);
+            item.style.display = isVisible ? "block" : "none";
+        });
+
+        syncVisibleSelection("talks-modal");
+    }
+
+    function applyServiceFilters() {
+        const startDate = parseCalendarDate(serviceCalendarFrom?.value());
+        const endDate = parseCalendarDate(serviceCalendarTo?.value());
+
+        document.querySelectorAll("#service-modal .timeline-item").forEach((item) => {
+            const fromDate = parseLocalIsoDate(item.dataset.from);
+            const toDate = parseLocalIsoDate(item.dataset.to, true);
+            const isVisible = matchesDateRange(startDate, endDate, fromDate, toDate);
+            item.style.display = isVisible ? "block" : "none";
+        });
+
+        syncVisibleSelection("service-modal");
+    }
+
+    function handleMobileTimelineClick(link) {
+        const sectionId = link.dataset.sectionId;
+
+        if (!sectionId) {
+            return;
+        }
+
+        const originalContent = document.getElementById(sectionId);
+
+        if (!originalContent) {
+            return;
+        }
+
+        const existingContent = link.parentElement.nextElementSibling;
+
+        if (existingContent?.classList.contains("mobile-content-section")) {
+            collapseMobileSection(existingContent);
+
+            if (expandedState.get(link)) {
+                expandedState.set(link, false);
+                link.classList.remove("mobile-active");
+                return;
+            }
+        }
+
+        if (expandedState.get(link)) {
+            expandedState.set(link, false);
+            link.classList.remove("mobile-active");
+            return;
+        }
+
+        document.querySelectorAll(".timeline-content-link.mobile-active").forEach((activeLink) => {
+            const expandedContent = activeLink.parentElement.nextElementSibling;
+
+            if (expandedContent?.classList.contains("mobile-content-section")) {
+                collapseMobileSection(expandedContent);
+            }
+
+            expandedState.set(activeLink, false);
+            activeLink.classList.remove("mobile-active");
+        });
+
+        const clonedContent = document.createElement("div");
+        clonedContent.classList.add("mobile-content-section");
+
+        const prefix = sectionId.split("-")[0];
+        const numberChildrenRemove = removeChildrenConfig[prefix] || 0;
+        const contentWithoutHeader = Array.from(originalContent.children)
+            .slice(numberChildrenRemove)
+            .map((element) => element.cloneNode(true));
+
+        contentWithoutHeader.forEach((element) => {
+            clonedContent.appendChild(element);
+        });
+
+        clonedContent.style.height = "0";
+        link.parentElement.insertAdjacentElement("afterend", clonedContent);
+
+        requestAnimationFrame(() => {
+            const height = clonedContent.scrollHeight;
+            clonedContent.style.height = `${height}px`;
+            clonedContent.style.opacity = "1";
+            clonedContent.style.padding = "1rem";
+
+            setTimeout(() => {
+                clonedContent.style.height = "auto";
+            }, 300);
+        });
+
+        expandedState.set(link, true);
+        link.classList.add("mobile-active");
+    }
+
+    function setupCalendars() {
+        [weCalendarFrom] = bulmaCalendar.attach("#we-timeline-period-filter-from", {
+            type: "date",
+            displayMode: "dialog",
+            startDate: "05/01/18",
+            dateFormat: "MM/dd/yy"
+        });
+
+        [weCalendarTo] = bulmaCalendar.attach("#we-timeline-period-filter-to", {
+            type: "date",
+            displayMode: "dialog",
+            startDate: new Date().toLocaleString("en-US", { month: "2-digit", day: "2-digit", year: "2-digit" }),
+            dateFormat: "MM/dd/yy"
+        });
+
+        [talksCalendarFrom] = bulmaCalendar.attach("#talks-timeline-period-filter-from", {
+            type: "date",
+            displayMode: "dialog",
+            startDate: "04/01/24",
+            dateFormat: "MM/dd/yy"
+        });
+
+        [talksCalendarTo] = bulmaCalendar.attach("#talks-timeline-period-filter-to", {
+            type: "date",
+            displayMode: "dialog",
+            startDate: new Date().toLocaleString("en-US", { month: "2-digit", day: "2-digit", year: "2-digit" }),
+            dateFormat: "MM/dd/yy"
+        });
+
+        [serviceCalendarFrom] = bulmaCalendar.attach("#service-timeline-period-filter-from", {
+            type: "date",
+            displayMode: "dialog",
+            startDate: "11/15/24",
+            dateFormat: "MM/dd/yy"
+        });
+
+        [serviceCalendarTo] = bulmaCalendar.attach("#service-timeline-period-filter-to", {
+            type: "date",
+            displayMode: "dialog",
+            startDate: new Date().toLocaleString("en-US", { month: "2-digit", day: "2-digit", year: "2-digit" }),
+            dateFormat: "MM/dd/yy"
+        });
+
+        [weCalendarFrom, weCalendarTo].forEach((calendar) => {
+            calendar.on("select", applyWorkExperienceFilters);
+        });
+
+        [talksCalendarFrom, talksCalendarTo].forEach((calendar) => {
+            calendar.on("select", applyTalksFilters);
+        });
+
+        [serviceCalendarFrom, serviceCalendarTo].forEach((calendar) => {
+            calendar.on("select", applyServiceFilters);
+        });
+    }
+
+    window.closeModal = function () {
+        closeAllModals();
+    };
+
+    document.querySelectorAll(".portfolio-modal-trigger").forEach((trigger) => {
+        trigger.addEventListener("click", (event) => {
+            event.preventDefault();
+            openModalTrigger(trigger);
         });
     });
 
-    (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
-        const $target = $close.closest('.modal');
+    document.querySelectorAll(".modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button").forEach((closeTrigger) => {
+        const targetModal = closeTrigger.closest(".modal");
 
-        $close.addEventListener('click', () => {
-            closeModal($target);
+        closeTrigger.addEventListener("click", () => {
+            closeModalElement(targetModal);
         });
     });
 
-    document.addEventListener('keydown', (event) => {
+    [
+        ["we-timeline-sector-filter", "we-timeline-sector-filter-modal"],
+        ["we-timeline-period-filter", "we-timeline-period-filter-modal"],
+        ["we-timeline-technology-filter", "we-timeline-technology-filter-modal"],
+        ["projects-timeline-type-filter", "projects-timeline-type-filter-modal"],
+        ["projects-timeline-technology-filter", "projects-timeline-technology-filter-modal"],
+        ["publications-timeline-type-filter", "publications-timeline-type-filter-modal"],
+        ["talks-timeline-period-filter", "talks-timeline-period-filter-modal"],
+        ["service-timeline-period-filter", "service-timeline-period-filter-modal"]
+    ].forEach(([buttonId, modalId]) => {
+        const button = document.getElementById(buttonId);
+        const modal = document.getElementById(modalId);
+
+        button?.addEventListener("click", () => {
+            openModal(modal);
+        });
+    });
+
+    document.addEventListener("keydown", (event) => {
         if (event.key === "Escape") {
             closeAllModals();
         }
     });
 
-    document.querySelectorAll('.tabs ul li').forEach(tab => {
-        tab.addEventListener('click', () => {
-            const target = tab.getAttribute('data-target');
-            const section = target.split('-').pop();
+    document.addEventListener("click", (event) => {
+        const tab = event.target.closest(".tabs ul li");
 
-            document.querySelectorAll('.tabs ul li').forEach(t => {
-                if (t.getAttribute('data-target').includes(section)) {
-                    t.classList.remove('is-active');
+        if (tab) {
+            const target = tab.getAttribute("data-target");
+            const section = target.split("-").pop();
+
+            document.querySelectorAll(".tabs ul li").forEach((candidate) => {
+                if (candidate.getAttribute("data-target")?.includes(section)) {
+                    candidate.classList.remove("is-active");
                 }
             });
 
-            document.querySelectorAll('.tab-content').forEach(c => {
-                if (c.id.includes(section)) {
-                    c.style.display = 'none';
+            document.querySelectorAll(".tab-content").forEach((content) => {
+                if (content.id.includes(section)) {
+                    content.style.display = "none";
                 }
             });
 
-            tab.classList.add('is-active');
-            document.getElementById(target).style.display = 'flex';
-        });
-    });
+            tab.classList.add("is-active");
+            document.getElementById(target).style.display = "flex";
+            return;
+        }
 
+        const educationProject = event.target.closest(".ed-content-section-project ul li");
 
-    document.querySelector('#we-timeline-sector-filter').addEventListener('click', function () {
-        openModal(document.querySelector('#we-timeline-sector-filter-modal'));
-    });
+        if (educationProject) {
+            const details = educationProject.nextElementSibling;
 
-    document.querySelectorAll('#we-timeline-sector-filter-modal input').forEach(checkbox => {
-        checkbox.addEventListener('change', function (e) {
-            const sector = e.target.closest('label').textContent.trim(); // Get the sector from data attribute
-            document.querySelectorAll('#work-experience-modal .timeline-item').forEach(item => {
-                if (item.dataset.sector == sector) {
-                    item.style.display = e.target.checked ? "block" : "none";
-                }
-            });
-        });
-    });
-
-
-    document.querySelector('#we-timeline-period-filter').addEventListener('click', function () {
-        openModal(document.querySelector('#we-timeline-period-filter-modal'));
-    });
-
-
-    weCalendarFrom = bulmaCalendar.attach('#we-timeline-period-filter-from', {
-        type: "date",
-        displayMode: "dialog",
-        startDate: '05/01/18',
-        dateFormat: 'MM/dd/yy'
-    });
-
-    weCalendarTo = bulmaCalendar.attach('#we-timeline-period-filter-to', {
-        type: "date",
-        displayMode: "dialog",
-        startDate: new Date().toLocaleString('en-US', { month: '2-digit', day: '2-digit', year: '2-digit' }).replace(/\//g, '/'),
-        dateFormat: 'MM/dd/yy',
-    });
-
-    [weCalendarFrom[0], weCalendarTo[0]].forEach(d => {
-        d.on('select', date => {
-            const fromFilter = new Date(weCalendarFrom[0].value());
-            const toFilter = new Date(weCalendarTo[0].value());
-            document.querySelectorAll('#work-experience-modal .timeline-item').forEach(c => {
-                const fromTimelineItem = new Date(c.dataset.from.slice(0, 3) + "01/" + c.dataset.from.slice(3));
-                const toTimelineItem = new Date(c.dataset.to.slice(0, 3) + "01/" + c.dataset.to.slice(3));
-                if (fromFilter <= fromTimelineItem && toFilter >= toTimelineItem) {
-                    c.style.display = "block";
-                }
-                else {
-                    c.style.display = "none";
-                }
-
-            });
-        });
-    });
-
-    document.querySelector('#we-timeline-technology-filter').addEventListener('click', function () {
-        openModal(document.querySelector('#we-timeline-technology-filter-modal'));
-    });
-
-    const timelineTechInputs = document.querySelectorAll('#we-timeline-technology-filter-modal input');
-
-    timelineTechInputs.forEach(element => {
-        element.addEventListener('change', e => {
-            let selectedTech = [];
-            timelineTechInputs.forEach(el => {
-                if (el.checked) {
-                    selectedTech.push(el.closest('label').textContent.trim()
-                    );
-                }
-            })
-            document.querySelectorAll('#work-experience-modal .timeline-item').forEach(c => {
-                const technology = Object.values(JSON.parse(c.dataset.technology)).flat();
-                const hasCommon = selectedTech.some(element => technology.includes(element));
-                if (hasCommon) {
-                    c.style.display = "block";
-                }
-                else {
-                    c.style.display = "none";
-                }
-
-            });
-        })
-    });
-
-    /**
-     * Education modal related code
-     */
-
-    const projectItems = document.querySelectorAll(".ed-content-section-project ul li");
-
-    projectItems.forEach(item => {
-        item.addEventListener("click", function (e) {
-            const projectDetails = item.nextElementSibling;
-
-            // Check if it is the right div and toggle its display property
-            if (projectDetails && projectDetails.classList.contains("ed-content-section-project-details")) {
-                projectDetails.style.display = projectDetails.style.display === "none" ? "block" : "none";
+            if (details?.classList.contains("ed-content-section-project-details")) {
+                details.style.display = details.style.display === "none" ? "block" : "none";
             }
-        });
-    });
 
-    /**
-     * Projects modal related code
-     */
+            return;
+        }
 
+        const timelineLink = event.target.closest(".timeline-content-link");
 
-    document.querySelector('#projects-timeline-type-filter').addEventListener('click', function () {
-        openModal(document.querySelector('#projects-timeline-type-filter-modal'));
-    });
+        if (!timelineLink) {
+            return;
+        }
 
-
-    document.querySelectorAll('#projects-timeline-type-filter-modal input').forEach(checkbox => {
-        checkbox.addEventListener('change', function (e) {
-            const type = e.target.closest('label').textContent.trim(); // Get the sector from data attribute
-            document.querySelectorAll('#projects-modal .timeline-item').forEach(item => {
-                if (item.dataset.sector == type) {
-                    item.style.display = e.target.checked ? "block" : "none";
-                }
-            });
-        });
-    });
-
-
-
-    document.querySelector('#projects-timeline-technology-filter').addEventListener('click', function () {
-        openModal(document.querySelector('#projects-timeline-technology-filter-modal'));
-    });
-
-    const timelineProjectTechInputs = document.querySelectorAll('#projects-timeline-technology-filter-modal input');
-
-    timelineProjectTechInputs.forEach(element => {
-        element.addEventListener('change', e => {
-            let selectedTech = [];
-            timelineProjectTechInputs.forEach(el => {
-                if (el.checked) {
-                    selectedTech.push(el.closest('label').textContent.trim()
-                    );
-                }
-            })
-            document.querySelectorAll('#projects-modal .timeline-item').forEach(c => {
-                const technology = Object.values(JSON.parse(c.dataset.technology)).flat();
-                const hasCommon = selectedTech.some(element => technology.includes(element));
-                if (hasCommon) {
-                    c.style.display = "block";
-                }
-                else {
-                    c.style.display = "none";
-                }
-
-            });
-        })
-    });
-
-    /**
-     * Publications modal related code
-     */
-
-
-    document.querySelector('#publications-timeline-type-filter').addEventListener('click', function () {
-        openModal(document.querySelector('#publications-timeline-type-filter-modal'));
-    });
-
-    document.querySelectorAll('#publications-timeline-type-filter-modal input').forEach(checkbox => {
-        checkbox.addEventListener('change', function (e) {
-            const type = e.target.closest('label').textContent.trim();
-            document.querySelectorAll('#publications-modal .timeline-item').forEach(item => {
-                if (item.dataset.type == type) {
-                    item.style.display = e.target.checked ? "block" : "none";
-                }
-            });
-        });
-    });
-
-    /**
-     * Talks modal related code
-     */
-
-    document.querySelector('#talks-timeline-period-filter').addEventListener('click', function () {
-        openModal(document.querySelector('#talks-timeline-period-filter-modal'));
-    });
-
-    talksCalendarFrom = bulmaCalendar.attach('#talks-timeline-period-filter-from', {
-        type: "date",
-        displayMode: "dialog",
-        startDate: '04/01/24',
-        dateFormat: 'MM/dd/yy'
-    });
-
-    talksCalendarTo = bulmaCalendar.attach('#talks-timeline-period-filter-to', {
-        type: "date",
-        displayMode: "dialog",
-        startDate: new Date().toLocaleString('en-US', { month: '2-digit', day: '2-digit', year: '2-digit' }).replace(/\//g, '/'),
-        dateFormat: 'MM/dd/yy',
-    });
-
-
-    [talksCalendarFrom[0], talksCalendarTo[0]].forEach(d => {
-        d.on('select', date => {
-            const fromFilter = parseCalendarDate(talksCalendarFrom[0].value());
-            const toFilter = parseCalendarDate(talksCalendarTo[0].value());
-            document.querySelectorAll('#talks-modal .timeline-item').forEach(c => {
-                const fromTimelineItem = parseLocalIsoDate(c.dataset.from);
-                const toTimelineItem = parseLocalIsoDate(c.dataset.to);
-                if (fromFilter <= fromTimelineItem && toFilter >= toTimelineItem) {
-                    c.style.display = "block";
-                }
-                else {
-                    c.style.display = "none";
-                }
-
-            });
-        });
-    });
-
-    document.querySelector('#leadership-timeline-period-filter').addEventListener('click', function () {
-        openModal(document.querySelector('#leadership-timeline-period-filter-modal'));
-    });
-
-    leadershipCalendarFrom = bulmaCalendar.attach('#leadership-timeline-period-filter-from', {
-        type: "date",
-        displayMode: "dialog",
-        startDate: '11/15/24',
-        dateFormat: 'MM/dd/yy'
-    });
-
-    leadershipCalendarTo = bulmaCalendar.attach('#leadership-timeline-period-filter-to', {
-        type: "date",
-        displayMode: "dialog",
-        startDate: new Date().toLocaleString('en-US', { month: '2-digit', day: '2-digit', year: '2-digit' }).replace(/\//g, '/'),
-        dateFormat: 'MM/dd/yy',
-    });
-
-    [leadershipCalendarFrom[0], leadershipCalendarTo[0]].forEach(d => {
-        d.on('select', date => {
-            const fromFilter = parseCalendarDate(leadershipCalendarFrom[0].value());
-            const toFilter = parseCalendarDate(leadershipCalendarTo[0].value());
-            document.querySelectorAll('#leadership-modal .timeline-item').forEach(c => {
-                const fromTimelineItem = parseLocalIsoDate(c.dataset.from);
-                const toTimelineItem = parseLocalIsoDate(c.dataset.to);
-                if (fromFilter <= fromTimelineItem && toFilter >= toTimelineItem) {
-                    c.style.display = "block";
-                }
-                else {
-                    c.style.display = "none";
-                }
-
-            });
-        });
-    });
-
-
-    const buttons = document.querySelectorAll('.landing-page-button');
-    buttons.forEach((button, index) => {
-        button.style.opacity = '0';
-        button.style.transform = 'translateY(20px)';
-        setTimeout(() => {
-            button.style.transition = 'all 0.5s ease';
-            button.style.opacity = '1';
-            button.style.transform = 'translateY(0)';
-        }, 100 * index);
-    });
-
-});
-
-
-
-Fancybox.bind("[data-fancybox]", {
-});
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const isMobile = () => window.innerWidth <= 768;
-    let expandedState = new Map();
-    let currentScrollPosition = 0;
-
-    const removeChildrenConfig = {
-        "talks": 3,
-        "projects": 2,
-        "we": 4,
-        "ed": 4,
-        "publications": 2,
-        "service": 3
-    }
-
-    const handleMobileClick = (event) => {
-        if (!isMobile()) return;
         event.preventDefault();
 
-        const link = event.currentTarget;
-        const sectionId = link.getAttribute('onclick')?.match(/'(.*?)'/)?.[1];
-
-        if (!sectionId) {
-            console.error('Section ID not found');
+        if (isMobile()) {
+            handleMobileTimelineClick(timelineLink);
             return;
         }
 
-        const originalContent = document.getElementById(sectionId);
-        if (!originalContent) {
-            console.error(`Content not found for section: ${sectionId}`);
+        switchSection(timelineLink.dataset.sectionId, timelineLink);
+    });
+
+    document.addEventListener("change", (event) => {
+        const target = event.target;
+
+        if (!(target instanceof HTMLInputElement)) {
             return;
         }
 
-        const existingContent = link.parentElement.nextElementSibling;
-        if (existingContent?.classList.contains('mobile-content-section')) {
-
-            existingContent.style.height = existingContent.scrollHeight + 'px';
-            existingContent.offsetHeight;
-            existingContent.style.height = '0';
-            existingContent.style.opacity = '0';
-            existingContent.style.padding = '0 1rem';
-
-            setTimeout(() => {
-                existingContent.remove();
-            }, 300); 
-
-            if (expandedState.get(link)) {
-                expandedState.set(link, false);
-                link.classList.remove('mobile-active');
-                return;
-            }
-
-        }
-
-        if (expandedState.get(link)) {
-            expandedState.set(link, false);
-            link.classList.remove('mobile-active');
+        if (target.closest("#we-timeline-sector-filter-options") || target.closest("#we-timeline-technology-filter-options")) {
+            applyWorkExperienceFilters();
             return;
         }
 
-        document.querySelectorAll('.timeline-content-link.mobile-active').forEach(activeLink => {
-            const expandedContent = activeLink.parentElement.nextElementSibling;
-            if (expandedContent?.classList.contains('mobile-content-section')) {
-                expandedContent.style.height = expandedContent.scrollHeight + 'px';
-                expandedContent.offsetHeight;
-                expandedContent.style.height = '0';
-                expandedContent.style.opacity = '0';
-                expandedContent.style.padding = '0 1rem';
-
-                setTimeout(() => {
-                    expandedContent.remove();
-                }, 300);
-            }
-            expandedState.set(activeLink, false);
-            activeLink.classList.remove('mobile-active');
-        });
-
-        const clonedContent = document.createElement('div');
-        clonedContent.classList.add('mobile-content-section');
-
-        for (let [key, value] of Object.entries(removeChildrenConfig)) {
-            if (link.getAttribute("onclick").includes(key)) {
-                numberChildrenRemove = value;
-            }
+        if (target.closest("#projects-timeline-type-filter-options") || target.closest("#projects-timeline-technology-filter-options")) {
+            applyProjectsFilters();
+            return;
         }
 
-        const contentWithoutFirst = Array.from(originalContent.children)
-            .slice(numberChildrenRemove)
-            .map(element => element.cloneNode(true));
+        if (target.closest("#publications-timeline-type-filter-options")) {
+            applyPublicationsFilters();
+        }
+    });
 
-        contentWithoutFirst.forEach(element => {
-            clonedContent.appendChild(element);
-        });
-
-
-        clonedContent.style.height = '0';
-
-
-        link.parentElement.insertAdjacentElement('afterend', clonedContent);
-
-        requestAnimationFrame(() => {
-            const height = clonedContent.scrollHeight;
-            clonedContent.style.height = height + 'px';
-            clonedContent.style.opacity = '1';
-            clonedContent.style.padding = '1rem';
-
-            setTimeout(() => {
-                clonedContent.style.height = 'auto';
-            }, 300);
-        });
-
-        document.querySelectorAll('.tabs ul li').forEach(tab => {
-            tab.addEventListener('click', () => {
-                const target = tab.getAttribute('data-target');
-                const section = target.split('-').pop();
-
-                document.querySelectorAll('.tabs ul li').forEach(t => {
-                    if (t.getAttribute('data-target').includes(section)) {
-                        t.classList.remove('is-active');
-                    }
-                });
-
-                document.querySelectorAll('.tab-content').forEach(c => {
-                    if (c.id.includes(section)) {
-                        c.style.display = 'none';
-                    }
-                });
-
-                tab.classList.add('is-active');
-                document.getElementById(target).style.display = 'flex';
-            });
-        });
-
-        const projectItems = document.querySelectorAll(".ed-content-section-project ul li");
-
-        projectItems.forEach(item => {
-            item.addEventListener("click", function (e) {
-                const projectDetails = item.nextElementSibling;
-
-                if (projectDetails && projectDetails.classList.contains("ed-content-section-project-details")) {
-                    projectDetails.style.display = projectDetails.style.display === "none" ? "block" : "none";
-                }
-            });
-        });
-
-        expandedState.set(link, true);
-        link.classList.add('mobile-active');
-    };
-
-    const setupMobileHandlers = () => {
-        const links = document.querySelectorAll('#talks-modal .timeline-content-link, #projects-modal .timeline-content-link, #work-experience-modal .timeline-content-link, #education-modal .timeline-content-link, #publications-modal .timeline-content-link, #leadership-modal .timeline-content-link');
-        links.forEach(link => {
-            link.removeEventListener('click', handleMobileClick, true);
-            link.addEventListener('click', handleMobileClick, true);
-        });
-    };
-
-    const cleanupMobileContent = () => {
-        document.querySelectorAll('.mobile-content-section').forEach(section => section.remove());
-        expandedState.clear();
-        document.querySelectorAll('.timeline-content-link.mobile-active').forEach(link => {
-            link.classList.remove('mobile-active');
-        });
-    };
-
-    const handleViewportChange = (entries) => {
-        entries.forEach(entry => {
+    const resizeObserver = new ResizeObserver((entries) => {
+        entries.forEach((entry) => {
             if (entry.contentRect.width > 768) {
                 cleanupMobileContent();
             }
         });
-    };
+    });
 
-    const resizeObserver = new ResizeObserver(handleViewportChange);
     resizeObserver.observe(document.body);
 
-    const setupScrollTracking = () => {
-        window.addEventListener('scroll', () => {
-            if (isMobile()) {
-                currentScrollPosition = window.scrollY;
-            }
-        });
-    };
-
-    const restoreScrollPosition = () => {
-        if (isMobile()) {
-            window.scrollTo(0, currentScrollPosition);
-        }
-    };
-
-    const debounce = (func, delay) => {
-        let timer;
-        return (...args) => {
-            clearTimeout(timer);
-            timer = setTimeout(() => func.apply(this, args), delay);
-        };
-    };
-
-    window.addEventListener('resize', debounce(() => {
+    window.addEventListener("resize", debounce(() => {
         if (!isMobile()) {
             cleanupMobileContent();
-        } else {
-            restoreScrollPosition();
+            return;
         }
+
+        restoreScrollPosition();
     }, 200));
 
-    setupMobileHandlers();
-    setupScrollTracking();
+    window.addEventListener("scroll", () => {
+        if (isMobile()) {
+            currentScrollPosition = window.scrollY;
+        }
+    });
+
+    modalRenderReady.then(() => {
+        setupCalendars();
+        applyWorkExperienceFilters();
+        applyProjectsFilters();
+        applyPublicationsFilters();
+        applyTalksFilters();
+        applyServiceFilters();
+    }).catch((error) => {
+        console.error("Failed to initialize dynamic site behaviors", error);
+    });
 });
