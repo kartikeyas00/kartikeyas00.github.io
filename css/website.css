@@ -17,18 +17,14 @@
 [class*=" icomoon-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'icomoon' !important;
-    speak: never;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
     text-transform: none;
     line-height: 1;
-
-    /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
 
 .icomoon-geopandas:before {
     content: "\e900";
@@ -46,88 +42,37 @@
     content: "\e903";
 }
 
-
-
-/**CSS for main landing page**/
-
-
-
-
-.landing-page-button {
-    background: linear-gradient(145deg, #1e2328, #232a30);
-    /*border: none;*/
-    color: #EBD494;
-    transition: all 0.3s ease;
-    box-shadow: 5px 5px 10px #1a1f24, -5px -5px 10px #262b34;
-    position: relative;
-    overflow: hidden;
+:root {
+    --page-bg: #20252C;
+    --panel-bg: #1b2027;
+    --panel-elevated: #26303a;
+    --panel-border: rgba(235, 212, 148, 0.22);
+    --panel-border-strong: rgba(26, 255, 140, 0.42);
+    --text-primary: #FFFFFF;
+    --text-secondary: rgba(255, 255, 255, 0.80);
+    --accent-primary: #1aff8c;
+    --accent-secondary: #EBD494;
+    --accent-warm: #ffd66b;
+    --shadow-lg: 0 18px 40px rgba(0, 0, 0, 0.22);
+    --shadow-md: 0 10px 24px rgba(0, 0, 0, 0.16);
 }
 
-
-.landing-page-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: all 0.5s;
-}
-
-.landing-page-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 8px 8px 15px #1a1f24, -8px -8px 15px #262b34;
-    color: #1aff8c;
-}
-
-.landing-page-button:hover::before {
-    left: 100%;
-}
-
-.landing-page-button .icon {
-    margin-right: 10px;
-    transition: all 0.3s ease;
-}
-
-.landing-page-button:hover .icon {
-    transform: rotate(360deg);
-}
-
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(26, 255, 140, 0.4);
-    }
-
-    70% {
-        box-shadow: 0 0 0 10px rgba(26, 255, 140, 0);
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 rgba(26, 255, 140, 0);
-    }
-}
-
-.landing-page-button:focus {
-    animation: pulse 1.5s infinite;
-}
-
-.hero-body {
-    background-color: #20252C;
-    padding: 4rem 2rem;
-}
-
-.main-page-title {
-    color: #EBD494;
-    font-family: 'Roboto Mono', monospace;
-}
-
-p.subtitle {
-    margin-bottom: 2rem;
+html {
+    scroll-behavior: smooth;
+    background-color: var(--page-bg);
 }
 
 body {
     font-family: 'Poppins', sans-serif;
+    background:
+        radial-gradient(circle at top left, rgba(26, 255, 140, 0.10), transparent 24%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 18%),
+        var(--page-bg);
+    color: var(--text-primary);
+}
+
+p.subtitle {
+    margin-bottom: 2rem;
 }
 
 .modal-full-height {
@@ -153,78 +98,23 @@ body {
     }
 }
 
-.is-active-link {
-    background-color: #4A4A4A;
-    color: white;
-}
-
-.is-active-link:hover {
-    background-color: #3273dc;
-}
-
-.footer {
-    background-color: #20252C;
-    padding: 1.5rem;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-.footer p {
-    color: #EBD494;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 0.9rem;
-    margin: 0;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
-}
-
-.footer:hover p {
-    opacity: 1;
-}
-
 /** Mobile Specific Design **/
 
 @media screen and (max-width: 768px) {
-    .hero-body {
-        padding: 3rem 1rem;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .main-page-title {
-        font-size: 2.5rem !important;
-        margin-top: 1rem;
-    }
-
     .subtitle {
         font-size: 1rem !important;
-    }
-
-    .mobile-profile-pic {
-        width: 200px;
-        height: 200px;
     }
 
     .buttons {
         justify-content: center;
     }
 
-    .landing-page-button {
-        width: 100%;
-        margin-bottom: 0.75rem !important;
-    }
-
-    .mt-6-desktop {
-        margin-top: 2rem !important;
-    }
-
-    .mt-4-mobile {
-        margin-top: 1rem !important;
-    }
-
     .mb-3-mobile {
         margin-bottom: 0.75rem !important;
+    }
+
+    .footer {
+        padding: 1.25rem 1rem 1.75rem;
     }
 }
 
@@ -408,8 +298,6 @@ body {
 
 
 /**Work Experience Content**/
-.we-content-section {}
-
 .we-content-title {
     color: #1aff8c;
     font-family: 'Space Mono', monospace;
@@ -750,8 +638,6 @@ body {
     height: 1.2em;
     margin-right: 0.5em;
 }
-
-.ed-content-section {}
 
 .ed-content-title {
     color: #1aff8c;
@@ -1652,12 +1538,6 @@ body {
 
 .talks-not-available {
     color: #ff6b6b;
-    font-style: italic;
-    margin-top: 5px;
-}
-
-.talks-coming-soon {
-    color: #ceff6b;
     font-style: italic;
     margin-top: 5px;
 }
