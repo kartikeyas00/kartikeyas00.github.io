@@ -1,6 +1,7 @@
 [
     {
         "title": "Graph Neural Networks Explorer",
+        "date": "2024-07-01",
         "type": "Personal",
         "tech": {
             "Languages": [
@@ -60,6 +61,7 @@
     },
     {
         "title": "Enhancing Schelling’s Segregation Model: A Distributed Geo-spatial Approach",
+        "date": "2022-12-01",
         "type": "Academic",
         "tech": {
             "Languages": [
@@ -112,6 +114,7 @@
     },
     {
         "title": "Cowin Automate: Automated Vaccination Availability Alerts Using Cowin API",
+        "date": "2021-05-01",
         "type": "Personal",
         "tech": {
             "Languages": [
@@ -161,6 +164,7 @@
     },
     {
         "title": "Optimizing Resident Assistant Matching to Floors Using Gale-Shapley",
+        "date": "2019-01-01",
         "type": "Academic",
         "tech": {
             "Languages": [
@@ -208,6 +212,7 @@
     },
     {
         "title": "Evaluating Racial Tolerance in U.S. States Using Schelling's Model",
+        "date": "2019-04-01",
         "type": "Academic",
         "tech": {
             "Languages": [

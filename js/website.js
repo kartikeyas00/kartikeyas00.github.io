@@ -46,8 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let weCalendarTo;
     let talksCalendarFrom;
     let talksCalendarTo;
-    let leadershipCalendarFrom;
-    let leadershipCalendarTo;
+    let serviceCalendarFrom;
+    let serviceCalendarTo;
 
     const removeChildrenConfig = {
         talks: 3,
@@ -149,6 +149,73 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll(".timeline-content-link.mobile-active").forEach((link) => {
             link.classList.remove("mobile-active");
         });
+    }
+
+    function findTimelineLinkBySectionId(modal, sectionId) {
+        if (!modal || !sectionId) {
+            return null;
+        }
+
+        return Array.from(modal.querySelectorAll(".timeline-content-link")).find((link) => {
+            return link.dataset.sectionId === sectionId;
+        }) || null;
+    }
+
+    function getRenderedSectionId(prefix, title, venue) {
+        const items = window.renderedModalData?.[prefix];
+
+        if (!Array.isArray(items) || !title) {
+            return null;
+        }
+
+        const index = items.findIndex((item) => {
+            const sameTitle = item.title === title;
+            const sameVenue = venue ? item.venue === venue : true;
+            return sameTitle && sameVenue;
+        });
+
+        return index === -1 ? null : `${prefix}-section${items.length - index}`;
+    }
+
+    async function openModalTrigger(trigger) {
+        if (!trigger) {
+            return;
+        }
+
+        await modalRenderReady;
+
+        const targetModal = document.getElementById(trigger.dataset.target);
+
+        if (!targetModal) {
+            return;
+        }
+
+        openModal(targetModal);
+
+        const sectionId = trigger.dataset.sectionId || getRenderedSectionId(
+            trigger.dataset.modalPrefix,
+            trigger.dataset.itemTitle,
+            trigger.dataset.itemVenue
+        );
+
+        if (!sectionId) {
+            return;
+        }
+
+        const timelineLink = findTimelineLinkBySectionId(targetModal, sectionId);
+
+        if (!timelineLink) {
+            return;
+        }
+
+        if (isMobile()) {
+            handleMobileTimelineClick(timelineLink);
+            timelineLink.scrollIntoView({ behavior: "smooth", block: "start" });
+            return;
+        }
+
+        timelineLink.click();
+        timelineLink.scrollIntoView({ behavior: "smooth", block: "center" });
     }
 
     function openModal(modal) {
@@ -329,18 +396,18 @@ document.addEventListener("DOMContentLoaded", () => {
         syncVisibleSelection("talks-modal");
     }
 
-    function applyLeadershipFilters() {
-        const startDate = parseCalendarDate(leadershipCalendarFrom?.value());
-        const endDate = parseCalendarDate(leadershipCalendarTo?.value());
+    function applyServiceFilters() {
+        const startDate = parseCalendarDate(serviceCalendarFrom?.value());
+        const endDate = parseCalendarDate(serviceCalendarTo?.value());
 
-        document.querySelectorAll("#leadership-modal .timeline-item").forEach((item) => {
+        document.querySelectorAll("#service-modal .timeline-item").forEach((item) => {
             const fromDate = parseLocalIsoDate(item.dataset.from);
             const toDate = parseLocalIsoDate(item.dataset.to, true);
             const isVisible = matchesDateRange(startDate, endDate, fromDate, toDate);
             item.style.display = isVisible ? "block" : "none";
         });
 
-        syncVisibleSelection("leadership-modal");
+        syncVisibleSelection("service-modal");
     }
 
     function handleMobileTimelineClick(link) {
@@ -445,14 +512,14 @@ document.addEventListener("DOMContentLoaded", () => {
             dateFormat: "MM/dd/yy"
         });
 
-        [leadershipCalendarFrom] = bulmaCalendar.attach("#leadership-timeline-period-filter-from", {
+        [serviceCalendarFrom] = bulmaCalendar.attach("#service-timeline-period-filter-from", {
             type: "date",
             displayMode: "dialog",
             startDate: "11/15/24",
             dateFormat: "MM/dd/yy"
         });
 
-        [leadershipCalendarTo] = bulmaCalendar.attach("#leadership-timeline-period-filter-to", {
+        [serviceCalendarTo] = bulmaCalendar.attach("#service-timeline-period-filter-to", {
             type: "date",
             displayMode: "dialog",
             startDate: new Date().toLocaleString("en-US", { month: "2-digit", day: "2-digit", year: "2-digit" }),
@@ -467,8 +534,8 @@ document.addEventListener("DOMContentLoaded", () => {
             calendar.on("select", applyTalksFilters);
         });
 
-        [leadershipCalendarFrom, leadershipCalendarTo].forEach((calendar) => {
-            calendar.on("select", applyLeadershipFilters);
+        [serviceCalendarFrom, serviceCalendarTo].forEach((calendar) => {
+            calendar.on("select", applyServiceFilters);
         });
     }
 
@@ -476,12 +543,10 @@ document.addEventListener("DOMContentLoaded", () => {
         closeAllModals();
     };
 
-    document.querySelectorAll(".landing-page-button").forEach((trigger) => {
-        const targetModal = document.getElementById(trigger.dataset.target);
-
-        trigger.addEventListener("click", async () => {
-            await modalRenderReady;
-            openModal(targetModal);
+    document.querySelectorAll(".portfolio-modal-trigger").forEach((trigger) => {
+        trigger.addEventListener("click", (event) => {
+            event.preventDefault();
+            openModalTrigger(trigger);
         });
     });
 
@@ -501,7 +566,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ["projects-timeline-technology-filter", "projects-timeline-technology-filter-modal"],
         ["publications-timeline-type-filter", "publications-timeline-type-filter-modal"],
         ["talks-timeline-period-filter", "talks-timeline-period-filter-modal"],
-        ["leadership-timeline-period-filter", "leadership-timeline-period-filter-modal"]
+        ["service-timeline-period-filter", "service-timeline-period-filter-modal"]
     ].forEach(([buttonId, modalId]) => {
         const button = document.getElementById(buttonId);
         const modal = document.getElementById(modalId);
@@ -616,23 +681,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    document.querySelectorAll(".landing-page-button").forEach((button, index) => {
-        button.style.opacity = "0";
-        button.style.transform = "translateY(20px)";
-        setTimeout(() => {
-            button.style.transition = "all 0.5s ease";
-            button.style.opacity = "1";
-            button.style.transform = "translateY(0)";
-        }, 100 * index);
-    });
-
     modalRenderReady.then(() => {
         setupCalendars();
         applyWorkExperienceFilters();
         applyProjectsFilters();
         applyPublicationsFilters();
         applyTalksFilters();
-        applyLeadershipFilters();
+        applyServiceFilters();
     }).catch((error) => {
         console.error("Failed to initialize dynamic site behaviors", error);
     });

@@ -241,6 +241,26 @@
         return Number.isNaN(Date.parse(value)) ? null : new Date(value);
     }
 
+    function formatMonthYear(value) {
+        if (!value) {
+            return "";
+        }
+
+        if (/^\d{2}\/\d{4}$/.test(value)) {
+            return value;
+        }
+
+        const parsedDate = parseDateValue(value);
+
+        if (!parsedDate) {
+            return value;
+        }
+
+        const month = `${parsedDate.getMonth() + 1}`.padStart(2, "0");
+        const year = parsedDate.getFullYear();
+        return `${month}/${year}`;
+    }
+
     function formatTimelineDate(value) {
         const parsedDate = parseDateValue(value);
 
@@ -254,8 +274,27 @@
         return `${month}/${day}/${year}`;
     }
 
+    function formatDateRange(from, to) {
+        const start = formatMonthYear(from);
+        const end = to ? formatMonthYear(to) : "Present";
+
+        if (!start) {
+            return end === "Present" ? "" : end;
+        }
+
+        return `${start} - ${end}`;
+    }
+
     function formatWorkDateRange(item) {
-        return `${item.from} - ${item.to || "Present"}`;
+        return formatDateRange(item.from, item.to);
+    }
+
+    function formatCardDate(entry) {
+        if (entry.from || entry.to) {
+            return formatDateRange(entry.from, entry.to);
+        }
+
+        return formatTimelineDate(entry.date);
     }
 
     function escapeHtml(value) {
@@ -551,7 +590,7 @@
                         <div class="${slug}-card">
                             <div class="${slug}-date">
                                 <i class="fa-regular fa-calendar"></i>
-                                ${escapeHtml(entry.date)}
+                                ${escapeHtml(formatCardDate(entry))}
                             </div>
                             <div class="${slug}-details">
                                 <div class="${slug}-role">${escapeHtml(entry.title)}</div>
@@ -635,7 +674,7 @@
         return `
             <div class="timeline-item">
                 <div class="timeline-dot" style="display: none;"></div>
-                <div class="timeline-date"><i class="fa-solid fa-calendar-days"></i> ${escapeHtml(item.period)}</div>
+                <div class="timeline-date"><i class="fa-solid fa-calendar-days"></i> ${escapeHtml(formatDateRange(item.from, item.to))}</div>
                 <div class="timeline-content">
                     <a class="timeline-content-link" href="#" data-section-id="${escapeAttribute(sectionId)}">
                         <div class="timeline-content-details">
@@ -656,7 +695,7 @@
                     <i class="fa-solid fa-building-columns"></i> ${escapeHtml(item.institution)}
                 </h4>
                 <h4 class="subtitle ed-content-subtitle">
-                    <i class="fa-solid fa-calendar-days"></i> ${escapeHtml(item.period)}
+                    <i class="fa-solid fa-calendar-days"></i> ${escapeHtml(formatDateRange(item.from, item.to))}
                 </h4>
                 <h4 class="subtitle ed-content-subtitle">
                     <i class="fa-solid fa-location-dot"></i> ${escapeHtml(item.location)}
@@ -670,6 +709,7 @@
         return `
             <div class="timeline-item" data-type="${escapeAttribute(item.type)}" data-technology='${jsonAttribute(item.tech)}'>
                 <div class="timeline-dot" style="display: none;"></div>
+                <div class="timeline-date"><i class="fa-solid fa-calendar-days"></i> ${escapeHtml(formatMonthYear(item.date))}</div>
                 <div class="timeline-content">
                     <a class="timeline-content-link" href="#" data-section-id="${escapeAttribute(sectionId)}">
                         <div class="timeline-content-details">
@@ -686,6 +726,9 @@
         return `
             <div class="projects-content-section" id="${escapeAttribute(sectionId)}" style="display: none;">
                 <h2 class="title projects-content-title">${escapeHtml(item.title)}</h2>
+                <h4 class="subtitle projects-content-subtitle">
+                    <i class="fa-solid fa-calendar-days"></i> ${escapeHtml(formatMonthYear(item.date))}
+                </h4>
                 ${renderStructuredSections("projects", item.sections, item, sectionId)}
             </div>
         `;
@@ -713,7 +756,7 @@
             <div class="publications-content-section" id="${escapeAttribute(sectionId)}" style="display: none;">
                 <h2 class="title publications-content-title">${escapeHtml(item.title)}</h2>
                 <h4 class="subtitle publications-content-subtitle">
-                    <i class="fa-solid fa-calendar-days"></i> ${escapeHtml(item.date)}
+                    <i class="fa-solid fa-calendar-days"></i> ${escapeHtml(formatTimelineDate(item.date))}
                 </h4>
                 <h4 class="subtitle publications-content-subtitle">
                     ${item.kind === "blog"
@@ -747,7 +790,7 @@
             <div class="talks-content-section" id="${escapeAttribute(sectionId)}" style="display: none;">
                 <h2 class="title talks-content-title">${escapeHtml(item.title)}</h2>
                 <h4 class="subtitle talks-content-subtitle">
-                    <i class="fa-solid fa-calendar-days"></i> ${escapeHtml(item.date)}
+                    <i class="fa-solid fa-calendar-days"></i> ${escapeHtml(formatTimelineDate(item.date || item.from))}
                 </h4>
                 <h4 class="subtitle talks-content-subtitle">
                     <i class="fa-solid fa-microphone"></i> ${escapeHtml(item.venue)}
@@ -783,7 +826,7 @@
             <div class="service-content-section" id="${escapeAttribute(sectionId)}" style="display: none;">
                 <h2 class="title service-content-title">${escapeHtml(item.title)}</h2>
                 <h4 class="subtitle service-content-subtitle">
-                    <i class="fa-solid fa-calendar-days"></i> ${escapeHtml(item.date)}
+                    <i class="fa-solid fa-calendar-days"></i> ${escapeHtml(formatTimelineDate(item.date || item.from))}
                 </h4>
                 <h4 class="subtitle service-content-subtitle">
                     <i class="fa-solid fa-users"></i> ${venueMarkup}

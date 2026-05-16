@@ -1,7 +1,7 @@
 [
     {
         "title": "CFP Reviewer",
-        "date": "April 9, 2026",
+        "date": "2026-04-09",
         "venue": "BSides SLC 2026",
         "venueUrl": "https://www.bsidesslc.org/",
         "from": "2026-04-09",
@@ -12,14 +12,14 @@
                 "slug": "description",
                 "title": "Overview",
                 "paragraphs": [
-                    "Reviewed 125 CFP submissions, evaluating talk proposals based on technical depth, originality, clarity, audience relevance, and alignment with the conference program."
+                    "Reviewed 125 CFP submissions for BSides SLC 2026, evaluating abstracts and talk outlines for relevance to the conference, clarity of communication, originality, technical quality, and audience fit within the program."
                 ]
             }
         ]
     },
     {
-        "title": "Paper Reviewer",
-        "date": "October 13, 2025",
+        "title": "Research Paper Reviewer",
+        "date": "2025-10-13",
         "venue": "Pacific Northwest Software Quality Conference 2025",
         "venueUrl": "https://pnsqc.org/conference/2025/at-a-glance/",
         "from": "2025-10-13",
@@ -30,14 +30,14 @@
                 "slug": "description",
                 "title": "Overview",
                 "paragraphs": [
-                    "Reviewed two full research papers, providing detailed feedback on technical soundness, methodology, clarity, contribution strength, and suitability for publication."
+                    "Reviewed two full research papers, assessing technical rigor, clarity, contribution, methodology, and relevance for a professional software quality and engineering audience."
                 ]
             }
         ]
     },
     {
         "title": "CFP Reviewer",
-        "date": "September 12, 2025",
+        "date": "2025-09-12",
         "venue": "BSides Cache 2025",
         "venueUrl": "https://www.bsidescache.org/",
         "from": "2025-09-12",
@@ -48,14 +48,14 @@
                 "slug": "description",
                 "title": "Overview",
                 "paragraphs": [
-                    "Reviewed 48 CFP submissions, evaluating abstracts and outlines to help identify talks with strong technical merit, audience value, and conference fit."
+                    "Reviewed 48 CFP submissions, evaluating proposal abstracts and talk structure for originality, technical quality, clarity, audience relevance, and overall fit for the conference program."
                 ]
             }
         ]
     },
     {
         "title": "CFP Reviewer",
-        "date": "April 10, 2025",
+        "date": "2025-04-10",
         "venue": "BSides SLC 2025",
         "venueUrl": "https://www.bsidesslc.org/",
         "from": "2025-04-10",
@@ -66,14 +66,14 @@
                 "slug": "description",
                 "title": "Overview",
                 "paragraphs": [
-                    "Reviewed 118 CFP submissions, assessing talk proposals for technical quality, clarity, originality, practical value, and relevance to the security community."
+                    "Reviewed 118 CFP submissions, assessing abstracts and session outlines for technical strength, clarity, originality, relevance to the security community, and audience fit."
                 ]
             }
         ]
     },
     {
         "title": "CFP Reviewer",
-        "date": "November 15, 2024",
+        "date": "2024-11-15",
         "venue": "BSides Red Rocks 2024",
         "venueUrl": "https://www.bsidesredrocks.org/",
         "from": "2024-11-15",
@@ -84,7 +84,7 @@
                 "slug": "description",
                 "title": "Overview",
                 "paragraphs": [
-                    "Reviewed 37 CFP submissions, evaluating talk abstracts, outlines, technical depth, originality, audience relevance, and overall fit for the conference program."
+                    "Reviewed 37 CFP submissions, evaluating talk abstracts, outlines, technical quality, originality, relevance, clarity, and audience fit to help shape a balanced conference lineup."
                 ]
             }
         ]

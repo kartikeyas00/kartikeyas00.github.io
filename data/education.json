@@ -3,7 +3,8 @@
         "degree": "M.S. in Computer Science",
         "institution": "University of Oregon",
         "icon": "img/college/uo/icon/oregon-duck.png",
-        "period": "09/2021 - 06/2023",
+        "from": "2021-09-01",
+        "to": "2023-06-01",
         "location": "Eugene, OR 🇺🇸",
         "sections": [
             {
@@ -126,13 +127,15 @@
                 "title": "Internships",
                 "items": [
                     {
-                        "date": "01/2023 - 03/2023",
+                        "from": "2023-01-01",
+                        "to": "2023-03-01",
                         "title": "Data Science Intern",
                         "subtitle": "Viewrail",
                         "icon": "fa-regular fa-building"
                     },
                     {
-                        "date": "06/2022 - 09/2022",
+                        "from": "2022-06-01",
+                        "to": "2022-09-01",
                         "title": "Threat Analytics Intern",
                         "subtitle": "Equinix",
                         "icon": "fa-regular fa-building"
@@ -145,19 +148,22 @@
                 "title": "Research and Teaching Roles",
                 "items": [
                     {
-                        "date": "04/2023 - 06/2023",
+                        "from": "2023-04-01",
+                        "to": "2023-06-01",
                         "title": "Teaching Assistant",
                         "subtitle": "CS 415 Operating Systems",
                         "icon": "fa-solid fa-computer"
                     },
                     {
-                        "date": "09/2022 - 12/2022",
+                        "from": "2022-09-01",
+                        "to": "2022-12-01",
                         "title": "Teaching Assistant",
                         "subtitle": "CS 422 Software Method",
                         "icon": "fa-solid fa-computer"
                     },
                     {
-                        "date": "09/2021 - 06/2022",
+                        "from": "2021-09-01",
+                        "to": "2022-06-01",
                         "title": "Research Assistant",
                         "subtitle": "Center For Cyber Security and Privacy",
                         "icon": "fa-solid fa-fingerprint"
@@ -227,7 +233,8 @@
         "degree": "B.A. in Computer Science, Accounting",
         "institution": "Goshen College",
         "icon": "img/college/gc/icon/gc-maple-leaf.png",
-        "period": "08/2015 - 05/2019",
+        "from": "2015-08-01",
+        "to": "2019-05-01",
         "location": "Goshen, IN 🇺🇸",
         "sections": [
             {
@@ -495,13 +502,15 @@
                 "title": "Internships",
                 "items": [
                     {
-                        "date": "01/2019 - 04/2019",
+                        "from": "2019-01-01",
+                        "to": "2019-04-01",
                         "title": "Data Analytics Intern",
                         "subtitle": "Veada Industries",
                         "icon": "fa-regular fa-building"
                     },
                     {
-                        "date": "05/2018 - 09/2018",
+                        "from": "2018-05-01",
+                        "to": "2018-09-01",
                         "title": "Data Analytics Intern",
                         "subtitle": "Zebra Technologies",
                         "icon": "fa-regular fa-building"

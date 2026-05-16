@@ -1,427 +1,365 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Kartikeya Sharma's Personal Website</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-    <link rel="stylesheet" type='text/css' href="css/bulma-calendar.min.css" />
-    <link rel="stylesheet" href="css/website.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600|Roboto+Mono:400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kartikeya Sharma</title>
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+  <!-- Fancybox (modal gallery support) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+
+  <!-- Bulma (modal system) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bulma-calendar.min.css" />
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="css/website.css">
+  <link rel="stylesheet" href="css/landing.css">
 </head>
 
-<body>
+<body data-surface-variant="ledger">
 
-    <section class="hero is-fullheight">
-        <div class="hero-body">
-            <div class="container">
-                <div class="columns is-vcentered is-multiline">
-                    <div class="column is-12-mobile is-4-tablet is-4-desktop">
-                        <figure class="image is-256x256 is-flex is-justify-content-center">
-                            <img class="is-rounded mobile-profile-pic" src="img/main/ski.jpg" alt="Profile Picture">
-                        </figure>
-                    </div>
+  <!-- ═══════════════════════════════════════════════════════
+       LANDING PAGE
+       ═══════════════════════════════════════════════════════ -->
 
-                    <div class="column is-12-mobile is-8-tablet is-8-desktop">
-                        <h1 class="title is-1 main-page-title has-text-centered-mobile">Kartikeya Sharma</h1>
-                        <p class="subtitle has-text-centered-mobile" style="color: #FFFFFF;">
-                            CyberSecurity and AI 🤖
-                        </p>
-                        <div class="buttons is-centered-mobile">
-                            <a class="button is-link is-rounded" href="https://www.linkedin.com/in/kart1/">
-                                <span class="icon">
-                                    <i class="fa-brands fa-linkedin"></i>
-                                </span>
-                                <span>LinkedIn</span>
-                            </a>
-                            <a class="button is-dark is-rounded" href="https://github.com/kartikeyas00">
-                                <span class="icon">
-                                    <i class="fa-brands fa-github"></i>
-                                </span>
-                                <span>GitHub</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+  <div class="scroll-root">
 
-                <div class="columns is-centered mt-6-desktop mt-4-mobile">
-                    <div class="column is-12-mobile is-10-tablet is-10-desktop">
-                        <div class="buttons is-centered is-multiline">
-                            <button class="button is-rounded is-medium landing-page-button mb-3-mobile"
-                                data-target="work-experience-modal">
-                                <span class="icon">
-                                    <i class="fas fa-briefcase"></i>
-                                </span>
-                                <span>Work Experience</span>
-                            </button>
-                            <button class="button is-rounded is-medium landing-page-button mb-3-mobile"
-                                data-target="education-modal">
-                                <span class="icon">
-                                    <i class="fas fa-graduation-cap"></i>
-                                </span>
-                                <span>Education</span>
-                            </button>
-                            <a class="button is-rounded is-medium landing-page-button mb-3-mobile"
-                                data-target="projects-modal">
-                                <span class="icon">
-                                    <i class="fas fa-project-diagram"></i>
-                                </span>
-                                <span>Projects</span>
-                            </a>
-                            <a class="button is-rounded is-medium landing-page-button mb-3-mobile"
-                                data-target="publications-modal">
-                                <span class="icon">
-                                    <i class="fas fa-rss"></i>
-                                </span>
-                                <span>Publications</span>
-                            </a>
-                            <a class="button is-rounded is-medium landing-page-button mb-3-mobile"
-                                data-target="talks-modal">
-                                <span class="icon">
-                                    <i class="fas fa-microphone"></i>
-                                </span>
-                                <span>Talks</span>
-                            </a>
-                            <a class="button is-rounded is-medium landing-page-button mb-3-mobile"
-                                data-target="leadership-modal">
-                                <span class="icon">
-                                    <i class="fas fa-users"></i>
-                                </span>
-                                <span>Leadership</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+    <section class="snap-section" id="v-identity">
+      <div class="v1-inner">
+        <div class="identity-frame">
+
+          <header class="identity-band">
+            <div class="identity-copy">
+              <h1 class="ident-name"><span>Kartikeya</span><span>Sharma</span></h1>
+              <p class="ident-desc">Security Researcher focused on <span class="ident-emphasis">Agentic AI</span> and <span class="ident-emphasis">Graph Neural Networks</span>.</p>
+              <p class="ident-role">Senior Associate Information Security Engineer at <span class="ident-current">Equinix</span>.</p>
+              <p class="ident-bio">My work focuses on two main areas: <span class="ident-emphasis">Agentic AI</span> for cybersecurity and <span class="ident-emphasis">Graph Neural Networks</span> for threat detection. I build AI systems that help automate security research, find asset owners, support remediation, and improve decision-making, while my GNN research studies network behavior, DDoS detection, and adversarial manipulation of graph-based detection systems.</p>
+              <nav class="ident-links" aria-label="Primary links and timeline navigation">
+                <a href="https://github.com/kartikeyas00" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                  <span class="icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span>
+                  <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/kart1/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                  <span class="icon" aria-hidden="true"><i class="fa-brands fa-linkedin-in"></i></span>
+                  <span>LinkedIn</span>
+                </a>
+                <a href="#" data-placeholder-link="resume" aria-label="Resume link">
+                  <span class="icon" aria-hidden="true"><i class="fa-regular fa-file-lines"></i></span>
+                  <span>Resume</span>
+                </a>
+                <a class="v1-anchor" href="#v-index" aria-label="Jump to timeline index">
+                  <span>Timeline</span>
+                </a>
+              </nav>
             </div>
+          </header>
+
+          <div class="featured-block">
+            <p class="featured-label">Featured</p>
+            <div class="hl-list" id="hl-list" role="list" aria-live="polite"></div>
+          </div>
         </div>
-        <footer class="footer">
-            <div class="content has-text-centered">
-                <p>
-                    © 2025 Kartikeya Sharma. All rights reserved.
-                </p>
-            </div>
-        </footer>
+      </div>
     </section>
 
+    <section class="snap-section" id="v-index">
+      <div class="v2-inner">
 
+        <div class="idx-scroll" id="idx-scroll" aria-live="polite"></div>
 
-    <!---------  Modal for Work Experience ---------------------------------------->
+        <nav class="idx-filters" aria-label="Filter entries by type">
+          <button class="f-pill is-active" data-filter="all">All</button>
+          <button class="f-pill" data-filter="work">Work</button>
+          <button class="f-pill" data-filter="project">Projects</button>
+          <button class="f-pill" data-filter="paper">Publications</button>
+          <button class="f-pill" data-filter="talk">Talks</button>
+          <button class="f-pill" data-filter="service">Service</button>
+          <button class="f-pill" data-filter="education">Education</button>
+        </nav>
 
-    <div id="work-experience-modal" class="modal">
-        <div class="modal-background"></div>
-        <div class="modal-content modal-full-height" style="overflow-x: hidden;">
-            <div class="title-row">
-                <h1 class="title we-title has-text-centered">Work Experience</h1>
-            </div>
-            <div class="columns">
-                <div class="column is-one-third"
-                    style=" background-color: #2c2c2e;  height: calc(100vh - 100px); overflow-y: auto;">
-                    <div class="tags m-4">
-                        <span class="tag is-white is-rounded is-large">
-                            <i class="fa-solid fa-filter"></i>
-                        </span>
-                        <button id="we-timeline-sector-filter" class="tag is-white is-rounded is-large">Sector&nbsp<i
-                                class="fa-solid fa-angle-down"></i></button>
-                        <button id="we-timeline-period-filter" class="tag is-white is-rounded is-large">Period&nbsp<i
-                                class="fa-solid fa-angle-down"></i></button>
-                        <button id="we-timeline-technology-filter" class="tag is-white is-rounded is-large">Tech&nbsp<i
-                                class="fa-solid fa-angle-down"></i></button>
-                    </div>
-                    <div class="timeline m-2" id="we-timeline"></div>
-                </div>
-                <div class="column is-two-third" id="we-content-panel"
-                    style="background-color: #2c2c2e; padding: 30px; height: calc(100vh - 100px);overflow-y: auto;">
-                </div>
-            </div>
+        <footer class="archive-footer">© 2026 Kartikeya Sharma. All rights reserved.</footer>
+
+      </div>
+    </section>
+
+  </div><!-- /.scroll-root -->
+
+  <div id="landing-detail-modal" class="modal landing-detail-modal" aria-hidden="true">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="landing-detail-shell">
+        <div class="landing-detail-bar">
+          <div class="landing-detail-kicker">
+            <span id="landing-detail-date" class="landing-detail-date"></span>
+            <span id="landing-detail-kind" class="landing-detail-kind"></span>
+          </div>
+          <button type="button" id="landing-detail-close" class="landing-detail-close" aria-label="Close detail view">Close</button>
         </div>
-        <button class="modal-close is-large" aria-label="close" onclick="closeModal()">×</button>
+        <div id="landing-detail-content" class="landing-detail-content"></div>
+      </div>
     </div>
+  </div>
 
 
-    <!-- Modal for Sector filter for Work Experience Timeline-->
-    <div class="modal" id="we-timeline-sector-filter-modal">
-        <div class="modal-background"></div>
-        <div class="modal-content">
-            <h1 class="title we-timeline-sector-filter-modal-title has-text-centered">Sector</h1>
-            <div id="we-timeline-sector-filter-options"></div>
+  <!-- ═══════════════════════════════════════════════════════
+       MODALS
+       ═══════════════════════════════════════════════════════ -->
+
+  <!-- Work Experience Modal -->
+  <div id="work-experience-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content modal-full-height" style="overflow-x: hidden;">
+      <div class="title-row">
+        <h1 class="title we-title has-text-centered">Work Experience</h1>
+      </div>
+      <div class="columns">
+        <div class="column is-one-third"
+          style="background-color: #2c2c2e; height: calc(100vh - 100px); overflow-y: auto;">
+          <div class="tags m-4">
+            <span class="tag is-white is-rounded is-large"><i class="fa-solid fa-filter"></i></span>
+            <button id="we-timeline-sector-filter" class="tag is-white is-rounded is-large">Sector&nbsp<i class="fa-solid fa-angle-down"></i></button>
+            <button id="we-timeline-period-filter" class="tag is-white is-rounded is-large">Period&nbsp<i class="fa-solid fa-angle-down"></i></button>
+            <button id="we-timeline-technology-filter" class="tag is-white is-rounded is-large">Tech&nbsp<i class="fa-solid fa-angle-down"></i></button>
+          </div>
+          <div class="timeline m-2" id="we-timeline"></div>
         </div>
-    </div>
-
-
-    <!-- Modal for Period filter for Work Experience Timeline-->
-    <div class="modal" id="we-timeline-period-filter-modal">
-        <div class="modal-background"></div>
-        <div class="modal-content">
-            <h1 class="title we-timeline-period-filter-modal-title has-text-centered">Period</h1>
-
-            <div>
-                <div class="field is-horizontal">
-                    <div class="field-label is-normal">
-                        <label class="label">From</label>
-                    </div>
-                    <div class="field-body">
-                        <input id="we-timeline-period-filter-from" type="month" />
-                    </div>
-                </div>
-                <div class="field is-horizontal">
-                    <div class="field-label is-normal">
-                        <label class="label">To</label>
-                    </div>
-                    <div class="field-body">
-                        <input id="we-timeline-period-filter-to" type="month" />
-                    </div>
-                </div>
-
-            </div>
+        <div class="column is-two-third" id="we-content-panel"
+          style="background-color: #2c2c2e; padding: 30px; height: calc(100vh - 100px); overflow-y: auto;">
         </div>
+      </div>
     </div>
-    <!-- Modal for technology filter for Work Experience Timeline-->
-    <div class="modal" id="we-timeline-technology-filter-modal">
-        <div class="modal-background"></div>
-        <div class="modal-content">
-            <h1 class="title we-timeline-technology-filter-modal-title has-text-centered">Technology</h1>
-            <div id="we-timeline-technology-filter-options"></div>
+    <button class="modal-close is-large" aria-label="close" onclick="closeModal()">×</button>
+  </div>
+
+  <div class="modal" id="we-timeline-sector-filter-modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <h1 class="title we-timeline-sector-filter-modal-title has-text-centered">Sector</h1>
+      <div id="we-timeline-sector-filter-options"></div>
+    </div>
+  </div>
+
+  <div class="modal" id="we-timeline-period-filter-modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <h1 class="title we-timeline-period-filter-modal-title has-text-centered">Period</h1>
+      <div>
+        <div class="field is-horizontal">
+          <div class="field-label is-normal"><label class="label">From</label></div>
+          <div class="field-body"><input id="we-timeline-period-filter-from" type="month" /></div>
         </div>
-    </div>
-
-
-
-    <!---------  Modal for Education ---------------------------------------------->
-    <div id="education-modal" class="modal">
-        <div class="modal-background"></div>
-        <div class="modal-content modal-full-height" style="overflow-x: hidden;">
-            <div class="title-row">
-                <h1 class="title we-title has-text-centered">Education</h1>
-            </div>
-            <div class="columns">
-                <div class="column is-one-third"
-                    style=" background-color: #2c2c2e;  height: calc(100vh - 100px); overflow-y: auto;">
-                    <div class="tags m-4">
-                    </div>
-                    <div class="timeline m-2" id="ed-timeline"></div>
-                </div>
-                <div class="column is-two-third" id="ed-content-panel"
-                    style="background-color: #2c2c2e; padding: 30px; height: calc(100vh - 100px);overflow-y: auto;">
-                </div>
-            </div>
+        <div class="field is-horizontal">
+          <div class="field-label is-normal"><label class="label">To</label></div>
+          <div class="field-body"><input id="we-timeline-period-filter-to" type="month" /></div>
         </div>
-        <button class="modal-close is-large" aria-label="close" onclick="closeModal()">×</button>
+      </div>
     </div>
+  </div>
 
+  <div class="modal" id="we-timeline-technology-filter-modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <h1 class="title we-timeline-technology-filter-modal-title has-text-centered">Technology</h1>
+      <div id="we-timeline-technology-filter-options"></div>
+    </div>
+  </div>
 
-    <!---------  Modal for Projects ---------------------------------------------->
-
-    <div id="projects-modal" class="modal">
-        <div class="modal-background"></div>
-        <div class="modal-content modal-full-height" style="overflow-x: hidden;">
-            <div class="title-row">
-                <h1 class="title we-title has-text-centered">Projects</h1>
-            </div>
-            <div class="columns">
-                <div class="column is-one-third"
-                    style=" background-color: #2c2c2e;  height: calc(100vh - 100px); overflow-y: auto;">
-                    <div class="tags m-4">
-                        <span class="tag is-white is-rounded is-large">
-                            <i class="fa-solid fa-filter"></i>
-                        </span>
-                        <button id="projects-timeline-type-filter" class="tag is-white is-rounded is-large">Type&nbsp<i
-                                class="fa-solid fa-angle-down"></i></button>
-                        <button id="projects-timeline-technology-filter"
-                            class="tag is-white is-rounded is-large">Tech&nbsp<i
-                                class="fa-solid fa-angle-down"></i></button>
-                    </div>
-                    <div class="timeline m-2" id="projects-timeline"></div>
-                </div>
-                <div class="column is-two-third" id="projects-content-panel"
-                    style="background-color: #2c2c2e; padding: 30px; height: calc(100vh - 100px);overflow-y: auto;">
-                </div>
-            </div>
+  <!-- Education Modal -->
+  <div id="education-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content modal-full-height" style="overflow-x: hidden;">
+      <div class="title-row">
+        <h1 class="title we-title has-text-centered">Education</h1>
+      </div>
+      <div class="columns">
+        <div class="column is-one-third"
+          style="background-color: #2c2c2e; height: calc(100vh - 100px); overflow-y: auto;">
+          <div class="tags m-4"></div>
+          <div class="timeline m-2" id="ed-timeline"></div>
         </div>
-        <button class="modal-close is-large" aria-label="close" onclick="closeModal()">×</button>
-    </div>
-
-
-    <!-- Modal for Type filter for Project Timeline-->
-    <div class="modal" id="projects-timeline-type-filter-modal">
-        <div class="modal-background"></div>
-        <div class="modal-content">
-            <h1 class="title projects-timeline-type-filter-modal-title has-text-centered">Sector</h1>
-            <div id="projects-timeline-type-filter-options"></div>
+        <div class="column is-two-third" id="ed-content-panel"
+          style="background-color: #2c2c2e; padding: 30px; height: calc(100vh - 100px); overflow-y: auto;">
         </div>
+      </div>
     </div>
+    <button class="modal-close is-large" aria-label="close" onclick="closeModal()">×</button>
+  </div>
 
-
-    <!-- Modal for technology filter for Project Timeline-->
-    <div class="modal" id="projects-timeline-technology-filter-modal">
-        <div class="modal-background"></div>
-        <div class="modal-content">
-            <h1 class="title projects-timeline-technology-filter-modal-title has-text-centered">Technology</h1>
-            <div id="projects-timeline-technology-filter-options"></div>
+  <!-- Projects Modal -->
+  <div id="projects-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content modal-full-height" style="overflow-x: hidden;">
+      <div class="title-row">
+        <h1 class="title we-title has-text-centered">Projects</h1>
+      </div>
+      <div class="columns">
+        <div class="column is-one-third"
+          style="background-color: #2c2c2e; height: calc(100vh - 100px); overflow-y: auto;">
+          <div class="tags m-4">
+            <span class="tag is-white is-rounded is-large"><i class="fa-solid fa-filter"></i></span>
+            <button id="projects-timeline-type-filter" class="tag is-white is-rounded is-large">Type&nbsp<i class="fa-solid fa-angle-down"></i></button>
+            <button id="projects-timeline-technology-filter" class="tag is-white is-rounded is-large">Tech&nbsp<i class="fa-solid fa-angle-down"></i></button>
+          </div>
+          <div class="timeline m-2" id="projects-timeline"></div>
         </div>
-    </div>
-
-
-    <!---------  Modal for Publications ---------------------------------------->
-
-    <div id="publications-modal" class="modal">
-        <div class="modal-background"></div>
-        <div class="modal-content modal-full-height" style="overflow-x: hidden;">
-            <div class="title-row">
-                <h1 class="title we-title has-text-centered">Publications</h1>
-            </div>
-            <div class="columns">
-                <div class="column is-one-third"
-                    style=" background-color: #2c2c2e;  height: calc(100vh - 100px); overflow-y: auto;">
-                    <div class="tags m-4">
-                        <span class="tag is-white is-rounded is-large">
-                            <i class="fa-solid fa-filter"></i>
-                        </span>
-                        <button id="publications-timeline-type-filter"
-                            class="tag is-white is-rounded is-large">Type&nbsp<i
-                                class="fa-solid fa-angle-down"></i></button>
-                    </div>
-                    <div class="timeline m-2" id="publications-timeline"></div>
-                </div>
-                <div class="column is-two-third" id="publications-content-panel"
-                    style="background-color: #2c2c2e; padding: 30px; height: calc(100vh - 100px);overflow-y: auto;">
-                </div>
-            </div>
+        <div class="column is-two-third" id="projects-content-panel"
+          style="background-color: #2c2c2e; padding: 30px; height: calc(100vh - 100px); overflow-y: auto;">
         </div>
-        <button class="modal-close is-large" aria-label="close" onclick="closeModal()">×</button>
+      </div>
     </div>
+    <button class="modal-close is-large" aria-label="close" onclick="closeModal()">×</button>
+  </div>
 
+  <div class="modal" id="projects-timeline-type-filter-modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <h1 class="title projects-timeline-type-filter-modal-title has-text-centered">Sector</h1>
+      <div id="projects-timeline-type-filter-options"></div>
+    </div>
+  </div>
 
-    <!-- Modal for Type filter for Publications Timeline-->
-    <div class="modal" id="publications-timeline-type-filter-modal">
-        <div class="modal-background"></div>
-        <div class="modal-content">
-            <h1 class="title publications-timeline-type-filter-modal-title has-text-centered">Type</h1>
-            <div id="publications-timeline-type-filter-options"></div>
+  <div class="modal" id="projects-timeline-technology-filter-modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <h1 class="title projects-timeline-technology-filter-modal-title has-text-centered">Technology</h1>
+      <div id="projects-timeline-technology-filter-options"></div>
+    </div>
+  </div>
+
+  <!-- Publications Modal -->
+  <div id="publications-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content modal-full-height" style="overflow-x: hidden;">
+      <div class="title-row">
+        <h1 class="title we-title has-text-centered">Publications</h1>
+      </div>
+      <div class="columns">
+        <div class="column is-one-third"
+          style="background-color: #2c2c2e; height: calc(100vh - 100px); overflow-y: auto;">
+          <div class="tags m-4">
+            <span class="tag is-white is-rounded is-large"><i class="fa-solid fa-filter"></i></span>
+            <button id="publications-timeline-type-filter" class="tag is-white is-rounded is-large">Type&nbsp<i class="fa-solid fa-angle-down"></i></button>
+          </div>
+          <div class="timeline m-2" id="publications-timeline"></div>
         </div>
-    </div>
-
-
-    <!---------  Modal for Talks ---------------------------------------------->
-    <div id="talks-modal" class="modal">
-        <div class="modal-background"></div>
-        <div class="modal-content modal-full-height" style="overflow-x: hidden;">
-            <div class="title-row">
-                <h1 class="title we-title has-text-centered">Talks</h1>
-            </div>
-            <div class="columns">
-                <div class="column is-one-third"
-                    style=" background-color: #2c2c2e;  height: calc(100vh - 100px); overflow-y: auto;">
-                    <div class="tags m-4">
-                        <span class="tag is-white is-rounded is-large">
-                            <i class="fa-solid fa-filter"></i>
-                        </span>
-                        <button id="talks-timeline-period-filter" class="tag is-white is-rounded is-large">Period&nbsp<i
-                                class="fa-solid fa-angle-down"></i></button>
-                    </div>
-                    <div class="timeline m-2" id="talks-timeline"></div>
-                </div>
-                <div class="column is-two-third" id="talks-content-panel"
-                    style="background-color: #2c2c2e; padding: 30px; height: calc(100vh - 100px);overflow-y: auto;">
-                </div>
-            </div>
+        <div class="column is-two-third" id="publications-content-panel"
+          style="background-color: #2c2c2e; padding: 30px; height: calc(100vh - 100px); overflow-y: auto;">
         </div>
-        <button class="modal-close is-large" aria-label="close" onclick="closeModal()">×</button>
+      </div>
     </div>
+    <button class="modal-close is-large" aria-label="close" onclick="closeModal()">×</button>
+  </div>
 
+  <div class="modal" id="publications-timeline-type-filter-modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <h1 class="title publications-timeline-type-filter-modal-title has-text-centered">Type</h1>
+      <div id="publications-timeline-type-filter-options"></div>
+    </div>
+  </div>
 
-    <!-- Modal for Period filter for Talks Timeline-->
-    <div class="modal" id="talks-timeline-period-filter-modal">
-        <div class="modal-background"></div>
-        <div class="modal-content">
-            <h1 class="title talks-timeline-period-filter-modal-title has-text-centered">Period</h1>
-            <div>
-                <div class="field is-horizontal">
-                    <div class="field-label is-normal">
-                        <label class="label">From</label>
-                    </div>
-                    <div class="field-body">
-                        <input id="talks-timeline-period-filter-from" type="month" />
-                    </div>
-                </div>
-                <div class="field is-horizontal">
-                    <div class="field-label is-normal">
-                        <label class="label">To</label>
-                    </div>
-                    <div class="field-body">
-                        <input id="talks-timeline-period-filter-to" type="month" />
-                    </div>
-                </div>
-            </div>
+  <!-- Talks Modal -->
+  <div id="talks-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content modal-full-height" style="overflow-x: hidden;">
+      <div class="title-row">
+        <h1 class="title we-title has-text-centered">Talks</h1>
+      </div>
+      <div class="columns">
+        <div class="column is-one-third"
+          style="background-color: #2c2c2e; height: calc(100vh - 100px); overflow-y: auto;">
+          <div class="tags m-4">
+            <span class="tag is-white is-rounded is-large"><i class="fa-solid fa-filter"></i></span>
+            <button id="talks-timeline-period-filter" class="tag is-white is-rounded is-large">Period&nbsp<i class="fa-solid fa-angle-down"></i></button>
+          </div>
+          <div class="timeline m-2" id="talks-timeline"></div>
         </div>
-    </div>
-    <!----------------------------------------------------------------------------->
-
-    <!---------  Modal for Leadership ---------------------------------------->
-    <div id="leadership-modal" class="modal">
-        <div class="modal-background"></div>
-        <div class="modal-content modal-full-height" style="overflow-x: hidden;">
-            <div class="title-row">
-                <h1 class="title we-title has-text-centered">Leadership</h1>
-            </div>
-            <div class="columns">
-                <div class="column is-one-third"
-                    style=" background-color: #2c2c2e;  height: calc(100vh - 100px); overflow-y: auto;">
-                    <div class="tags m-4">
-                        <span class="tag is-white is-rounded is-large">
-                            <i class="fa-solid fa-filter"></i>
-                        </span>
-                        <button id="leadership-timeline-period-filter" class="tag is-white is-rounded is-large">Period&nbsp<i
-                                class="fa-solid fa-angle-down"></i></button>
-                    </div>
-                    <div class="timeline m-2" id="service-timeline"></div>
-                </div>
-                <div class="column is-two-third" id="service-content-panel"
-                    style="background-color: #2c2c2e; padding: 30px; height: calc(100vh - 100px);overflow-y: auto;">
-                </div>
-            </div>
+        <div class="column is-two-third" id="talks-content-panel"
+          style="background-color: #2c2c2e; padding: 30px; height: calc(100vh - 100px); overflow-y: auto;">
         </div>
-        <button class="modal-close is-large" aria-label="close" onclick="closeModal()">×</button>
+      </div>
     </div>
+    <button class="modal-close is-large" aria-label="close" onclick="closeModal()">×</button>
+  </div>
 
-
-    <!-- Modal for Period filter for Leadership Timeline-->
-    <div class="modal" id="leadership-timeline-period-filter-modal">
-        <div class="modal-background"></div>
-        <div class="modal-content">
-            <h1 class="title leadership-timeline-period-filter-modal-title has-text-centered">Period</h1>
-            <div>
-                <div class="field is-horizontal">
-                    <div class="field-label is-normal">
-                        <label class="label">From</label>
-                    </div>
-                    <div class="field-body">
-                        <input id="leadership-timeline-period-filter-from" type="month" />
-                    </div>
-                </div>
-                <div class="field is-horizontal">
-                    <div class="field-label is-normal">
-                        <label class="label">To</label>
-                    </div>
-                    <div class="field-body">
-                        <input id="leadership-timeline-period-filter-to" type="month" />
-                    </div>
-                </div>
-            </div>
+  <div class="modal" id="talks-timeline-period-filter-modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <h1 class="title talks-timeline-period-filter-modal-title has-text-centered">Period</h1>
+      <div>
+        <div class="field is-horizontal">
+          <div class="field-label is-normal"><label class="label">From</label></div>
+          <div class="field-body"><input id="talks-timeline-period-filter-from" type="month" /></div>
         </div>
+        <div class="field is-horizontal">
+          <div class="field-label is-normal"><label class="label">To</label></div>
+          <div class="field-body"><input id="talks-timeline-period-filter-to" type="month" /></div>
+        </div>
+      </div>
     </div>
-    <!----------------------------------------------------------------------------->
+  </div>
+
+  <!-- Service Modal -->
+  <div id="service-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content modal-full-height" style="overflow-x: hidden;">
+      <div class="title-row">
+        <h1 class="title we-title has-text-centered">Community &amp; Leadership</h1>
+      </div>
+      <div class="columns">
+        <div class="column is-one-third"
+          style="background-color: #2c2c2e; height: calc(100vh - 100px); overflow-y: auto;">
+          <div class="tags m-4">
+            <span class="tag is-white is-rounded is-large"><i class="fa-solid fa-filter"></i></span>
+            <button id="service-timeline-period-filter" class="tag is-white is-rounded is-large">Period&nbsp<i class="fa-solid fa-angle-down"></i></button>
+          </div>
+          <div class="timeline m-2" id="service-timeline"></div>
+        </div>
+        <div class="column is-two-third" id="service-content-panel"
+          style="background-color: #2c2c2e; padding: 30px; height: calc(100vh - 100px); overflow-y: auto;">
+        </div>
+      </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close" onclick="closeModal()">×</button>
+  </div>
+
+  <div class="modal" id="service-timeline-period-filter-modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <h1 class="title service-timeline-period-filter-modal-title has-text-centered">Period</h1>
+      <div>
+        <div class="field is-horizontal">
+          <div class="field-label is-normal"><label class="label">From</label></div>
+          <div class="field-body"><input id="service-timeline-period-filter-from" type="month" /></div>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-label is-normal"><label class="label">To</label></div>
+          <div class="field-body"><input id="service-timeline-period-filter-to" type="month" /></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+  <script src="js/bulma-calendar.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/website.js"></script>
+  <script src="js/landing.js"></script>
 
 </body>
-<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-<script src="js/bulma-calendar.js"></script>
-<script src="js/render.js"></script>
-<script src="js/website.js"></script>
-
 </html>

@@ -3,7 +3,7 @@
         "kind": "research-paper",
         "type": "Research Papers",
         "title": "Graph Neural Network-Based DDoS Protection for Data Center Infrastructure",
-        "date": "10/13/2025",
+        "date": "2025-10-13",
         "venue": "43rd Annual Pacific Northwest Software Quality Conference",
         "sections": [
             {
@@ -34,7 +34,7 @@
         "kind": "blog",
         "type": "Blogs",
         "title": "Graph Neural Networks for Enhanced DDoS Attack Detection",
-        "date": "January 9, 2025",
+        "date": "2025-01-09",
         "slug": "gnn-ddos-detection",
         "sections": [
             {
