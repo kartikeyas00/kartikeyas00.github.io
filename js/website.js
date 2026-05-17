@@ -109,6 +109,45 @@ document.addEventListener("DOMContentLoaded", () => {
         return visibleItem?.querySelector(".timeline-content-link") || null;
     }
 
+    function syncVisibleTimelineTail(modal) {
+        const timeline = modal?.querySelector(".timeline");
+
+        if (!timeline) {
+            return;
+        }
+
+        const items = Array.from(timeline.querySelectorAll(".timeline-item"));
+        const visibleItems = items.filter((item) => item.style.display !== "none");
+
+        items.forEach((item) => {
+            item.classList.remove("is-tail");
+        });
+
+        if (!visibleItems.length) {
+            timeline.classList.add("is-empty");
+            timeline.style.setProperty("--timeline-tail-offset", `${timeline.getBoundingClientRect().height}px`);
+            return;
+        }
+
+        timeline.classList.remove("is-empty");
+
+        const tailItem = visibleItems[visibleItems.length - 1];
+        const tailDot = tailItem.querySelector(".timeline-dot");
+
+        tailItem.classList.add("is-tail");
+
+        if (!tailDot) {
+            timeline.style.setProperty("--timeline-tail-offset", "0px");
+            return;
+        }
+
+        const timelineRect = timeline.getBoundingClientRect();
+        const tailDotRect = tailDot.getBoundingClientRect();
+        const tailOffset = Math.max(0, timelineRect.bottom - (tailDotRect.top + (tailDotRect.height / 2)));
+
+        timeline.style.setProperty("--timeline-tail-offset", `${tailOffset}px`);
+    }
+
     function clearModalSelection(modal) {
         modal.querySelectorAll(".timeline-item.active").forEach((item) => {
             item.classList.remove("active");
@@ -229,6 +268,8 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
+        syncVisibleTimelineTail(modal);
+
         getFirstVisibleTimelineLink(modal)?.click();
     }
 
@@ -320,6 +361,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!modal || !modal.classList.contains("is-active") || isMobile()) {
             return;
         }
+
+        syncVisibleTimelineTail(modal);
 
         const activeItem = modal.querySelector(".timeline-item.active");
 

@@ -525,7 +525,9 @@ button {
   box-shadow: 0 0 0 4px var(--bg), 0 0 0 5px rgba(169, 103, 62, 0.36);
 }
 
-.idx-row:last-child .idx-body::before {
+.idx-row:last-child .idx-body::before,
+.idx-row:not(.is-hidden):not(:has(~ .idx-row:not(.is-hidden))) .idx-body::before,
+.idx-row.is-tail .idx-body::before {
   display: none;
 }
 
