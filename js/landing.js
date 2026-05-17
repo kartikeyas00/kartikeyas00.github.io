@@ -446,11 +446,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }).join('');
   };
 
+  const syncVisibleIndexTail = () => {
+    const rows = scroll ? [...scroll.querySelectorAll('.idx-row')] : [];
+
+    rows.forEach((row) => row.classList.remove('is-tail'));
+
+    const lastVisibleRow = [...rows].reverse().find((row) => !row.classList.contains('is-hidden'));
+
+    if (lastVisibleRow) {
+      lastVisibleRow.classList.add('is-tail');
+    }
+  };
+
   const applyFilter = (filter) => {
     document.querySelectorAll('.idx-row').forEach((row) => {
       const show = filter === 'all' || row.dataset.kind === filter;
       row.classList.toggle('is-hidden', !show);
     });
+
+    syncVisibleIndexTail();
 
     if (scroll) {
       scroll.scrollTop = 0;

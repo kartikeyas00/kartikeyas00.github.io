@@ -134,6 +134,7 @@ p.subtitle {
 .timeline {
     position: relative;
     padding-left: 30px;
+    --timeline-tail-offset: 0px;
 }
 
 .timeline-item {
@@ -173,10 +174,14 @@ p.subtitle {
     content: '';
     position: absolute;
     top: 0;
-    bottom: 0;
+    bottom: var(--timeline-tail-offset);
     left: 0;
     width: 2px;
     background-color: #1aff8c;
+}
+
+.timeline.is-empty::before {
+    display: none;
 }
 
 
@@ -240,7 +245,8 @@ p.subtitle {
     background-color: #3e3e40;
 }
 
-.timeline-item:last-child::after {
+.timeline-item:last-child::after,
+.timeline-item.is-tail::after {
     display: none;
 }
 
