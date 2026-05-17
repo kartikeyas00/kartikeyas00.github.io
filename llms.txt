@@ -1,0 +1,32 @@
+# Kartikeya Sharma
+
+> Personal portfolio site for Kartikeya Sharma, a security researcher focused on Agentic AI, Graph Neural Networks, threat detection, cybersecurity talks, and applied research.
+
+This website is a static single-page portfolio. The homepage presents the content through client-rendered timeline and modal views, but the most authoritative structured information lives in JSON files under `/data/`.
+
+For factual questions about work history, projects, publications, talks, education, or service, prefer the JSON files over the rendered homepage HTML. For long-form technical writing, use the blog page under `/blogs/`.
+
+This site does not currently publish Markdown mirrors of its pages. When a shorter context is needed, skip the `Optional` section.
+
+## Primary Content
+
+- [Home page](/index.html): Main portfolio landing page with profile summary, featured items, and access to all timeline categories.
+- [Work experience data](/data/work-experience.json): Structured employment history with roles, dates, achievements, locations, and technology stacks.
+- [Projects data](/data/projects.json): Structured project portfolio with descriptions, repositories, deployed links, images, and tech stacks.
+- [Publications data](/data/publications.json): Research papers and blog entries, including summaries and links to detailed content.
+- [Talks data](/data/talks.json): Conference talks with abstracts, slide links, recordings, venues, and dates.
+- [Education data](/data/education.json): Academic background, coursework, and research or class projects.
+- [Service and leadership data](/data/leadership.json): Reviewer and service activity history.
+
+## Long-form Content
+
+- [Graph Neural Networks for Enhanced DDoS Attack Detection](/blogs/gnn-ddos-detection.html): Detailed technical article on using graph neural networks for DDoS detection.
+
+## Optional
+
+- [Client-side renderer](/js/render.js): Explains how the site loads JSON datasets and renders the timeline and modal content.
+- [Interaction logic](/js/website.js): Handles modal lifecycle, filters, section switching, and mobile behavior.
+- [Landing page styles](/css/landing.css): Visual design for the homepage and landing sections.
+- [Main site styles](/css/website.css): Shared modal, timeline, and content styling.
+- [GitHub profile](https://github.com/kartikeyas00): Additional source repositories related to projects and experiments.
+- [LinkedIn profile](https://www.linkedin.com/in/kart1/): External professional profile.
