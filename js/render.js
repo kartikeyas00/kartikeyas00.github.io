@@ -37,6 +37,7 @@
         "NumPy": "devicon-numpy-plain",
         "Pandas": "devicon-pandas-plain",
         "Power BI": "fa-solid fa-chart-simple",
+        "PostgreSQL": "devicon-postgresql-plain",
         "PyPDF2": "devicon-python-plain",
         "PyQT": "devicon-qt-plain",
         "PyTorch": "devicon-pytorch-plain",

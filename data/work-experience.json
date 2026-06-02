@@ -15,11 +15,13 @@
                 "Flask"
             ],
             "Database": [
-                "Elasticsearch"
+                "Elasticsearch",
+                "PostgreSQL"
             ],
             "ML & Data Analytics": [
                 "PyTorch",
                 "DGL",
+                "scikit-learn",
                 "Pandas",
                 "NumPy",
                 "Matplotlib",
@@ -34,32 +36,32 @@
                 "title": "Job Responsibilities",
                 "paragraphs": [
                     [
-                        "Developed reporting tools and analytical dashboards to ",
+                        "Build ",
                         {
-                            "text": "standardize processes",
+                            "text": "detection and ML systems",
                             "highlight": true
                         },
-                        " and ",
+                        " for the InfoSec org, spanning ",
                         {
-                            "text": "increase understanding",
+                            "text": "graph-based threat detection",
                             "highlight": true
                         },
-                        " of cybersecurity threats. Managed the implementation of a new ",
+                        ", ",
                         {
-                            "text": "cybersecurity tool",
+                            "text": "anomaly detection",
                             "highlight": true
                         },
-                        ", ensuring ",
+                        " over endpoint and asset data, and ",
                         {
-                            "text": "data accuracy",
+                            "text": "enrichment automation",
                             "highlight": true
                         },
-                        " and leading ",
+                        " for analyst workflows. Own tooling end-to-end from ",
                         {
-                            "text": "training sessions",
+                            "text": "dataset construction",
                             "highlight": true
                         },
-                        " to improve security practices."
+                        " through model development and deployment."
                     ]
                 ]
             },
@@ -69,16 +71,20 @@
                 "title": "Achievements",
                 "items": [
                     {
-                        "icon": "fa-solid fa-file-alt",
-                        "text": "Designed and implemented reporting tools for the threat intelligence team using JavaScript, standardizing reporting processes and utilizing Power Automate to distribute emails efficiently."
+                        "icon": "fa-solid fa-diagram-project",
+                        "text": "Designed and built a graph neural network detection pipeline to retrospectively identify DDoS activity in network traffic using raw edge firewall events, spanning three model architectures (Flow-Based GNN, Heterogeneous U-Nets, and a custom Encoder-Decoder for unsupervised detection)."
                     },
                     {
-                        "icon": "fa-solid fa-chart-area",
-                        "text": "Developed insightful dashboards using Python's pandas library, JavaScript, and Apache ECharts to analyze DDoS attacks, enhancing the team's ability to understand and mitigate threats."
+                        "icon": "fa-solid fa-magnifying-glass-chart",
+                        "text": "Built an unsupervised anomaly detection system over endpoint application-install data from CrowdStrike and Tenable, using K-Means clustering and cosine similarity to surface anomalous software at scale, covering bulk application review that EDR tooling misses."
                     },
                     {
-                        "icon": "fa-solid fa-shield-alt",
-                        "text": "Played a key role in onboarding a Cyber Asset Attack Surface Management tool, creating use cases for different departments, validating data accuracy, and conducting training sessions for InfoSec employees to enhance tool utilization."
+                        "icon": "fa-solid fa-code-compare",
+                        "text": "Shipped a semantic string-matching service with a background processing queue for large files, collapsing a recurring multi-day reconciliation task into under an hour (95%+ faster) while retaining a human verification step on results."
+                    },
+                    {
+                        "icon": "fa-solid fa-bolt",
+                        "text": "Built an IOC enrichment tool aggregating multiple threat-intelligence sources into a single bulk view, scaling analysts from one-at-a-time lookups to thousands of indicators per run."
                     }
                 ]
             },

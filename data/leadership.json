@@ -1,5 +1,23 @@
 [
     {
+        "title": "Hackathon Judge",
+        "date": "2026-05-23",
+        "venue": "Google I/O Hackathon 2026",
+        "venueUrl": "https://cerebralvalley.ai/e/google-io-hackathon",
+        "from": "2026-05-23",
+        "to": "2026-05-23",
+        "sections": [
+            {
+                "type": "paragraphs",
+                "slug": "description",
+                "title": "Overview",
+                "paragraphs": [
+                    "Served as a first-round judge at the Google I/O Hackathon in San Francisco, hosted by Cerebral Valley in partnership with Google DeepMind, where teams turned the latest I/O releases into working products built with Gemini and Gemma across AI Studio, Antigravity, and Google's newest developer tools. Evaluated 21 projects through 3-minute pitches and live Q&A, scoring each on impact potential, live demo execution, and creativity and originality via the CV judging platform."
+                ]
+            }
+        ]
+    },
+    {
         "title": "CFP Reviewer",
         "date": "2026-04-09",
         "venue": "BSides SLC 2026",
